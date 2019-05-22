@@ -5,7 +5,12 @@ mongoose.set('useFindAndModify', false);
 
 var UserSchema = new mongoose.Schema({
     password: { type: String, required: true },
-    email: String,
+    email: { type: String },
+    username: { type: String, },
+    nickname: { type: String, default: this.username },
+    coin: { type: Number, default: 3000 },
+    diamond: { type: Number, default: 0},
+
 }, { collection: 'User' });
 
 UserSchema.pre('save', function (next) {
