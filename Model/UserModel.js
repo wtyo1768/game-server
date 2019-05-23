@@ -4,13 +4,13 @@ const crypto = require('crypto');
 mongoose.set('useFindAndModify', false);
 
 var UserSchema = new mongoose.Schema({
+    email: { type: String , required: true } ,
     password: { type: String, required: true },
-    email: { type: String },
     username: { type: String, },
     nickname: { type: String, default: this.username },
     coin: { type: Number, default: 3000 },
     diamond: { type: Number, default: 0},
-
+    resourceMax : Number,    
 }, { collection: 'User' });
 
 UserSchema.pre('save', function (next) {
@@ -20,6 +20,7 @@ UserSchema.pre('save', function (next) {
     };
     next();
 });
+
 var UserModel = mongoose.model('User', UserSchema);
 
 module.exports = UserModel;

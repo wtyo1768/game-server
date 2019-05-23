@@ -1,13 +1,13 @@
 const mongoose = require('mongoose');
 
 var PlanetSchema = new mongoose.Schema({
-    
-    pid: { type: String },
-    password: { type: String, required: true },
-    email: { type: String },
-    username: { type: String, },
-    nickname: { type: String, default: this.username },
-    diamond: { type: Number, default: 0},
+    name: String,
+    type: String,
+    level: { type: Number, default: 1 },
+    experience: { type: Number, default: 0 },
+    positionX: Number,
+    positionY: Number,
+
 
 }, { collection: 'Planet' });
 
