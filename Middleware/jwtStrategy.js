@@ -16,11 +16,13 @@ const opts = {
 }
 
 const strategy = new jwtStrategy(opts, function (payload, done) {
+    console.log(payload)
     PlanetModel.findById(payload._id  ,function (err, user) {
         if (err)
             return done(err, false, err);
         if (user){
-            user._id = user.__v = undefined;
+            console.log(user)
+            user.__v = undefined;
             return done(null, user);
         }
         else

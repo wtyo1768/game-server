@@ -17,7 +17,7 @@ const localStrategy = new LocalStrategy({
                 else if (user.password != password)
                     return done(null, false , {message : 'Incorrect email or password'})
                 else{
-                    user.password = user.__v = user._id = undefined;
+                    user.password = user.__v =  undefined;
                     return done(null, user, { message: 'Logged In Successfully' });
                 }
             })
