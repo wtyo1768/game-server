@@ -14,6 +14,8 @@ mongoose.Promise = global.Promise;
 
 app.listen(port, () => console.log('App listening on port ' + port));
 
+app.use(cors());
+
 app.options('*', cors());
 
 app.use(bodyParser.urlencoded({ extended: false }));
