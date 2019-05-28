@@ -2,7 +2,6 @@ var UserModel = require('../../Model/UserModel');
 var PlanetModel = require('../../Model/PlanetModel');
 
 module.exports = async function (req, res) {
-    //req.body = JSON.parse(req.body);
     var UserData = {
         'email': req.body.email,
         'password': req.body.password

@@ -9,7 +9,7 @@ var PlanetSchema = new mongoose.Schema({
     positionX: Number,
     positionY: Number,
     architectureTechnology: { type: mongoose.Schema.Types.Mixed },
-    BuildingMap: { type: mongoose.Schema.Types.Mixed, default: [] },
+    buildingMap: { type: mongoose.Schema.Types.Mixed, default: [] },
 
 }, { collection: 'Planet' });
 
