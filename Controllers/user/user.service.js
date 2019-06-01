@@ -5,17 +5,63 @@ exports.getAllUserData = async function (req, res) {
 }
 
 exports.ConsumeResource = async function (req, res) {
-    return res.send('testing')
-    var data = { stone: 100, copper: 100 };
+    console.log('consume')
+    const data = req.body.resources;
+    if (!data)
+        return res.status(204).end();
 
-    //console.log(req.user)
-    // UserModel.mapReduce(o,)
+    UserModel.findById(req.user._id)
+        .select('resources')
+        .exec()
+        .then(doc => {
+            data.forEach((ele, index) => {
+                doc.resources[index] = ele;
+            })
+            doc.markModified('resources')
+            doc.save()
+                .then(() => res.status(200).end())
+        })
+        .catch(err => res.status(400).end())
+}
 
-    var Sourcekey = Object.keys(data);
-    Sourcekey.forEach((ele)=>{
-        data_res[ele] -= data[keys] 
-    })
+exports.spentCoin = function (req, res) {
+    const money = req.body.coin;
 
-    console.log(data_res)
-    return res.send(data_res)
-} 
+    UserModel.findByIdAndUpdate(req.user._id, { coin: money })
+        .exec()
+        .then(() => {
+        })
+        .catch(() => {
+        })
+}
+exports.spendDiamong = function (req, res) {
+}
+
+exports.CoolDownofColleting = function (req, res) {
+    const data = req.body.gridData
+    let modified = false
+    console.log('Cooldown')
+    console.log(data)
+
+    UserModel.findById(req.user._id)
+        .select('coolDownGrid')
+        .exec()
+        .then(doc => {
+            doc.coolDownGrid.forEach((ele, index) => {
+                if (ele.maxLat == data.maxLat && ele.maxLng == data.maxLng) {
+                    doc.coolDownGrid[index].finishTime = data.finishTime;
+                    modified = true;
+                }
+            })
+            if (!modified)
+                doc.coolDownGrid.push({
+                    maxLat: data.maxLat,
+                    maxLng: data.maxLng,
+                    finishTime: data.finishTime
+                })
+            doc.markModified(`coolDownGrid`);
+            doc.save();
+            return res.status(200).end();
+        })
+        .catch(err => res.status(400).end());
+}

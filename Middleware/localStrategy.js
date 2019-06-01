@@ -7,8 +7,11 @@ const localStrategy = new LocalStrategy({
     passwordField: 'password'
 },
     function (username, password, done) {
+        console.log(password)
+
         password = crypto.createHash('md5').
         update(password, 'utf8').digest('hex');
+        console.log(password)
         return UserModel.findOne({ email: username })
             .then(user => {
                 if (!user) {
@@ -17,6 +20,7 @@ const localStrategy = new LocalStrategy({
                 else if (user.password != password)
                     return done(null, false , {message : 'Incorrect email or password'})
                 else{
+                    user = user.toObject();
                     user.password = user.__v =  undefined;
                     return done(null, user, { message: 'Logged In Successfully' });
                 }

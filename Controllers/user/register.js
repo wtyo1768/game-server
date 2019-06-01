@@ -1,24 +1,27 @@
 var UserModel = require('../../Model/UserModel');
 var PlanetModel = require('../../Model/PlanetModel');
+var crypto = require('crypto');
 
 module.exports = async function (req, res) {
+    let password = crypto.createHash('md5').
+        update(req.body.password, 'utf8').digest('hex');
+
+    const Planet = new PlanetModel();
     var UserData = {
-        'email': req.body.email,
-        'password': req.body.password
+        username : req.body.username,
+        email: req.body.email,
+        password: password,
+        planets: [{ pid: Planet._id }]
     }
-    const user = new UserModel(UserData);
+    const User = new UserModel(UserData);
     const searchRes = await UserModel.findOne({ email: req.body.email });
     if (searchRes)
-        return res.send({ success: false, info: 'dunlicate account!' })
-    const planet_data = new PlanetModel();
-    user.planets[0].pid = planet_data._id;
-        user.save(async function (err) {
-        if (err) {
-            return res.send({ success: false, info: err });
-        }
-        else {
-            await planet_data.save();
-            return res.send({ success: true, info: 'success' });
-        }
-    });
+        return res.status(204).send('dunlicate account!')
+
+    User.save()
+        .then(() => {
+            Planet.save();
+            return res.status(201).end();
+        })
+        .catch(err => res.status(400).send(err))
 }

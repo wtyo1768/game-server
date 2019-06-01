@@ -21,7 +21,7 @@ app.use(express.static('public'));
 
 app.use(cors());
 //For Preflight request 
-app.options('*', cors());
+app.options('*', cors({ maxAge: 600 }));
 
 app.use(bodyParser.json());
 
@@ -31,13 +31,17 @@ app.use(bodyParser.text())
 
 app.use(cookieParser());
 
-// app.use(function (req, res, next) {
-//     if (req.method == "GET") 
-//         return next();
-//     req.body = JSON.parse(req.body);
-//     next();
-// })
+app.use(function (req, res, next) {
+    if (req.method == "GET")
+        return next();
+    // req.body = JSON.parse(req.body)
+    next();
+})
+
+app.get('', (req, res) => res.send('This is Kyronus Server'))
 
 app.use('/user', require('./Routes/user.route'));
 
 app.use('/planet', require('./Routes/planet.route'));
+
+app.use('/map', require('./Routes/map.route'));

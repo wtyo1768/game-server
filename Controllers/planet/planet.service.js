@@ -21,34 +21,35 @@ exports.update = async function (req, res) {
 }
 
 exports.ConstructBuilding = function (req, res) {
+
     PlanetModel.findById(req.body.pid)
         .then(planet => {
             planet.buildingMap.push(req.body.building)
             planet.markModified('buildingMap')
             planet.save().then((planet) => res.send(planet))
-        }).catch((err) => {
-            res.send(err);
         })
+        .catch(
+            err => res.send(err))
 }
 
 exports.DeconstructBuilding = async function (req, res) {
+
     PlanetModel.findById(req.body.pid)
         .then(planet => {
             planet.buildingMap.splice(req.body.index, 1)
             planet.markModified(`buildingMap`)
             planet.save().then((planet) => res.send(planet))
-        }).catch((err) => {
-            res.send(err);
         })
+        .catch(err => res.send(err))
 }
 
 exports.haveBuiltBuilding = async function (req, res) {
+
     PlanetModel.findById(req.body.pid)
         .then(planet => {
             planet.buildingMap[req.body.index].status = 'done'
             planet.markModified(`buildingMap`)
             planet.save().then((planet) => res.send(planet))
-        }).catch((err) => {
-            res.send(err);
         })
+        .catch( err=> res.send(err) )
 }

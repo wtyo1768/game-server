@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const Types = mongoose.Schema.Types;
 
 var PlanetSchema = new mongoose.Schema({
 
@@ -8,11 +9,9 @@ var PlanetSchema = new mongoose.Schema({
     experience: { type: Number, default: 0 },
     positionX: Number,
     positionY: Number,
-    architectureTechnology: { type: mongoose.Schema.Types.Mixed },
-    buildingMap: { type: mongoose.Schema.Types.Mixed, default: [] },
+    architectureTechnology: { type: Types.Mixed  },
+    buildingMap: { type: Types.Mixed , default: [] },
 
 }, { collection: 'Planet' });
 
-var PlanetModel = mongoose.model('Planet', PlanetSchema);
-
-module.exports = PlanetModel;
+module.exports = mongoose.model('Planet', PlanetSchema);

@@ -16,12 +16,13 @@ const opts = {
 }
 
 const strategy = new jwtStrategy(opts, function (payload, done) {
-   // console.log(payload)
+    //console.log(payload)
     UserModel.findById(payload._id  ,function (err, user) {
         if (err)
             return done(err, false, err);
         if (user){
-           // console.log(user)
+            user = user.toObject();
+            user.password = user.__v = undefined;
             return done(null, user);
         }
         else
