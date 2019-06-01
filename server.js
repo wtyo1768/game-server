@@ -34,7 +34,7 @@ app.use(cookieParser());
 app.use(function (req, res, next) {
     if (req.method == "GET")
         return next();
-    // req.body = JSON.parse(req.body)
+    req.body = JSON.parse(req.body)
     next();
 })
 
