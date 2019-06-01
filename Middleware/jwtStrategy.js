@@ -23,6 +23,7 @@ const strategy = new jwtStrategy(opts, function (payload, done) {
         if (user){
             user = user.toObject();
             user.password = user.__v = undefined;
+            console.log('jwt')
             return done(null, user);
         }
         else

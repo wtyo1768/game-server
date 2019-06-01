@@ -9,7 +9,8 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 
-mongoose.connect(url, { useNewUrlParser: true });
+mongoose.connect(url, { useNewUrlParser: true })
+.catch( ()=>console.log('Error in database connecting') )
 
 mongoose.Promise = global.Promise;
 
