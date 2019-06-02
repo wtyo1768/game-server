@@ -19,7 +19,7 @@ var GoogleStrategy = new Strategy(
                         email: profile.emails[0].value,
                         googleID: profile.id,
                         password: "itsagoogleaccount",
-                        planets : [{ pid: Planet._id }]
+                        planets : [{ pid: Planet._id ,state:true}]
                     }
                     const User = new UserModel(data);
                     User.save()

@@ -14,7 +14,7 @@ module.exports = async function (req, res) {
         username: req.body.username,
         email: req.body.email,
         password: password,
-        planets: [{ pid: Planet._id }]
+        planets: [{ pid: Planet._id, state: true }]
     }
     const User = new UserModel(UserData);
     const searchRes = await UserModel.findOne({ email: req.body.email });
