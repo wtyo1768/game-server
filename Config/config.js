@@ -15,9 +15,8 @@ const config = {
     'callbackURL': '/user/Auth',
   },
   
-  'logger' : {
-    'ActivationKey' : '7Ds9De0Kr4Wh7Gx7Ul6Fj7Xk5Ie3Yd9Xg3Th2Dh',
-    
+  'AzureInsight':{
+    'instrumentation_key' : '37db324a-652f-489f-82b8-db8ec90d2acd',
   }
 }
 module.exports = config;

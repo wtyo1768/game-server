@@ -1,8 +1,12 @@
+
+const appInsights = require('applicationinsights');
+const config = require("./Config/config.js");
+appInsights.setup(config.AzureInsight.instrumentation_key).start();
+
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 const port = process.env.PORT || 3000;
-const config = require("./Config/config.js");
 //const url = `mongodb+srv://wtyo1768:s124930654@kyronus-dihrd.mongodb.net/test?retryWrites=true`
 const url = "mongodb://wtyo1768:aO2xZc7fHuSef3bR1gtotCz9MUnCXiO1In1RNF4s1NObi7zi5bAvZWFWXo2ZBaghC7aJsII2MKVt3yaXCkwrRA==@wtyo1768.documents.azure.com:10255/kyronus?ssl=true&replicaSet=globaldb"
 const cors = require('cors');

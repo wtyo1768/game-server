@@ -12,7 +12,7 @@ var GoogleStrategy = new Strategy(
         console.log('googleAuth');
         console.log(accessToken + ' |||| ' + refreshToken);
         UserModel.findOne({ googleID: profile.id })
-            .then((data) => {
+            .then( data => {
                 if (!data) {//create One
                     const data = {
                         username: profile.displayName,

@@ -1,15 +1,10 @@
 const PlanetModel = require('../../Model/PlanetModel');
 
-exports.getPlanetData = function (req, res) { 
+exports.getPlanetData = function (req, res) {
     //You can't get Planet that didn't  belong to you
-    req.user.planets.forEach(async (element,index) => {
-        if (element.pid == req.params.pid) {
-            var data_res = await PlanetModel.findById(req.params.pid);
-            return res.send(data_res);
-        }
-        if(index = req.user.planets.length)
-            res.status(401).end();
-    });
+    let isValid = req.user.planets.some(ele => ele.pid == req.params.pid);
+    isValid ? PlanetModel.findById(req.params.pid).then(doc => res.send(doc))
+        : res.status(401).end();
 }
 
 exports.update = async function (req, res) {
@@ -49,5 +44,5 @@ exports.haveBuiltBuilding = async function (req, res) {
             planet.markModified(`buildingMap`)
             planet.save().then((planet) => res.send(planet))
         })
-        .catch( err=> res.send(err) )
+        .catch(err => res.send(err))
 }
