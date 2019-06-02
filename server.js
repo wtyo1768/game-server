@@ -1,7 +1,12 @@
 
+// App analysis
+
 const appInsights = require('applicationinsights');
 const config = require("./Config/config.js");
 appInsights.setup(config.AzureInsight.instrumentation_key).start();
+const telemetry = appInsights.defaultClient;
+
+//App init
 
 const express = require('express');
 const app = express();

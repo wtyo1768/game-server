@@ -3,14 +3,25 @@ const Types = mongoose.Schema.Types;
 
 var PlanetSchema = new mongoose.Schema({
 
-    name: String,
-    type: String,
+    name: { type: String, default: "赫克斯" },
+    type: { type: String, default: "預設" },
+
     level: { type: Number, default: 1 },
     experience: { type: Number, default: 0 },
-    positionX: Number,
-    positionY: Number,
-    architectureTechnology: { type: Types.Mixed  },
-    buildingMap: { type: Types.Mixed , default: [] },
+
+    positionX: { type: Number, default: 23.1 },
+    positionY: { type: Number, default: 123.4 },
+
+    architectureTechnology: {
+        type: Types.Mixed, default:
+        {
+            "commonBuilding": {
+                "c1": true,
+                "c3": true
+            }
+        },
+    },
+    buildingMap: { type: Types.Mixed, default: [] },
 
 }, { collection: 'Planet' });
 
