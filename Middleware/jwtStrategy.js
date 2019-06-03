@@ -1,22 +1,20 @@
 const jwtStrategy = require('passport-jwt').Strategy;
-const Extractjwt = require('passport-jwt').ExtractJwt;
+// const Extractjwt = require('passport-jwt').ExtractJwt;
 const UserModel = require('../Model/UserModel');
 
 const extrctJwtFromCookie = function (req) {
-    var token;
-    if (req && req.cookies)
-        token = req.cookies['token'];
+    let token =  req.cookies.auth
+    console.log(token)
     return token;
 }
 
 const opts = {
-    // jwtFromRequest : Extractjwt.fromBodyField('token'),
-    jwtFromRequest: Extractjwt.fromAuthHeaderAsBearerToken(),
+    jwtFromRequest : extrctJwtFromCookie,
+    //jwtFromRequest: Extractjwt.fromAuthHeaderAsBearerToken(),
     secretOrKey: require('../Config/config').secret,
 }
 
 const strategy = new jwtStrategy(opts, function (payload, done) {
-    //console.log(payload)
     UserModel.findById(payload._id  ,function (err, user) {
         if (err)
             return done(err, false, err);

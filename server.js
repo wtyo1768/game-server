@@ -12,14 +12,14 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 const port = process.env.PORT || 3000;
-//const url = `mongodb+srv://wtyo1768:s124930654@kyronus-dihrd.mongodb.net/test?retryWrites=true`
-const url = "mongodb://wtyo1768:aO2xZc7fHuSef3bR1gtotCz9MUnCXiO1In1RNF4s1NObi7zi5bAvZWFWXo2ZBaghC7aJsII2MKVt3yaXCkwrRA==@wtyo1768.documents.azure.com:10255/kyronus?ssl=true&replicaSet=globaldb"
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
+//const url = `mongodb+srv://wtyo1768:s124930654@kyronus-dihrd.mongodb.net/test?retryWrites=true`
+const url = "mongodb://wtyo1768:aO2xZc7fHuSef3bR1gtotCz9MUnCXiO1In1RNF4s1NObi7zi5bAvZWFWXo2ZBaghC7aJsII2MKVt3yaXCkwrRA==@wtyo1768.documents.azure.com:10255/kyronus?ssl=true&replicaSet=globaldb"
 
 mongoose.connect(url, { useNewUrlParser: true })
-.catch( ()=>console.log('Error in database connecting') )
+    .catch(() => console.log('Error in database connecting'))
 
 mongoose.Promise = global.Promise;
 
@@ -27,9 +27,15 @@ app.listen(port, () => console.log('App listening on port ' + port));
 
 app.use(express.static('public'));
 
-app.use(cors());
-//For Preflight request 
-app.options('*', cors({ maxAge: 600 }));
+const origin =  'http://localhost:8080';
+const corsOptions = {
+    origin: origin,
+    credentials: true,
+    maxAge: 1728000,
+};
+app.use(cors(corsOptions));
+
+app.options('*', cors(corsOptions));
 
 app.use(bodyParser.json());
 
@@ -40,6 +46,7 @@ app.use(bodyParser.text())
 app.use(cookieParser());
 
 app.use(function (req, res, next) {
+    res.header("Access-Control-Allow-Origin", origin);
     if (req.method == "GET")
         return next();
     req.body = JSON.parse(req.body)
@@ -47,6 +54,8 @@ app.use(function (req, res, next) {
 })
 
 app.get('', (req, res) => res.send('This is Kyronus Server'))
+
+app.use('/user' , require('./Routes/auth.route'));
 
 app.use('/user', require('./Routes/user.route'));
 

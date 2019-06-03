@@ -1,26 +1,14 @@
 const express = require('express');
 const router = express.Router();
-const passport = require('passport');
 const UserController = require('../Controllers/user/user.service');
+const passport = require('passport');
 
-passport.use('local', require('../Middleware/localStrategy'));
+router.use(passport.authenticate('jwt', { session: false }));
 
-passport.use(require('../Middleware/goolgeStrategy'));
+router.get('/', UserController.getAllUserData);
 
-router.get('/', passport.authenticate('jwt', { session: false }), UserController.getAllUserData);
+router.patch('/resources', UserController.ConsumeResource);
 
-router.get('/google', passport.authenticate('google', { session: false, scope: ['profile', 'email'] }));
-
-router.get('/Auth', passport.authenticate('google', { session: false }), function (req, res) {
-    res.status(200).end();
-})
-
-router.post('/login', passport.authenticate('local', { session: false }), require('../Controllers/user/login'));
-
-router.post('/register', require('../Controllers/user/register'));
-
-router.patch('/resources', passport.authenticate('jwt', { session: false }), UserController.ConsumeResource);
-
-router.post('/coolDownGrid', passport.authenticate('jwt', { session: false }), UserController.CoolDownofColleting);
+router.post('/coolDownGrid', UserController.CoolDownofColleting);
 
 module.exports = router;
