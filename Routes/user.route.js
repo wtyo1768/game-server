@@ -7,6 +7,14 @@ router.use(passport.authenticate('jwt', { session: false }));
 
 router.get('/', UserController.getAllUserData);
 
+router.get('/planetList',UserController.getPlanetList);
+
+router.patch('/isInBeginningStory' , UserController.leaveBeginningMode);
+
+router.patch('/coin', UserController.spendCoin);
+
+router.patch('/diamond', UserController.spendDiamond);
+
 router.patch('/resources', UserController.ConsumeResource);
 
 router.post('/coolDownGrid', UserController.CoolDownofColleting);

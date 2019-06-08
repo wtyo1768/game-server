@@ -1,20 +1,22 @@
 var UserModel = require('../../Model/UserModel');
-var PlanetModel = require('../../Model/PlanetModel');
 var crypto = require('crypto');
+
+var jwt = require('jsonwebtoken')
+const expire = { expiresIn: '7d' };
+const secret = require('../../Config/config').secret;
 
 const appInsights = require('applicationinsights');
 const telemetry = appInsights.defaultClient;
+
 
 module.exports = async function (req, res) {
     let password = crypto.createHash('md5').
         update(req.body.password, 'utf8').digest('hex');
 
-    const Planet = new PlanetModel();
     var UserData = {
         username: req.body.username,
         email: req.body.email,
         password: password,
-        planets: [{ pid: Planet._id, state: true }]
     }
     const User = new UserModel(UserData);
     const searchRes = await UserModel.findOne({ email: req.body.email });
@@ -25,8 +27,12 @@ module.exports = async function (req, res) {
 
     User.save()
         .then(() => {
-            Planet.save();
-            return res.status(201).end();
+            //require('../auth/email.auth').verifyEmail(UserData);
+            const payload = { _id: User._id };
+            const token = jwt.sign(payload, secret, expire);
+            res.cookie('auth', token, { expires: new Date(Date.now() + 1000 * 3600 * 24 * 7), httpOnly: true })
+
+            return res.status(201).send(User);
         })
         .catch(err => res.status(400).send(err))
 }

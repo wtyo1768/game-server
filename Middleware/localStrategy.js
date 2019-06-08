@@ -2,31 +2,27 @@ const LocalStrategy = require('passport-local').Strategy;
 const UserModel = require('../Model/UserModel');
 const crypto = require('crypto');
 
-const localStrategy = new LocalStrategy({
+const verify = function (username, password, done) {
+    password = crypto.createHash('md5').
+        update(password, 'utf8').digest('hex');
+    return UserModel.findOne({ email: username }).then(user => {
+        if (!user) {
+            return done(null, false, 404);
+        }
+        else if (user.password != password)
+            return done(null, false, 401)
+        else {
+            user = user.toObject();
+            user.password = user.__v = undefined;
+            return done(null, user);
+        }
+    })
+        .catch(err => done(err));
+}
+
+const opts = {
     usernameField: 'email',
     passwordField: 'password'
-},
-    function (username, password, done) {
-        console.log(password)
+}
 
-        password = crypto.createHash('md5').
-        update(password, 'utf8').digest('hex');
-        console.log(password)
-        return UserModel.findOne({ email: username })
-            .then(user => {
-                if (!user) {
-                    return done(null, false, { message: 'Incorrect email' });
-                }
-                else if (user.password != password)
-                    return done(null, false , {message : 'Incorrect email or password'})
-                else{
-                    user = user.toObject();
-                    user.password = user.__v =  undefined;
-                    return done(null, user, { message: 'Logged In Successfully' });
-                }
-            })
-            .catch(err => done(err));
-    }
-);
-
-module.exports = localStrategy;
+module.exports = new LocalStrategy(opts, verify);

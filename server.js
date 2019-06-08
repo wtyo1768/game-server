@@ -16,7 +16,7 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 //const url = `mongodb+srv://wtyo1768:s124930654@kyronus-dihrd.mongodb.net/test?retryWrites=true`
-const url = "mongodb://wtyo1768:aO2xZc7fHuSef3bR1gtotCz9MUnCXiO1In1RNF4s1NObi7zi5bAvZWFWXo2ZBaghC7aJsII2MKVt3yaXCkwrRA==@wtyo1768.documents.azure.com:10255/kyronus?ssl=true&replicaSet=globaldb"
+const url = `mongodb://wtyo1768:aO2xZc7fHuSef3bR1gtotCz9MUnCXiO1In1RNF4s1NObi7zi5bAvZWFWXo2ZBaghC7aJsII2MKVt3yaXCkwrRA==@wtyo1768.documents.azure.com:10255/kyronus?ssl=true&replicaSet=globaldb`
 
 mongoose.connect(url, { useNewUrlParser: true })
     .catch(() => console.log('Error in database connecting'))
@@ -47,11 +47,15 @@ app.use(cookieParser());
 
 app.use(function (req, res, next) {
     res.header("Access-Control-Allow-Origin", origin);
-    if (req.method == "GET")
+    if (req.method == "GET" || Object.keys(req.body).length == 0 )
         return next();
+    console.log('use')
+    console.log(req.body)
     req.body = JSON.parse(req.body)
     next();
 })
+
+//require('./Controllers/auth/email.auth').verifyEmail();
 
 app.get('', (req, res) => res.send('This is Kyronus Server'))
 

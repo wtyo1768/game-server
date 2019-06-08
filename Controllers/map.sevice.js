@@ -25,16 +25,16 @@ exports.collectMapResource = async function (req, res) {
             doc.properties = req.body.gridData.properties
             doc.markModified('properites');
             doc.save()                
-            .catch( ()=>res.status(400))
+            .catch( ()=>res.status(500))
         }
     }
     else {
         console.log('New source')
         const Map = new MapModel(req.body.gridData);
         Map.save()
-        .catch( ()=>res.status(400))
+        .catch( ()=>res.status(500))
     }
-    return res.status(200).end()
+    return res.end()
 }
 
 exports.ResourceDepletion = function (req, res) {

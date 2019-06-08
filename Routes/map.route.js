@@ -1,11 +1,17 @@
 const router = require("express").Router();
 const MapController = require('../Controllers/map.sevice');
 
+router.route('')
+    .get(MapController.getMapResource)
 
-router.get('', MapController.getMapResource);
+    .post(MapController.collectMapResource)
+    
+    .patch(MapController.ResourceDepletion)
 
-router.post('', MapController.collectMapResource);
+// router.get('', MapController.getMapResource);
 
-router.patch('', MapController.ResourceDepletion);
+// router.post('', MapController.collectMapResource);
+
+// router.patch('', MapController.ResourceDepletion);
 
 module.exports = router;

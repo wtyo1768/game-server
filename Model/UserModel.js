@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-const crypto = require('crypto');
 const Types = mongoose.Schema.Types;
 
 mongoose.set('useFindAndModify', false);
@@ -8,8 +7,11 @@ var UserSchema = new mongoose.Schema({
 
     facebookID: { type: Number },
     googleID: { type: Number },
+
     email: { type: String, required: true },
+    //isverified : {type:Boolean , default :false},
     password: { type: String, required: true },
+
     username: { type: String, default: "郭家銘" },
     nickname: { type: String, default: this.username },
     coin: { type: Number, default: 3000 },
@@ -22,15 +24,15 @@ var UserSchema = new mongoose.Schema({
             { type: '墨金屬', amount: 1000 }, { type: '鍨金屬', amount: 1000 },
             { type: '氪金屬', amount: 1000 }, { type: '銝金屬', amount: 1000 }],
     },
-    baggage: { type: Types.Mixed },
+    baggage: { type: Array, default: [] },
     achievements: {
         type: Types.Mixed, default: [{
             title: '星際拓荒者', brief: '擁有第一個星球', state: true
         }]
     },
-    planets: { type: Types.Mixed, default: [{ pid: null, state: true }] },
+    planets: { type: Types.Mixed, default: [] },
     task: { type: Array, default: [0] },
-    mission: { type: Types.Mixed },
+    mission: { type: Types.Mixed, default: [] },
 
     detectRange: { type: Number, default: 3 },
     collectAbility: { type: Number, default: 100 },
@@ -44,6 +46,9 @@ var UserSchema = new mongoose.Schema({
     },
     collectorMax: { type: Number, default: 2 },
     coolDownGrid: { type: Types.Mixed, default: [] },
+
+    isInBeginningStory: { type: Boolean, default: true }
+
 }, { collection: 'User' });
 
 

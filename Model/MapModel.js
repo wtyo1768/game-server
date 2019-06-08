@@ -7,17 +7,19 @@ const MapSchema = new mongoose.Schema({
     type: { type: String, default: 'Feature' },
     properties: {
         type: Object,
-        maxLat: Number,
-        maxLng: Number,
-        name: String,
-        density: Number,
-        respawnTime: Number,
-        storages: [
-            {
-                type: '木頭',
-                amount: Number
-            }
-        ],
+        default: {
+            maxLat: 0,
+            maxLng: 0,
+            name: String,
+            density: 0,
+            respawnTime: null,
+            storages: [
+                {
+                    type: '木頭',
+                    amount: Number
+                }
+            ],
+        }
     },
     geometry: {
         type: Object, default: {

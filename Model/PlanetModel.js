@@ -16,9 +16,11 @@ var PlanetSchema = new mongoose.Schema({
         type: Types.Mixed, default:
         {
             "commonBuilding": {
-                "c1": true,
-                "c3": true
-            }
+                "c0": true,
+            },
+            "militaryBuilding": {},
+            "survivalBuilding": {},
+            "economicBuilding": {}
         },
     },
     buildingMap: { type: Types.Mixed, default: [] },

@@ -15,6 +15,12 @@ const config = {
     'callbackURL': '/user/Auth',
   },
   
+  'facebook' :{ 
+    'ID' : '2218872001499698',
+    'secret' :'f259a5f277d9dc71928d7c2a897772f2',
+    'callbackURL': '/user/facebook/cb',
+  },
+
   'AzureInsight':{
     'instrumentation_key' : '37db324a-652f-489f-82b8-db8ec90d2acd',
   }

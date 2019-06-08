@@ -1,7 +1,35 @@
 const UserModel = require('../../Model/UserModel');
+const PlanetModel = require('../../Model/PlanetModel');
 
 exports.getAllUserData = async function (req, res) {
     return res.send(req.user);
+}
+exports.getPlanetList = async function (req, res) {
+    console.log(req.user.planets.length)
+    let result = [];
+    req.user.planets.forEach((ele, index) => {
+        PlanetModel.findById(ele.pid)
+            .select('name type level positionX positionY')
+            .then(doc => {
+                result.push(doc)
+                if (index == req.user.planets.length - 1)
+                    return res.send(result)
+            })
+    })
+
+}
+
+exports.leaveBeginningMode = (req,res) =>{
+    UserModel.findById(req.user._id)
+    .then(doc=>{
+        doc.isInBeginningStory = false;
+        doc.save();
+        res.end()
+    })
+    .catch(err=>{
+        res.status(400).end();
+    })
+    
 }
 
 exports.ConsumeResource = async function (req, res) {
@@ -18,23 +46,25 @@ exports.ConsumeResource = async function (req, res) {
                 doc.resources[index] = ele;
             })
             doc.markModified('resources')
-            doc.save()
-                .then(() => res.status(200).end())
+            doc.save().then(() => res.status(200).end())
         })
-        .catch(err => res.status(400).end())
+        .catch(err => res.status(500).end())
 }
 
-exports.spentCoin = function (req, res) {
+exports.spendCoin = function (req, res) {
     const money = req.body.coin;
-
+    console.log(money)
     UserModel.findByIdAndUpdate(req.user._id, { coin: money })
-        .exec()
-        .then(() => {
-        })
-        .catch(() => {
-        })
+        .then(() => res.end())
+        .catch(() => res.status(400).end())
 }
-exports.spendDiamong = function (req, res) {
+exports.spendDiamond = function (req, res) {
+    const diamond = req.body;
+    console.log(diamond)
+    console.log('dia')
+    UserModel.findByIdAndUpdate(req.user._id, { diamond: diamond })
+        .then(() => res.end())
+        .catch(() => res.status(400).end());
 }
 
 exports.CoolDownofColleting = function (req, res) {
@@ -63,5 +93,5 @@ exports.CoolDownofColleting = function (req, res) {
             doc.save();
             return res.status(200).end();
         })
-        .catch(err => res.status(400).end());
+        .catch(err => res.status(500).end());
 }
