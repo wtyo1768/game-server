@@ -5,10 +5,6 @@ var jwt = require('jsonwebtoken')
 const expire = { expiresIn: '7d' };
 const secret = require('../../Config/config').secret;
 
-const appInsights = require('applicationinsights');
-const telemetry = appInsights.defaultClient;
-
-
 module.exports = async function (req, res) {
     let password = crypto.createHash('md5').
         update(req.body.password, 'utf8').digest('hex');
@@ -21,18 +17,16 @@ module.exports = async function (req, res) {
     const User = new UserModel(UserData);
     const searchRes = await UserModel.findOne({ email: req.body.email });
     if (searchRes)
-        return res.status(204).send('dunlicate account!')
+        return res.status(204).end();
+    else
+        User.save()
+            .then(() => {
+                //require('../auth/email.auth').verifyEmail(UserData);
+                const payload = { _id: User._id };
+                const token = jwt.sign(payload, secret, expire);
+                res.cookie('auth', token, { expires: new Date(Date.now() + 1000 * 3600 * 24 * 7), httpOnly: true })
 
-    telemetry.trackEvent(UserData.username + "Register");
-
-    User.save()
-        .then(() => {
-            //require('../auth/email.auth').verifyEmail(UserData);
-            const payload = { _id: User._id };
-            const token = jwt.sign(payload, secret, expire);
-            res.cookie('auth', token, { expires: new Date(Date.now() + 1000 * 3600 * 24 * 7), httpOnly: true })
-
-            return res.status(201).send(User);
-        })
-        .catch(err => res.status(400).send(err))
+                return res.status(201).send(User);
+            })
+            .catch(err => res.status(400).send(err))
 }
