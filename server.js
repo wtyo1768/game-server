@@ -33,12 +33,12 @@ const corsOptions = {
     credentials: true,
     maxAge: 1728000,
 };
-app.use((req, res , next) => {
+
+app.use(cors(corsOptions));
+app.use((req, res, next) => {
     res.header("Access-Control-Allow-Origin", origin)
     next()
 })
-app.use(cors(corsOptions));
-
 app.options(cors(corsOptions));
 
 app.use(bodyParser.json());
