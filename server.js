@@ -27,12 +27,13 @@ app.listen(port, () => console.log('App listening on port ' + port));
 
 app.use(express.static('public'));
 
-const origin =  'http://localhost:8080';
+const origin = 'http://localhost:8080';
 const corsOptions = {
     origin: origin,
     credentials: true,
     maxAge: 1728000,
 };
+app.use((req, res) => res.header("Access-Control-Allow-Origin", origin))
 app.use(cors(corsOptions));
 
 app.options(cors(corsOptions));
@@ -46,8 +47,7 @@ app.use(bodyParser.text())
 app.use(cookieParser());
 
 app.use(function (req, res, next) {
-    res.header("Access-Control-Allow-Origin", origin);
-    if (req.method == "GET" || Object.keys(req.body).length == 0 )
+    if (req.method == "GET" || Object.keys(req.body).length == 0)
         return next();
     console.log('use')
     console.log(req.body)
@@ -59,7 +59,7 @@ app.use(function (req, res, next) {
 
 app.get('', (req, res) => res.send('This is Kyronus Server'))
 
-app.use('/user' , require('./Routes/auth.route'));
+app.use('/user', require('./Routes/auth.route'));
 
 app.use('/user', require('./Routes/user.route'));
 
