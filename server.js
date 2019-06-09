@@ -39,7 +39,7 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 app.use((req, res, next) => {
-    res.header("Access-Control-Allow-Origin", origin)
+    res.header("Access-Control-Allow-Origin", origin[0])
     next()
 })
 app.options("/", cors(corsOptions));
