@@ -63,7 +63,7 @@ app.use(function (req, res, next) {
 
 //require('./Controllers/auth/email.auth').verifyEmail();
 
-app.get('', (req, res) => res.send('This is Kyronus Server'))
+// app.get('', (req, res) => res.send('This is Kyronus Server'))
 
 app.use('/user', require('./Routes/auth.route'));
 
