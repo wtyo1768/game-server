@@ -47,7 +47,8 @@ var UserSchema = new mongoose.Schema({
     collectorMax: { type: Number, default: 2 },
     coolDownGrid: { type: Types.Mixed, default: [] },
 
-    isInBeginningStory: { type: Boolean, default: true }
+    isInBeginningStory: { type: Boolean, default: true }, 
+    isBeginner: { type: Boolean, default: true }
 
 }, { collection: 'User' });
 

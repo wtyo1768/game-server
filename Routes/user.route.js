@@ -11,6 +11,8 @@ router.get('/planetList',UserController.getPlanetList);
 
 router.patch('/isInBeginningStory' , UserController.leaveBeginningMode);
 
+router.patch('/isBeginner',UserController.isBeginner);
+
 router.patch('/coin', UserController.spendCoin);
 
 router.patch('/diamond', UserController.spendDiamond);

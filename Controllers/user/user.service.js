@@ -28,8 +28,19 @@ exports.leaveBeginningMode = (req,res) =>{
     })
     .catch(err=>{
         res.status(400).end();
+    })   
+}
+
+exports.isBeginner = (req,res) =>{
+    UserModel.findById(req.user._id)
+    .then(doc=>{
+        doc.isBeginner = false;
+        doc.save();
+        res.end()
     })
-    
+    .catch(err=>{
+        res.status(400).end();
+    })   
 }
 
 exports.ConsumeResource = async function (req, res) {

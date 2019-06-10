@@ -27,8 +27,7 @@ app.listen(port, () => console.log('App listening on port ' + port));
 
 app.use(express.static('public'));
 
-const origin = ['http://localhost:8080'
-    , 'https://kyronus.azurewebsites.net',
+const origin = ['http://localhost:8080',
     'http://localhost:3000'
 ];
 const corsOptions = {
