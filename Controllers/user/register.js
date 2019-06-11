@@ -17,7 +17,7 @@ module.exports = async function (req, res) {
     const User = new UserModel(UserData);
     const searchRes = await UserModel.findOne({ email: req.body.email });
     if (searchRes)
-        return res.status(204).end();
+        return res.status(406).end();
     else
         User.save()
             .then(() => {
