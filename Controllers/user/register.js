@@ -16,10 +16,8 @@ module.exports = async function (req, res) {
     }
     const User = new UserModel(UserData);
     const searchRes = await UserModel.findOne({ email: req.body.email });
-    if (searchRes)
-        return res.status(406).end();
-    else
-        User.save()
+    return searchRes ? res.status(406).end()
+        : User.save()
             .then(() => {
                 //require('../auth/email.auth').verifyEmail(UserData);
                 const payload = { _id: User._id };

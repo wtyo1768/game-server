@@ -9,7 +9,7 @@ exports.getPlanetList = async function (req, res) {
     let result = [];
     req.user.planets.forEach((ele, index) => {
         PlanetModel.findById(ele.pid)
-            .select('name type level positionX positionY')
+            .select('name type level positionX positionY experience')
             .then(doc => {
                 result.push(doc)
                 if (index == req.user.planets.length - 1)
