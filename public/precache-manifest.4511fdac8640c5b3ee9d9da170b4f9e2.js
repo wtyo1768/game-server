@@ -1,7 +1,7 @@
 self.__precacheManifest = [
   {
-    "revision": "c5de44217a3a7403a0b53cd99813a217",
-    "url": "/img/power-plant-spawn.c5de4421.png"
+    "revision": "414783c337caa0cb0df54c4c82b54aad",
+    "url": "/img/green-house-work.414783c3.png"
   },
   {
     "revision": "b6216d61c03e6ce0c9aea6ca7808f7ca",
@@ -16,52 +16,52 @@ self.__precacheManifest = [
     "url": "/css/chunk-04381fab.a3e5b1b5.css"
   },
   {
-    "revision": "6128ec3b1217bdb69da9",
-    "url": "/css/chunk-10706aa8.7ae70217.css"
+    "revision": "1beeefe0b5e5457c6deb",
+    "url": "/css/chunk-0fcef08d.56686d67.css"
   },
   {
-    "revision": "6128ec3b1217bdb69da9",
-    "url": "/js/chunk-10706aa8.7521ebd7.js"
+    "revision": "1beeefe0b5e5457c6deb",
+    "url": "/js/chunk-0fcef08d.8d9c468d.js"
   },
   {
-    "revision": "99a69495b5df908086ab",
-    "url": "/js/chunk-320a892d.b076d9db.js"
+    "revision": "31502e0e3aa27fea1979",
+    "url": "/js/chunk-347e2c8e.a7cd0b4e.js"
   },
   {
-    "revision": "d2cf1f55c65696aa93b8",
-    "url": "/js/chunk-34240bd6.ce1f1fee.js"
+    "revision": "a227f0b9773b6ac0a911",
+    "url": "/js/chunk-41a2c06e.1a7794f8.js"
   },
   {
-    "revision": "d046c44b8d12dc2ed902",
-    "url": "/css/chunk-360d5d85.e2cd414a.css"
+    "revision": "5c7eb182cc8a970effe8",
+    "url": "/css/chunk-4b11b64a.f776e16c.css"
   },
   {
-    "revision": "d046c44b8d12dc2ed902",
-    "url": "/js/chunk-360d5d85.6bddb7a3.js"
+    "revision": "5c7eb182cc8a970effe8",
+    "url": "/js/chunk-4b11b64a.cb897669.js"
   },
   {
-    "revision": "6ef6090d5579210e896c",
-    "url": "/css/chunk-411867b2.31b1f98c.css"
+    "revision": "0427ce320c8f5ae3c349",
+    "url": "/css/chunk-628af30c.1400d095.css"
   },
   {
-    "revision": "6ef6090d5579210e896c",
-    "url": "/js/chunk-411867b2.3d570cbc.js"
+    "revision": "0427ce320c8f5ae3c349",
+    "url": "/js/chunk-628af30c.ddbf68a9.js"
   },
   {
-    "revision": "c8b0b849eb0310a30207",
-    "url": "/css/chunk-c28c9896.ccd6faaf.css"
+    "revision": "fecd59f79b2e7e5e94de",
+    "url": "/css/chunk-ad2984ea.5f8fdaee.css"
   },
   {
-    "revision": "c8b0b849eb0310a30207",
-    "url": "/js/chunk-c28c9896.2ffe2ba1.js"
+    "revision": "fecd59f79b2e7e5e94de",
+    "url": "/js/chunk-ad2984ea.260dd6de.js"
   },
   {
-    "revision": "897e936efb57c1d8c2e3",
+    "revision": "39eb7ce8b82780524764",
     "url": "/css/chunk-c82de95c.df46804b.css"
   },
   {
-    "revision": "897e936efb57c1d8c2e3",
-    "url": "/js/chunk-c82de95c.3b9924df.js"
+    "revision": "39eb7ce8b82780524764",
+    "url": "/js/chunk-c82de95c.9b03b612.js"
   },
   {
     "revision": "fbec9def09634b6eba53",
@@ -84,28 +84,12 @@ self.__precacheManifest = [
     "url": "/img/back.290602b5.png"
   },
   {
-    "revision": "a78cabb144635b1279f46f4ac9cccd05",
-    "url": "/img/city-chaser-icon.a78cabb1.png"
-  },
-  {
-    "revision": "2bf84bbfc17f7f8b011db7330ad541fa",
-    "url": "/img/arrow.2bf84bbf.png"
-  },
-  {
-    "revision": "39a3813b94e2884978866232d69f68e1",
-    "url": "/img/feature.39a3813b.png"
-  },
-  {
-    "revision": "3e9c87b57b069bc75ffcce52f52117e7",
-    "url": "/img/power.3e9c87b5.png"
-  },
-  {
-    "revision": "a55935454e93182d233b17d3e608cdc9",
-    "url": "/img/population.a5593545.png"
-  },
-  {
     "revision": "b8123b04e35067db804ce0aca6f23b8a",
     "url": "/img/windmill-spawn.b8123b04.png"
+  },
+  {
+    "revision": "5befd76a7e5a05417bb21ddeae3f9738",
+    "url": "/img/resource-transfer-work.5befd76a.png"
   },
   {
     "revision": "d31b7f8c7e759b20a7f753bfded100b6",
@@ -116,12 +100,12 @@ self.__precacheManifest = [
     "url": "/img/planet-Info.0d2aff05.png"
   },
   {
-    "revision": "e101b33a5e02349db870eb41967863b2",
-    "url": "/img/warehouse-spawn.e101b33a.png"
-  },
-  {
     "revision": "3b788fd0c15356045a9398290e10c57b",
     "url": "/img/old-man.3b788fd0.png"
+  },
+  {
+    "revision": "f78490e078fee7f22bc57323779715fd",
+    "url": "/img/resource-transfer-spawn.f78490e0.png"
   },
   {
     "revision": "cc0e2bcefb3c640577d4c9cf0de30808",
@@ -136,6 +120,10 @@ self.__precacheManifest = [
     "url": "/img/collect.25cbaf7b.png"
   },
   {
+    "revision": "3d2761d17bb9f2520078d92bef7ffa01",
+    "url": "/img/planet-locate.3d2761d1.png"
+  },
+  {
     "revision": "30e264ad8c846017d8c5e8abaf84496b",
     "url": "/img/story-07.30e264ad.png"
   },
@@ -144,28 +132,20 @@ self.__precacheManifest = [
     "url": "/img/blue.431b99d2.png"
   },
   {
-    "revision": "545199bfa45175cbfa44f327bc3416c9",
-    "url": "/img/power-plant.545199bf.png"
-  },
-  {
-    "revision": "571d654721e93c35da6f44f3eb9a2e28",
-    "url": "/img/resource-transfer-locked.571d6547.png"
+    "revision": "b00ccee95feff3ac23366de181d61227",
+    "url": "/img/stone-portal-work.b00ccee9.png"
   },
   {
     "revision": "380c4283ed693795002a36d175fcb594",
     "url": "/img/steel.380c4283.png"
   },
   {
-    "revision": "b1b62221fc42e5cf48c45bab3b8c8fe8",
-    "url": "/img/stone-portal-spawn.b1b62221.png"
-  },
-  {
-    "revision": "ac212dcbbe1a73ce8d774bd1c772dcf4",
-    "url": "/img/warehouse-work.ac212dcb.png"
-  },
-  {
     "revision": "e6921780304d1d05b1bc45e7fb139475",
     "url": "/img/windmill-work.e6921780.png"
+  },
+  {
+    "revision": "78b4de10aa376f1c7cb1b72e61a929fe",
+    "url": "/img/bg.78b4de10.png"
   },
   {
     "revision": "64933f143946223a3ed23b83a5ddfae2",
@@ -180,16 +160,32 @@ self.__precacheManifest = [
     "url": "/img/audio-bgm.59540b57.png"
   },
   {
-    "revision": "8f3473045bb7ba9299c2c531f70a8ee8",
-    "url": "/img/login-bg.8f347304.png"
+    "revision": "a60dc1c0819cf7a602857e1f9409ee72",
+    "url": "/img/warehouse.a60dc1c0.png"
+  },
+  {
+    "revision": "33511592b666fc0401a5d8198057eb8f",
+    "url": "/img/population.33511592.png"
+  },
+  {
+    "revision": "a78cabb144635b1279f46f4ac9cccd05",
+    "url": "/img/city-chaser-icon.a78cabb1.png"
   },
   {
     "revision": "729f1784c9c572a26280c56effef70ca",
     "url": "/img/wood.729f1784.png"
   },
   {
-    "revision": "4943af6f0e2697153cfacf2d32c4a80f",
-    "url": "/img/green-house-spawn.4943af6f.png"
+    "revision": "c5de44217a3a7403a0b53cd99813a217",
+    "url": "/img/power-plant-spawn.c5de4421.png"
+  },
+  {
+    "revision": "d08b9dc3719d9579e1078c28d3509b45",
+    "url": "/img/hades-bg-normal.d08b9dc3.png"
+  },
+  {
+    "revision": "235905f3c47402dc1987aeb53bfbbc66",
+    "url": "/img/growth-rate.235905f3.png"
   },
   {
     "revision": "7b42db39aec23dcf22b8e5eec1269e65",
@@ -198,6 +194,10 @@ self.__precacheManifest = [
   {
     "revision": "c7eeb6d455b2552c9ef8d898e1438cfe",
     "url": "/img/build.c7eeb6d4.png"
+  },
+  {
+    "revision": "c8b2a7dd2a7704805cc29233ece130e9",
+    "url": "/img/power-plant-locked.c8b2a7dd.png"
   },
   {
     "revision": "2dfc76a135591ecb9b7416f89c5f8480",
@@ -228,20 +228,28 @@ self.__precacheManifest = [
     "url": "/img/story-03.83e0f52b.png"
   },
   {
-    "revision": "67d6544b5ad161ad07c0",
-    "url": "/js/app.661fb227.js"
+    "revision": "bb71c3f1bdf7752f541726d990ef1136",
+    "url": "/img/green-house.bb71c3f1.png"
+  },
+  {
+    "revision": "90123e6cb1978188729f",
+    "url": "/js/app.f641a269.js"
   },
   {
     "revision": "c0a49de124d21e6b56ca",
     "url": "/js/chunk-04381fab.4fe6a7d2.js"
   },
   {
-    "revision": "a4b0dbdad477ee1ef8cc26f300c09934",
-    "url": "/img/planet-2.a4b0dbda.png"
+    "revision": "e101b33a5e02349db870eb41967863b2",
+    "url": "/img/warehouse-spawn.e101b33a.png"
   },
   {
-    "revision": "414783c337caa0cb0df54c4c82b54aad",
-    "url": "/img/green-house-work.414783c3.png"
+    "revision": "4943af6f0e2697153cfacf2d32c4a80f",
+    "url": "/img/green-house-spawn.4943af6f.png"
+  },
+  {
+    "revision": "a4b0dbdad477ee1ef8cc26f300c09934",
+    "url": "/img/planet-2.a4b0dbda.png"
   },
   {
     "revision": "855ebb9ae10dff627fa6034b00f2d91f",
@@ -260,12 +268,16 @@ self.__precacheManifest = [
     "url": "/img/marker-icon.2273e3d8.png"
   },
   {
-    "revision": "afe7d94ebc8a619a597c84362af8b223",
-    "url": "/img/diamond.afe7d94e.png"
+    "revision": "87fab3b356aa26456e69d8413ac52fcb",
+    "url": "/img/diamond.87fab3b3.png"
   },
   {
-    "revision": "9e9a396d5c67f3351924367002686a6f",
-    "url": "/img/stone-portal-locked.9e9a396d.png"
+    "revision": "545199bfa45175cbfa44f327bc3416c9",
+    "url": "/img/power-plant.545199bf.png"
+  },
+  {
+    "revision": "1344fe0e932784e3ecc963b679257471",
+    "url": "/img/hades.1344fe0e.png"
   },
   {
     "revision": "ee3aebed45bbc98ccebc59196d9bb180",
@@ -284,12 +296,12 @@ self.__precacheManifest = [
     "url": "/img/story-05.bbc03463.png"
   },
   {
-    "revision": "bb71c3f1bdf7752f541726d990ef1136",
-    "url": "/img/green-house.bb71c3f1.png"
+    "revision": "afda0d41ef95fccac1afe23e9178cbba",
+    "url": "/img/building-upgrade.afda0d41.png"
   },
   {
-    "revision": "b00ccee95feff3ac23366de181d61227",
-    "url": "/img/stone-portal-work.b00ccee9.png"
+    "revision": "ac8713f58c5866d683d71e20cc0f730e",
+    "url": "/img/building-function.ac8713f5.png"
   },
   {
     "revision": "d8da195f1d4d69db6f0ce58af6e44a3c",
@@ -304,32 +316,36 @@ self.__precacheManifest = [
     "url": "/media/start-anim.f9d2dea2.webm"
   },
   {
-    "revision": "c8b2a7dd2a7704805cc29233ece130e9",
-    "url": "/img/power-plant-locked.c8b2a7dd.png"
-  },
-  {
     "revision": "35098d7d6d452c9f6316339b8d4d0e94",
     "url": "/img/level-sword.35098d7d.png"
   },
   {
-    "revision": "5737092f9c69138c86899a9fe56c8050",
-    "url": "/img/coin.5737092f.png"
+    "revision": "1475762aea1c66d52f0e3db21c18f5f1",
+    "url": "/img/coin.1475762a.png"
+  },
+  {
+    "revision": "e58698d57f64dd0d5be1c3741e2ccb36",
+    "url": "/img/hades-bg-draw.e58698d5.png"
   },
   {
     "revision": "aaddf59c0deb37366a705c3bdcc7e523",
     "url": "/img/mission.aaddf59c.png"
   },
   {
+    "revision": "ac212dcbbe1a73ce8d774bd1c772dcf4",
+    "url": "/img/warehouse-work.ac212dcb.png"
+  },
+  {
     "revision": "307aa35d63c21a2a3fe8184bd5e127de",
     "url": "/img/robot-cool-down.307aa35d.png"
   },
   {
-    "revision": "78b4de10aa376f1c7cb1b72e61a929fe",
-    "url": "/img/bg.78b4de10.png"
+    "revision": "53add80cb6a7986520c32790c8e9ef03",
+    "url": "/img/resource-transfer.53add80c.png"
   },
   {
-    "revision": "a60dc1c0819cf7a602857e1f9409ee72",
-    "url": "/img/warehouse.a60dc1c0.png"
+    "revision": "b976bfafd45cd5819f32ea0c5a95fbd9",
+    "url": "/img/hades-temple-work.b976bfaf.png"
   },
   {
     "revision": "408ab9c2308df799516e75616d474ca5",
@@ -340,40 +356,28 @@ self.__precacheManifest = [
     "url": "/img/story-01.d82a58a3.png"
   },
   {
-    "revision": "f78490e078fee7f22bc57323779715fd",
-    "url": "/img/resource-transfer-spawn.f78490e0.png"
-  },
-  {
     "revision": "8834cacd561ca0cf6588e89693625329",
     "url": "/img/robot-normal.8834cacd.png"
-  },
-  {
-    "revision": "53add80cb6a7986520c32790c8e9ef03",
-    "url": "/img/resource-transfer.53add80c.png"
   },
   {
     "revision": "e23e2c7bd629d8e427f8748969f66660",
     "url": "/img/story-04.e23e2c7b.png"
   },
   {
+    "revision": "71795b2545cd1314906fa74f119d57a3",
+    "url": "/img/power-plant-work.71795b25.png"
+  },
+  {
     "revision": "fcd2ad3879377b0cf8a7eb39185ed6cc",
     "url": "/img/car40.fcd2ad38.png"
-  },
-  {
-    "revision": "3d2761d17bb9f2520078d92bef7ffa01",
-    "url": "/img/planet-locate.3d2761d1.png"
-  },
-  {
-    "revision": "5befd76a7e5a05417bb21ddeae3f9738",
-    "url": "/img/resource-transfer-work.5befd76a.png"
   },
   {
     "revision": "c73ddd2d0e06e656eef8ce23e6a796c2",
     "url": "/img/ore-3.c73ddd2d.png"
   },
   {
-    "revision": "6dac6ac1d06dc83b2470ccbb704c549e",
-    "url": "/img/stone-portal.6dac6ac1.png"
+    "revision": "6deb0ff06ab6a0e604a250013b40af46",
+    "url": "/img/green-house-locked.6deb0ff0.png"
   },
   {
     "revision": "c6ec2d6947804bb940d1b6e3e4e011fd",
@@ -382,6 +386,10 @@ self.__precacheManifest = [
   {
     "revision": "7b9d6d04ef269550199df0b19e06cd54",
     "url": "/img/story-13.7b9d6d04.png"
+  },
+  {
+    "revision": "6dac6ac1d06dc83b2470ccbb704c549e",
+    "url": "/img/stone-portal.6dac6ac1.png"
   },
   {
     "revision": "ae05812ca93582c85527ace7e059760e",
@@ -396,12 +404,12 @@ self.__precacheManifest = [
     "url": "/img/star-purple.afb674c2.png"
   },
   {
-    "revision": "71795b2545cd1314906fa74f119d57a3",
-    "url": "/img/power-plant-work.71795b25.png"
-  },
-  {
     "revision": "2ba017bc44cc40e9c0753ce1ad680348",
     "url": "/img/cat-epic.2ba017bc.png"
+  },
+  {
+    "revision": "571d654721e93c35da6f44f3eb9a2e28",
+    "url": "/img/resource-transfer-locked.571d6547.png"
   },
   {
     "revision": "6dbe5147afde7590fcb58828a498e136",
@@ -420,12 +428,12 @@ self.__precacheManifest = [
     "url": "/img/ore-4.625b081e.png"
   },
   {
-    "revision": "afda0d41ef95fccac1afe23e9178cbba",
-    "url": "/img/building-upgrade.afda0d41.png"
+    "revision": "b1b62221fc42e5cf48c45bab3b8c8fe8",
+    "url": "/img/stone-portal-spawn.b1b62221.png"
   },
   {
-    "revision": "ac8713f58c5866d683d71e20cc0f730e",
-    "url": "/img/building-function.ac8713f5.png"
+    "revision": "9e9a396d5c67f3351924367002686a6f",
+    "url": "/img/stone-portal-locked.9e9a396d.png"
   },
   {
     "revision": "0498d1ec9819357bbc253e11a77e5af5",
@@ -434,10 +442,6 @@ self.__precacheManifest = [
   {
     "revision": "6428088de98374a429abfadf6a72ddb3",
     "url": "/img/ore-2.6428088d.png"
-  },
-  {
-    "revision": "6deb0ff06ab6a0e604a250013b40af46",
-    "url": "/img/green-house-locked.6deb0ff0.png"
   },
   {
     "revision": "3110d14a991a622405bd2e5e5e65fed6",
@@ -452,11 +456,11 @@ self.__precacheManifest = [
     "url": "/img/story-02.b9482859.png"
   },
   {
-    "revision": "b9ac9257a2a79b5a0c9f45402a5dd727",
+    "revision": "8f3369450bd1745bd39b03c4752cd48e",
     "url": "/index.html"
   },
   {
-    "revision": "67d6544b5ad161ad07c0",
-    "url": "/css/app.c4657bed.css"
+    "revision": "90123e6cb1978188729f",
+    "url": "/css/app.0de5380c.css"
   }
 ];
