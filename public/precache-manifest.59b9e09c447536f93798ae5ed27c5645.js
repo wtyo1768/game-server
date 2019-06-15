@@ -76,12 +76,12 @@ self.__precacheManifest = [
     "url": "/img/leave-cross.36dc453a.png"
   },
   {
-    "revision": "290602b55e46bef25f750306abaad26b",
-    "url": "/img/back.290602b5.png"
-  },
-  {
     "revision": "b0f986497b51a8ad9b4df70323b62e34",
     "url": "/img/position-flag.b0f98649.png"
+  },
+  {
+    "revision": "290602b55e46bef25f750306abaad26b",
+    "url": "/img/back.290602b5.png"
   },
   {
     "revision": "a78cabb144635b1279f46f4ac9cccd05",
@@ -92,16 +92,16 @@ self.__precacheManifest = [
     "url": "/img/arrow.2bf84bbf.png"
   },
   {
+    "revision": "39a3813b94e2884978866232d69f68e1",
+    "url": "/img/feature.39a3813b.png"
+  },
+  {
     "revision": "3e9c87b57b069bc75ffcce52f52117e7",
     "url": "/img/power.3e9c87b5.png"
   },
   {
     "revision": "a55935454e93182d233b17d3e608cdc9",
     "url": "/img/population.a5593545.png"
-  },
-  {
-    "revision": "39a3813b94e2884978866232d69f68e1",
-    "url": "/img/feature.39a3813b.png"
   },
   {
     "revision": "b8123b04e35067db804ce0aca6f23b8a",
@@ -228,8 +228,8 @@ self.__precacheManifest = [
     "url": "/img/story-03.83e0f52b.png"
   },
   {
-    "revision": "3f050279810b6d6926d4",
-    "url": "/js/app.f1b825b2.js"
+    "revision": "67d6544b5ad161ad07c0",
+    "url": "/js/app.661fb227.js"
   },
   {
     "revision": "c0a49de124d21e6b56ca",
@@ -420,12 +420,12 @@ self.__precacheManifest = [
     "url": "/img/ore-4.625b081e.png"
   },
   {
-    "revision": "ac8713f58c5866d683d71e20cc0f730e",
-    "url": "/img/building-function.ac8713f5.png"
-  },
-  {
     "revision": "afda0d41ef95fccac1afe23e9178cbba",
     "url": "/img/building-upgrade.afda0d41.png"
+  },
+  {
+    "revision": "ac8713f58c5866d683d71e20cc0f730e",
+    "url": "/img/building-function.ac8713f5.png"
   },
   {
     "revision": "0498d1ec9819357bbc253e11a77e5af5",
@@ -452,11 +452,11 @@ self.__precacheManifest = [
     "url": "/img/story-02.b9482859.png"
   },
   {
-    "revision": "8bfbf48c36e23e270a52c55a23a21b36",
+    "revision": "b9ac9257a2a79b5a0c9f45402a5dd727",
     "url": "/index.html"
   },
   {
-    "revision": "3f050279810b6d6926d4",
+    "revision": "67d6544b5ad161ad07c0",
     "url": "/css/app.c4657bed.css"
   }
 ];
