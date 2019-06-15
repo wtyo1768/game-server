@@ -15,8 +15,8 @@ const port = process.env.PORT || 3000;
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
-//const url = `mongodb+srv://wtyo1768:s124930654@kyronus-dihrd.mongodb.net/test?retryWrites=true`
-const url = `mongodb://wtyo1768:aO2xZc7fHuSef3bR1gtotCz9MUnCXiO1In1RNF4s1NObi7zi5bAvZWFWXo2ZBaghC7aJsII2MKVt3yaXCkwrRA==@wtyo1768.documents.azure.com:10255/kyronus?ssl=true&replicaSet=globaldb`
+const url = `mongodb+srv://wtyo1768:s124930654@kyronus-dihrd.mongodb.net/test?retryWrites=true`
+// const url = `mongodb://wtyo1768:aO2xZc7fHuSef3bR1gtotCz9MUnCXiO1In1RNF4s1NObi7zi5bAvZWFWXo2ZBaghC7aJsII2MKVt3yaXCkwrRA==@wtyo1768.documents.azure.com:10255/kyronus?ssl=true&replicaSet=globaldb`
 
 mongoose.connect(url, { useNewUrlParser: true })
     .catch(() => console.log('Error in database connecting'))
