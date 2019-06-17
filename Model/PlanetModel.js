@@ -25,9 +25,9 @@ var PlanetSchema = new mongoose.Schema({
     },
     buildingMap: { type: Types.Mixed, default: [] },
     architectureTechnologyPoint: { type: Number, default: 0 },
-    scale: { type: Number, default: 0 },
+    scale: { type: Number, default: 3 },
     population: { type: Object, default: { max: 10, amount: 0, growth: 0 } },
-    buffCards: { type: Types.Mixed, default: [] }
+    buffCards: { type: Types.Mixed, default: [] },
 
 
 }, { collection: 'Planet' });

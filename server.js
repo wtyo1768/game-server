@@ -45,11 +45,13 @@ app.use(bodyParser.text())
 app.use(cookieParser());
 
 app.use(function (req, res, next) {
-    if (req.method == "GET" || Object.keys(req.body).length == 0)
+    if (req.method == "GET")
         return next();
-    console.log('use')
-    console.log(req.body)
-    req.body = JSON.parse(req.body)
+    try {
+        req.body = JSON.parse(req.body)
+    } catch (error) {
+        return res.status(500).end();
+    }
     next();
 })
 
