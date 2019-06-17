@@ -80,3 +80,35 @@ exports.updateTechPoint = function (req, res) {
         .then(() => res.end())
         .catch(() => res.status(400).end());
 }
+
+exports.getExp = async (req, res) => {
+    const ErrNotOccur = await PlanetModel.findOneAndUpdate({ _id: req.params.pid }, { experience: req.body.experience })
+        .catch(() => res.status(500).end());
+    if (ErrNotOccur)
+        res.end();
+}
+
+exports.DrawCard = (req, res) => {
+    console.log('cards')
+    PlanetModel.findById(req.params.pid)
+        .then(doc => {
+            doc.buffCards.push(req.body);
+            doc.markModified('buffCards');
+            doc.save()
+            res.end()
+        })
+        .catch(() => res.status(500).end())
+}
+
+exports.activeBuffCard = (req, res) => {
+    PlanetModel.findById(req.params.pid)
+        .then(doc => {
+            doc.activeBuffCard.pop();
+            if (req.body)
+                doc.activeBuffCard.push(req.body);
+            doc.markModified('activeBuffCard');
+            doc.save();
+            res.end()
+        })
+        .catch(() => res.status(500).end())
+}

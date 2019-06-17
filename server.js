@@ -7,12 +7,12 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const url = `mongodb+srv://wtyo1768:s124930654@kyronus-dihrd.mongodb.net/test?retryWrites=true`;
-// const url = 'mongodb://wtyo1768:s124930654@docdb-2019-06-16-14-33-30.cluster-c7jrx8pdmlkx.ap-northeast-2.docdb.amazonaws.com:27017/?ssl=true&ssl_ca_certs=rds-combined-ca-bundle.pem&replicaSet=rs0'
-const fs = require('fs');
-const certFileBuf = fs.readFileSync('./Config/rds-combined-ca-bundle.pem');
+// const url = 'mongodb://wtyo1768:s124930654@3.218.207.159/i-03cc12b2743540144/kyronus';
+// const fs = require('fs');
+// const key = fs.readFileSync('./Config/key.pem');
 
-mongoose.connect(url, { useNewUrlParser: true/*, sslCA: certFileBuf, ssl: true */})
-    .catch(() => console.log('Error in database connecting'))
+mongoose.connect(url, { useNewUrlParser: true, })
+    .catch((err) => console.log(err))
 
 mongoose.Promise = global.Promise;
 
@@ -45,11 +45,12 @@ app.use(bodyParser.text())
 app.use(cookieParser());
 
 app.use(function (req, res, next) {
-    if (req.method == "GET")
+    if (req.method == "GET" || Object.keys(req.body).length == 0)
         return next();
     try {
         req.body = JSON.parse(req.body)
     } catch (error) {
+        console.log('---' + error + '----')
         return res.status(500).end();
     }
     next();

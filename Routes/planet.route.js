@@ -5,7 +5,7 @@ const PlanetController = require('../Controllers/planet/planet.service');
 
 router.use(passport.authenticate('jwt', { session: false }))
 
-router.post('/' , PlanetController.newPlanet);
+router.post('/', PlanetController.newPlanet);
 
 router.get('/:pid', PlanetController.getPlanetData);
 
@@ -13,11 +13,18 @@ router.route('/:pid/building')
     .post(PlanetController.ConstructBuilding)
 
     .patch(PlanetController.haveBuiltBuilding)
-    
+
     .delete(PlanetController.DeconstructBuilding)
 
-router.patch('/:pid/architectureTechnology',PlanetController.BuildingDevelop)
+router.patch('/:pid/architectureTechnology', PlanetController.BuildingDevelop)
 
-router.patch('/:pid/architectureTechnologyPoint' , PlanetController.updateTechPoint)
+router.patch('/:pid/architectureTechnologyPoint', PlanetController.updateTechPoint)
+
+router.patch('/:pid/experience', PlanetController.getExp);
+
+router.post('/:pid/buffCards', PlanetController.DrawCard)
+
+router.patch('/:pid/activeBuffCard', PlanetController.activeBuffCard)
+
 
 module.exports = router;
