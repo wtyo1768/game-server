@@ -1,13 +1,4 @@
-
-// App analysis
-
-const appInsights = require('applicationinsights');
 const config = require("./Config/config.js");
-appInsights.setup(config.AzureInsight.instrumentation_key).start();
-const telemetry = appInsights.defaultClient;
-
-//App init
-
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
@@ -15,10 +6,12 @@ const port = process.env.PORT || 3000;
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
-const url = `mongodb+srv://wtyo1768:s124930654@kyronus-dihrd.mongodb.net/test?retryWrites=true`
-// const url = `mongodb://wtyo1768:aO2xZc7fHuSef3bR1gtotCz9MUnCXiO1In1RNF4s1NObi7zi5bAvZWFWXo2ZBaghC7aJsII2MKVt3yaXCkwrRA==@wtyo1768.documents.azure.com:10255/kyronus?ssl=true&replicaSet=globaldb`
+const url = `mongodb+srv://wtyo1768:s124930654@kyronus-dihrd.mongodb.net/test?retryWrites=true`;
+// const url = 'mongodb://wtyo1768:s124930654@docdb-2019-06-16-14-33-30.cluster-c7jrx8pdmlkx.ap-northeast-2.docdb.amazonaws.com:27017/?ssl=true&ssl_ca_certs=rds-combined-ca-bundle.pem&replicaSet=rs0'
+const fs = require('fs');
+const certFileBuf = fs.readFileSync('./Config/rds-combined-ca-bundle.pem');
 
-mongoose.connect(url, { useNewUrlParser: true })
+mongoose.connect(url, { useNewUrlParser: true/*, sslCA: certFileBuf, ssl: true */})
     .catch(() => console.log('Error in database connecting'))
 
 mongoose.Promise = global.Promise;
@@ -56,13 +49,13 @@ app.use(function (req, res, next) {
         return next();
     console.log('use')
     console.log(req.body)
-    req.body = JSON.parse(req.body)
+    // req.body = JSON.parse(req.body)
     next();
 })
 
 //require('./Controllers/auth/email.auth').verifyEmail();
 
-// app.get('', (req, res) => res.send('This is Kyronus Server'))
+app.get('', (req, res) => res.send('This is Kyronus Server'))
 
 app.use('/user', require('./Routes/auth.route'));
 

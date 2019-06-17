@@ -1,24 +1,24 @@
 const Strategy = require('passport-facebook').Strategy;
 const config = require('../Config/config')
 const UserModel = require('../Model/UserModel');
-const PlanetModel = require('../Model/PlanetModel');
 
-const verify = function (accessToken, refreshToken, profile, done) {
-    //console.log(profile)
-    // const Planet = new PlanetModel();
-    const UserData = {
-        username: profile.displayName,
-        facebookID: profile.id,
-        password: 'thisisfacebookaccount',
-        email: 'tmp',
-        // planets: [{ pid: Planet._id, state: true }],
+const verify = async function (accessToken, refreshToken, profile, done) {
+    console.log('yo');
+    const User = await UserModel.findOne({ facebookID: profile.id })
+    if (!User) {
+        const UserData = {
+            username: profile.displayName,
+            facebookID: profile.id,
+            password: 'thisisfacebookaccount',
+            email: 'tmp',
+        }
+        const User = new UserModel(UserData);
+        User.save()
+            .catch(err => done(err, null))
+        return done(null, { _id: User._id })
     }
-    console.log(profile)           
-     //Planet.save()
-    //const User = new UserModel(UserData);
-    //User.save()
-    //    .catch(err => done(err, null))
-    return done(null, profile)
+    else
+        return done(null, { _id: User._id })
 }
 
 module.exports = new Strategy({

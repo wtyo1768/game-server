@@ -9,14 +9,15 @@ router.post('/' , PlanetController.newPlanet);
 
 router.get('/:pid', PlanetController.getPlanetData);
 
-router.route('/building')
+router.route('/:pid/building')
     .post(PlanetController.ConstructBuilding)
 
     .patch(PlanetController.haveBuiltBuilding)
     
     .delete(PlanetController.DeconstructBuilding)
 
-router.patch('/architectureTechnology',PlanetController.BuildingDevelop)
+router.patch('/:pid/architectureTechnology',PlanetController.BuildingDevelop)
 
+router.patch('/:pid/architectureTechnologyPoint' , PlanetController.updateTechPoint)
 
 module.exports = router;

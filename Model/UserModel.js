@@ -15,6 +15,8 @@ var UserSchema = new mongoose.Schema({
     username: { type: String, default: "郭家銘" },
     nickname: { type: String, default: this.username },
     coin: { type: Number, default: 3000 },
+    coinMax : { type : Number , default : 5000},
+    
     diamond: { type: Number, default: 0 },
     resourceMax: { type: Number, default: 3000 },
     resources: {

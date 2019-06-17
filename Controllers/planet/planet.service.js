@@ -7,12 +7,12 @@ exports.newPlanet = (req, res) => {
         const Planet = new PlanetModel(req.body);
         Planet.save()
         UserModel.findById(req.user._id)
-        .then(doc=>{
-            doc.planets.push({ pid: Planet._id, state: true });
-            doc.markModified('planets');
-            doc.save();
-            res.status(201).send(Planet);
-        })
+            .then(doc => {
+                doc.planets.push({ pid: Planet._id, state: true });
+                doc.markModified('planets');
+                doc.save();
+                res.status(201).send(Planet);
+            })
     } catch (error) {
         res.status(400).end()
     }
@@ -27,7 +27,7 @@ exports.getPlanetData = function (req, res) {
 }
 
 exports.ConstructBuilding = function (req, res) {
-    PlanetModel.findById(req.body.pid)
+    PlanetModel.findById(req.params.pid)
         .then(planet => {
             planet.buildingMap.push(req.body.building)
             planet.markModified('buildingMap')
@@ -39,7 +39,7 @@ exports.ConstructBuilding = function (req, res) {
 
 exports.DeconstructBuilding = async function (req, res) {
 
-    PlanetModel.findById(req.body.pid)
+    PlanetModel.findById(req.params.pid)
         .then(planet => {
             planet.buildingMap.splice(req.body.index, 1)
             planet.markModified(`buildingMap`)
@@ -50,7 +50,7 @@ exports.DeconstructBuilding = async function (req, res) {
 
 exports.haveBuiltBuilding = async function (req, res) {
 
-    PlanetModel.findById(req.body.pid)
+    PlanetModel.findById(req.params.pid)
         .then(planet => {
             planet.buildingMap[req.body.index].status = 'done'
             planet.markModified(`buildingMap`)
@@ -61,14 +61,22 @@ exports.haveBuiltBuilding = async function (req, res) {
 
 exports.BuildingDevelop = function (req, res) {
     const data = req.body;
+    console.log('BuildingDevelop')
 
-    let isValid = req.user.planets.some(ele => ele.pid == data.pid);
-    return isValid ? PlanetModel.findById(req.body.pid)
+    let isValid = req.user.planets.some(ele => ele.pid == req.params.pid);
+    return isValid ? PlanetModel.findById(req.params.pid)
         .then(doc => {
+            console.log(data)
             doc.architectureTechnology[data.type][data.id] = true;
             doc.markModified('architectureTechnology');
             doc.save().then(() => res.end())
         })
         .catch(() => res.status(400).end())
-        : res.status(204).end();
+        : res.status(401).end();
+}
+
+exports.updateTechPoint = function (req, res) {
+    PlanetModel.findByIdAndUpdate(req.params.pid, req.body.archiTech)
+        .then(() => res.end())
+        .catch(() => res.status(400).end());
 }

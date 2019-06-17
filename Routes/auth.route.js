@@ -13,15 +13,10 @@ router.post('/login', passport.authenticate('local', { session: false }), requir
 
 router.get('/google', passport.authenticate('google', { session: false, scope: ['profile', 'email'] }));
 
-router.get('/Auth', passport.authenticate('google', { session: false }), function (req, res) {
-    res.status(200).end();
-})
+router.get('/Auth', passport.authenticate('google', { session: false }), require('../Controllers/user/login'))
 
 router.get('/facebook', passport.authenticate('facebook', { session: false, scope: ['email'] }));
 
-router.get('/facebook/cb', passport.authenticate('facebook', { session: false }), (req, res) => {
-    console.log('cb')
-    console.log(req.user);
-});
+router.get('/facebook/cb', passport.authenticate('facebook', { session: false }), require('../Controllers/user/login'));
 
 module.exports = router;
