@@ -49,7 +49,7 @@ app.use(function (req, res, next) {
         return next();
     console.log('use')
     console.log(req.body)
-    // req.body = JSON.parse(req.body)
+    req.body = JSON.parse(req.body)
     next();
 })
 
