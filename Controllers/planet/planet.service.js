@@ -26,6 +26,26 @@ exports.getPlanetData = function (req, res) {
         : res.status(401).end();
 }
 
+exports.levelUp = function (req, res) {
+    PlanetModel.findById(req.params.pid)
+    .then(doc => {
+        doc.level += 1
+        doc.save()
+        res.end()
+    })
+    .catch(() => res.status(500).end())
+}
+
+exports.expandScale = function (req, res) {
+    PlanetModel.findById(req.params.pid)
+    .then(doc => {
+        doc.scale += 1
+        doc.save()
+        res.end()
+    })
+    .catch(() => res.status(500).end())
+}
+
 exports.ConstructBuilding = function (req, res) {
     PlanetModel.findById(req.params.pid)
         .then(planet => {
@@ -66,11 +86,7 @@ exports.BuildingDevelop = function (req, res) {
     let isValid = req.user.planets.some(ele => ele.pid == req.params.pid);
     return isValid ? PlanetModel.findById(req.params.pid)
         .then(doc => {
-            Object.keys(data).forEach(ele => {
-                Object.keys(data[ele]).forEach(Element => {
-                    doc.architectureTechnology[ele][Element] = true;
-                })
-            })
+            doc.architectureTechnology[req.body.type][req.body.id] = true;
             doc.markModified('architectureTechnology');
             doc.save().then(() => res.end())
         })
@@ -79,7 +95,8 @@ exports.BuildingDevelop = function (req, res) {
 }
 
 exports.updateTechPoint = function (req, res) {
-    PlanetModel.findByIdAndUpdate(req.params.pid, req.body.archiTech)
+    console.log('here', req.body)
+    PlanetModel.findByIdAndUpdate({ _id: req.params.pid }, { architectureTechnologyPoint: req.body.point })
         .then(() => res.end())
         .catch(() => res.status(400).end());
 }
@@ -95,7 +112,7 @@ exports.DrawCard = (req, res) => {
     console.log('cards')
     PlanetModel.findById(req.params.pid)
         .then(doc => {
-            doc.buffCards.push(req.body);
+            doc.buffCards.push(req.body.buffCard);
             doc.markModified('buffCards');
             doc.save()
             res.end()
@@ -107,8 +124,8 @@ exports.activeBuffCard = (req, res) => {
     PlanetModel.findById(req.params.pid)
         .then(doc => {
             doc.activeBuffCard.pop();
-            if (req.body)
-                doc.activeBuffCard.push(req.body);
+            if (req.body.buffCard)
+                doc.activeBuffCard.push(req.body.buffCard);
             doc.markModified('activeBuffCard');
             doc.save();
             res.end()
