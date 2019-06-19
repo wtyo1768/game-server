@@ -66,13 +66,16 @@ exports.BuildingDevelop = function (req, res) {
     let isValid = req.user.planets.some(ele => ele.pid == req.params.pid);
     return isValid ? PlanetModel.findById(req.params.pid)
         .then(doc => {
-            console.log(data)
-            doc.architectureTechnology[data.type][data.id] = true;
+            Object.keys(data).forEach(ele => {
+                Object.keys(data[ele]).forEach(Element => {
+                    doc.architectureTechnology[ele][Element] = true;
+                })
+            })
             doc.markModified('architectureTechnology');
             doc.save().then(() => res.end())
         })
-        .catch(() => res.status(400).end())
-        : res.status(401).end();
+        .catch((err) => console.log(err))
+        : res.status(500).end();
 }
 
 exports.updateTechPoint = function (req, res) {

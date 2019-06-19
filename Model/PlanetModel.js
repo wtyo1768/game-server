@@ -9,8 +9,8 @@ var PlanetSchema = new mongoose.Schema({
     level: { type: Number, default: 1 },
     experience: { type: Number, default: 0 },
 
-    positionX: { type: Number, default: 23.1 },
-    positionY: { type: Number, default: 123.4 },
+    positionX: { type: Number, default: Math.random() % 1000 + Math.random() % 100 / 100 },
+    positionY: { type: Number, default: Math.random() % 1000 + Math.random() % 100 / 100 },
 
     architectureTechnology: {
         type: Types.Mixed, default:
@@ -23,9 +23,18 @@ var PlanetSchema = new mongoose.Schema({
             "economicBuilding": {}
         },
     },
-    buildingMap: { type: Types.Mixed, default: [] },
+    buildingMap: {
+        type: Types.Mixed, default: [{
+            "id": "k0",
+            "name": "stonePortal",
+            "coordinateX": 0,
+            "coordinateY": 0,
+            "status": "done",
+            "finishTime": Date.now()
+        },]
+    },
     architectureTechnologyPoint: { type: Number, default: 0 },
-    scale: { type: Number, default: 3 },
+    scale: { type: Number, default: 4 },
     population: { type: Object, default: { max: 10, amount: 0, growth: 0 } },
     buffCards: { type: Types.Mixed, default: [] },
     activeBuffCard: { type: Types.Mixed, default: [] }
