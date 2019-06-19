@@ -9,8 +9,8 @@ var PlanetSchema = new mongoose.Schema({
     level: { type: Number, default: 1 },
     experience: { type: Number, default: 0 },
 
-    positionX: { type: Number, default: Math.random() % 1000 + Math.random() % 100 / 100 },
-    positionY: { type: Number, default: Math.random() % 1000 + Math.random() % 100 / 100 },
+    positionX: { type: Number, default: Math.floor(Math.random() * 100000) /100 },
+    positionY: { type: Number, default: Math.floor(Math.random() * 100000) /100 },
 
     architectureTechnology: {
         type: Types.Mixed, default:
@@ -18,9 +18,9 @@ var PlanetSchema = new mongoose.Schema({
             "commonBuilding": {
                 "c0": true,
             },
-            "militaryBuilding": {},
-            "specialBuilding": {},
-            "economicBuilding": {}
+            "militaryBuilding" : { 'm0': false },
+            "specialBuilding" : { 's0': false },
+            "economicBuilding" : { 'e0': false }
         },
     },
     buildingMap: {
