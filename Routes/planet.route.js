@@ -9,6 +9,10 @@ router.post('/', PlanetController.newPlanet);
 
 router.get('/:pid', PlanetController.getPlanetData);
 
+router.patch('/:pid/level', PlanetController.levelUp)
+
+router.patch('/:pid/scale', PlanetController.expandScale)
+
 router.route('/:pid/building')
     .post(PlanetController.ConstructBuilding)
 

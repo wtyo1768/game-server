@@ -33,12 +33,12 @@ var PlanetSchema = new mongoose.Schema({
             "finishTime": Date.now()
         },]
     },
-    architectureTechnologyPoint: { type: Number, default: 0 },
+    architectureTechnologyPoint: { type: Number, default: 1 },
     scale: { type: Number, default: 4 },
     population: { type: Object, default: { max: 10, amount: 0, growth: 0 } },
     buffCards: { type: Types.Mixed, default: [] },
     activeBuffCard: { type: Types.Mixed, default: [] }
 
-}, { collection: 'Planet' });
+}, { collection: 'Planet', minimize: false });
 
 module.exports = mongoose.model('Planet', PlanetSchema);
