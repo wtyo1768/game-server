@@ -6,8 +6,8 @@ const port = process.env.PORT || 3000;
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
-// const url = `mongodb+srv://wtyo1768:s124930654@kyronus-dihrd.mongodb.net/test?retryWrites=true`;
-const url = 'mongodb://wtyo1768:s124930654@ec2-3-218-207-159.compute-1.amazonaws.com:27017/Kyronus';
+const url = `mongodb+srv://wtyo1768:s124930654@kyronus-dihrd.mongodb.net/test?retryWrites=true`;
+// const url = 'mongodb://wtyo1768:s124930654@ec2-3-218-207-159.compute-1.amazonaws.com:27017/Kyronus';
 
 
 mongoose.connect(url, { useNewUrlParser: true, })
