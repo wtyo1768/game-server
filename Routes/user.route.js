@@ -13,6 +13,8 @@ router.patch('/isInBeginningStory' , UserController.leaveBeginningMode);
 
 router.patch('/isBeginner',UserController.isBeginner);
 
+router.patch('/currentBeginnerGuideScenes', UserController.nextScenes);
+
 router.patch('/coin', UserController.spendCoin);
 
 router.patch('/diamond', UserController.spendDiamond);

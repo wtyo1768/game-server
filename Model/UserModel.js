@@ -14,17 +14,17 @@ var UserSchema = new mongoose.Schema({
 
     username: { type: String, default: "郭家銘" },
     nickname: { type: String, default: this.username },
-    coin: { type: Number, default: 3000 },
-    coinMax : { type : Number , default : 5000},
+    coin: { type: Number, default: 6000 },
+    coinMax : { type : Number , default : 10000},
     
-    diamond: { type: Number, default: 0 },
+    diamond: { type: Number, default: 50 },
     resourceMax: { type: Number, default: 3000 },
     resources: {
         type: Array, default:
             [{ type: '木頭', amount: 1000 }, { type: '石頭', amount: 1000 },
             { type: '鋼鐵', amount: 1000 }, { type: '銅礦', amount: 1000 },
-            { type: '墨金屬', amount: 1000 }, { type: '鍨金屬', amount: 1000 },
-            { type: '氪金屬', amount: 1000 }, { type: '銝金屬', amount: 1000 }],
+            { type: '墨金屬', amount: 500 }, { type: '鍨金屬', amount: 500 },
+            { type: '氦金屬', amount: 500 }, { type: '銝金屬', amount: 500 }],
     },
     baggage: { type: Array, default: [] },
     achievements: {
@@ -50,7 +50,8 @@ var UserSchema = new mongoose.Schema({
     coolDownGrid: { type: Types.Mixed, default: [] },
 
     isInBeginningStory: { type: Boolean, default: true }, 
-    isBeginner: { type: Boolean, default: true }
+    isBeginner: { type: Boolean, default: true },
+    currentBeginnerGuideScenes: { type: Number, default: 0 }
 
 }, { collection: 'User' });
 
