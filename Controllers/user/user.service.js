@@ -43,6 +43,18 @@ exports.isBeginner = (req,res) =>{
     })   
 }
 
+exports.nextScenes = (req, res) => {
+    UserModel.findById(req.user._id)
+    .then(doc => {
+        doc.currentBeginnerGuideScenes = req.body.currentScenes
+        doc.save();
+        res.end()
+    })
+    .catch(err => {
+        res.status(400).end();
+    })
+}
+
 exports.ConsumeResource = async function (req, res) {
     console.log('consume')
     const data = req.body.resources;
