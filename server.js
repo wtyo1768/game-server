@@ -47,7 +47,7 @@ app.use(function (req, res, next) {
     if (req.method == "GET" || Object.keys(req.body).length == 0)
         return next();
     try {
-        req.body = JSON.parse(req.body)
+        // req.body = JSON.parse(req.body)
     } catch (error) {
         console.log('---' + error + '----')
     }
