@@ -1,13 +1,15 @@
 const passport = require('passport');
+const validate = require('express-validation');
 const express = require('express');
 const router = express.Router();
+const createUser = require('../Middleware/dataValidation').createUser;
 
 passport.use('jwt', require('../Middleware/jwtStrategy'));
 passport.use('local', require('../Middleware/localStrategy'));
 passport.use('google', require('../Middleware/goolgeStrategy'));
 passport.use('facebook', require('../Middleware/facebookStrategy'));
 
-router.post('/register', require('../Controllers/user/register'));
+router.post('/register', validate(createUser) ,require('../Controllers/user/register'));
 
 router.post('/login', passport.authenticate('local', { session: false }), require('../Controllers/user/login'));
 

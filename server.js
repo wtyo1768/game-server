@@ -50,7 +50,6 @@ app.use(function (req, res, next) {
         req.body = JSON.parse(req.body)
     } catch (error) {
         console.log('---' + error + '----')
-        return res.status(500).end();
     }
     next();
 })
@@ -66,3 +65,5 @@ app.use('/user', require('./Routes/user.route'));
 app.use('/planet', require('./Routes/planet.route'));
 
 app.use('/map', require('./Routes/map.route'));
+
+module.exports = app;
