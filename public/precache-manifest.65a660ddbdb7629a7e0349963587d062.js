@@ -172,16 +172,16 @@ self.__precacheManifest = [
     "url": "/img/house-a-spawn.2ceb4855.png"
   },
   {
-    "revision": "afda0d41ef95fccac1afe23e9178cbba",
-    "url": "/img/building-upgrade.afda0d41.png"
-  },
-  {
     "revision": "4bf9b757a5a7d37e487e14f68e8a87ce",
     "url": "/img/move.4bf9b757.png"
   },
   {
     "revision": "ac8713f58c5866d683d71e20cc0f730e",
     "url": "/img/building-function.ac8713f5.png"
+  },
+  {
+    "revision": "afda0d41ef95fccac1afe23e9178cbba",
+    "url": "/img/building-upgrade.afda0d41.png"
   },
   {
     "revision": "25cbaf7bf6bb4c94a74ed0e1526c2bd8",
@@ -344,8 +344,8 @@ self.__precacheManifest = [
     "url": "/img/mechanism-inactive.383dd477.png"
   },
   {
-    "revision": "fdd342d05633a3393794",
-    "url": "/js/app.0797a6f5.js"
+    "revision": "244f323dab895371d702",
+    "url": "/js/app.a6d9be6d.js"
   },
   {
     "revision": "711f22ca4de72466dd45",
@@ -684,11 +684,11 @@ self.__precacheManifest = [
     "url": "/img/sickle-active.476d8c4e.png"
   },
   {
-    "revision": "50ff658e71b6117c281fe2b69dbdf913",
+    "revision": "03842c13bf3a246c748bae33ffc8b708",
     "url": "/index.html"
   },
   {
-    "revision": "fdd342d05633a3393794",
+    "revision": "244f323dab895371d702",
     "url": "/css/app.c581ebab.css"
   }
 ];
