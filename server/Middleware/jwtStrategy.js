@@ -9,7 +9,7 @@ const extrctJwtFromCookie = function (req) {
 
 const opts = {
     jwtFromRequest : extrctJwtFromCookie,
-    secretOrKey: require('../Config/config').secret,
+    secretOrKey: require('../../config/config').secret,
 }
 
 const strategy = new jwtStrategy(opts, function (payload, done) {

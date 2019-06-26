@@ -1,4 +1,4 @@
-const config = require("./Config/config.js");
+const config = require("../config/config");
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
@@ -65,5 +65,3 @@ app.use('/user', require('./Routes/user.route'));
 app.use('/planet', require('./Routes/planet.route'));
 
 app.use('/map', require('./Routes/map.route'));
-
-module.exports = app;
