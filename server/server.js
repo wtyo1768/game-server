@@ -31,8 +31,8 @@ const corsOptions = {
 app.use(cors(corsOptions));
 app.use((req, res, next) => {
     // res.header("Access-Control-Allow-Origin", origin[0])
-    res.header("Access-Control-Allow-Origin" , req.headers.host)
-    console.log(req.headers.host)
+    res.header("Access-Control-Allow-Origin" , req.headers.origin)
+    console.log(req.headers.origin)
     next()
 })
 app.options("/", cors(corsOptions));
@@ -60,7 +60,7 @@ app.use(function (req, res, next) {
 
 app.get('', (req, res) => {
     res.send('This is Kyronus Server!');
-    console.log('From : ' + port)
+    // console.log('From : ' + port)
 })
 
 app.use('/user', require('./Routes/auth.route'));
