@@ -2,7 +2,7 @@ const config = require("../config/config");
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || process.argv[2] || 3000;
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
@@ -30,7 +30,9 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 app.use((req, res, next) => {
-    res.header("Access-Control-Allow-Origin", origin[0])
+    // res.header("Access-Control-Allow-Origin", origin[0])
+    res.header("Access-Control-Allow-Origin" , req.headers.host)
+    console.log(req.headers.host)
     next()
 })
 app.options("/", cors(corsOptions));
@@ -39,7 +41,7 @@ app.use(bodyParser.json());
 
 app.use(bodyParser.urlencoded({ extended: false }));
 
-app.use(bodyParser.text())
+app.use(bodyParser.text());
 
 app.use(cookieParser());
 
@@ -49,14 +51,17 @@ app.use(function (req, res, next) {
     try {
         req.body = JSON.parse(req.body)
     } catch (error) {
-        console.log('---' + error + '----')
+        // console.log('---' + error + '----')
     }
     next();
 })
 
 //require('./Controllers/auth/email.auth').verifyEmail();
 
-app.get('', (req, res) => res.send('This is Kyronus Server'))
+app.get('', (req, res) => {
+    res.send('This is Kyronus Server!');
+    console.log('From : ' + port)
+})
 
 app.use('/user', require('./Routes/auth.route'));
 
