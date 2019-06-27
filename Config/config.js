@@ -1,5 +1,5 @@
 const config = {
-
+  'yo' : 'test' ,
   'mongodb': {
     'database': 'wp2018_groupD',
     'host': 'luffy.ee.ncku.edu.tw',
