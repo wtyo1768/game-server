@@ -11,7 +11,8 @@
 
 * npm run test
 
-#Specify the PORT for process
+# Specify the PORT for process
 
 * node server.js your_port 
+
 * npm start your_port
