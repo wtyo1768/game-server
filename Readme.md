@@ -1,12 +1,12 @@
 
-* Normal Excute
+#Normal Excute
 
-npm start 
+*npm start 
 
-* Run for Develop
+#Run for Develop
 
-npm run start:dev
+*npm run start:dev
 
-* Run test
+#Run test
 
-npm run test
+*npm run test
