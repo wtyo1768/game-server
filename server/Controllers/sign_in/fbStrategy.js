@@ -1,6 +1,6 @@
 const Strategy = require('passport-facebook').Strategy;
-const config = require('../../config/config')
-const UserModel = require('../Model/UserModel');
+const config = require('../../../config/config')
+const UserModel = require('../../Model/UserModel');
 
 const verify = async function (accessToken, refreshToken, profile, done) {
     console.log('yo');

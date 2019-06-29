@@ -6,10 +6,10 @@ const createUser = require('../Middleware/dataValidation').createUser;
 
 passport.use('jwt', require('../Middleware/jwtStrategy'));
 passport.use('local', require('../Middleware/localStrategy'));
-passport.use('google', require('../Middleware/goolgeStrategy'));
-passport.use('facebook', require('../Middleware/facebookStrategy'));
+passport.use('google', require('../Controllers/sign_in/goolgeStrategy'));
+passport.use('facebook', require('../Controllers/sign_in/fbStrategy'));
 
-router.post('/register', validate(createUser) ,require('../Controllers/user/register'));
+router.post('/register', validate(createUser) ,require('../Controllers/sign_in/register'));
 
 router.post('/login', passport.authenticate('local', { session: false }), require('../Controllers/user/login'));
 

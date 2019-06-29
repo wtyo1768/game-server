@@ -1,6 +1,6 @@
 const Strategy = require('passport-google-oauth20').Strategy;
-const config = require('../../config/config');
-const UserModel = require('../Model/UserModel');
+const config = require('../../../config/config');
+const UserModel = require('../../Model/UserModel');
 
 function verify(accessToken, refreshToken, profile, done) {
     console.log(accessToken + ' |||| ' + refreshToken);
