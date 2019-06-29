@@ -17,7 +17,7 @@ mongoose.Promise = global.Promise;
 
 app.listen(port, () => console.log('App listening on port ' + port));
 
-app.use(express.static('public'));
+app.use(express.static('server/public'));
 
 const origin = ['https://kyronus.azurewebsites.net','http://localhost:8080',
     'http://localhost:3000'
