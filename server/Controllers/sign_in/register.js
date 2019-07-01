@@ -3,7 +3,7 @@ var crypto = require('crypto');
 
 var jwt = require('jsonwebtoken')
 const expire = { expiresIn: '7d' };
-const secret = require('../../../config/config').secret;
+const secret = require('../../config/config').secret;
 
 module.exports = async function (req, res) {
     let password = crypto.createHash('md5').

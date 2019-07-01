@@ -1,4 +1,4 @@
-const config = require("../config/config");
+const config = require("./config/config");
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
@@ -17,7 +17,7 @@ mongoose.Promise = global.Promise;
 
 app.listen(port, () => console.log('App listening on port ' + port));
 
-app.use(express.static('server/public'));
+app.use(express.static('public'));
 
 const origin = ['https://kyronus.azurewebsites.net','http://localhost:8080',
     'http://localhost:3000'
@@ -32,7 +32,7 @@ app.use(cors(corsOptions));
 app.use((req, res, next) => {
     // res.header("Access-Control-Allow-Origin", origin[0])
     res.header("Access-Control-Allow-Origin" , req.headers.origin)
-    console.log(req.headers.origin)
+    console.log('host: '+ req.headers.host)
     next()
 })
 app.options("/", cors(corsOptions));

@@ -1,6 +1,6 @@
 var jwt = require('jsonwebtoken')
 const expire = { expiresIn: '7d' };
-const secret = require('../../../config/config').secret;
+const secret = require('../../config/config').secret;
 
 module.exports = function (req, res) {
   const payload = { _id: req.user._id };
