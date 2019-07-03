@@ -63,6 +63,12 @@ app.get('', (req, res) => {
     // console.log('From : ' + port)
 })
 
+app.get('/.well-known/assetlinks.json',(req,res)=>{
+    res.writeHead(200, { 'Content-Type': 'application/json' });
+    res.write(JSON.stringify(require('./config/assetlinks.json')));
+    res.end();
+})
+
 app.use('/user', require('./Routes/auth.route'));
 
 app.use('/user', require('./Routes/user.route'));
