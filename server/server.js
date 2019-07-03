@@ -17,9 +17,9 @@ mongoose.Promise = global.Promise;
 
 app.listen(port, () => console.log('App listening on port ' + port));
 
-app.use(express.static('server/public'));
+app.use(express.static( __dirname + '/public') );
 
-const origin = ['https://kyronus.herokuapp.com/','https://kyronus.azurewebsites.net','http://localhost:8080',
+const origin = ['https://kyronus.herokuapp.com/', 'https://kyronus.azurewebsites.net', 'http://localhost:8080',
     'http://localhost:3000'
 ];
 const corsOptions = {
@@ -31,8 +31,8 @@ const corsOptions = {
 app.use(cors(corsOptions));
 app.use((req, res, next) => {
     // res.header("Access-Control-Allow-Origin", origin[0])
-    res.header("Access-Control-Allow-Origin" , req.headers.origin)
-    console.log('host: '+ req.headers.host)
+    res.header("Access-Control-Allow-Origin", req.headers.origin)
+    console.log('host: ' + req.headers.host)
     next()
 })
 app.options("/", cors(corsOptions));
