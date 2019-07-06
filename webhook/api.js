@@ -31,6 +31,15 @@ app.post('/webhook', (req, res) => {
                 }
                 else {
                     console.log(stdout)
+                    exec(cmd.nginx_rebuild, (err, stdout, stderr) => {
+                        if (err) {
+                            console.log(err)
+                            res.status(500).end();
+                        }
+                        else {
+                            console.log(stdout)
+                        }
+                    })
                 }
             })
         }
