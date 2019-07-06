@@ -8,8 +8,8 @@ self.__precacheManifest = [
     "url": "/robots.txt"
   },
   {
-    "revision": "c37f228347e3b38e15220d2fd4328b3d",
-    "url": "/media/loading.c37f2283.webm"
+    "revision": "3d49af083407f6f6cd15e69ca114beb2",
+    "url": "/img/intelligence-inactive.3d49af08.png"
   },
   {
     "revision": "7abf8772830c42cdd4cd",
@@ -20,16 +20,8 @@ self.__precacheManifest = [
     "url": "/js/chunk-13208bf6.e80f341e.js"
   },
   {
-    "revision": "38fcfc4b4c5919a94f9809774d817db7",
-    "url": "/media/level-up.38fcfc4b.webm"
-  },
-  {
-    "revision": "6603d5347b1f4c973f37",
-    "url": "/js/chunk-199c59db.447deac4.js"
-  },
-  {
-    "revision": "df9a90e1e7aa1e41276c8ef83c4792fc",
-    "url": "/media/hades-draw-card.df9a90e1.webm"
+    "revision": "985e74bf236ebcc502d871e677a3b684",
+    "url": "/media/scanning.985e74bf.mp4"
   },
   {
     "revision": "7059ef8514dc876d050a",
@@ -40,51 +32,59 @@ self.__precacheManifest = [
     "url": "/js/chunk-2d0c20e8.103aa649.js"
   },
   {
-    "revision": "43c66f7c4b8c2c6698afdc6fe3e4cdca",
-    "url": "/media/start-anim.43c66f7c.mp4"
+    "revision": "ea3d1a9522633fa8f3ff83f0e8281af6",
+    "url": "/media/hades-draw-card.ea3d1a95.mp4"
   },
   {
     "revision": "7db1f3fd92acb93aaa05",
     "url": "/js/chunk-629724b9.359d05f3.js"
   },
   {
-    "revision": "d793f5968261f0c3d1c98877bb46f885",
-    "url": "/media/collecting.d793f596.webm"
+    "revision": "5ccfc8245a15cdd55333516a11a23e66",
+    "url": "/media/level-up.5ccfc824.mp4"
   },
   {
     "revision": "e15ed859d06481a4c7a3",
     "url": "/js/chunk-66df925c.08ac19a1.js"
   },
   {
-    "revision": "51d81465123f7544a1fb8d5cc67b79bc",
-    "url": "/media/bgm.51d81465.mp3"
+    "revision": "43c66f7c4b8c2c6698afdc6fe3e4cdca",
+    "url": "/media/start-anim.43c66f7c.mp4"
+  },
+  {
+    "revision": "fceb5bfafeda357d222c",
+    "url": "/js/chunk-7573064e.a8506980.js"
+  },
+  {
+    "revision": "feb33b81ff0d66d4409eabd2f3c104c2",
+    "url": "/media/collecting.feb33b81.mp4"
   },
   {
     "revision": "f8970a3f4fc8d672b226",
     "url": "/js/chunk-8223be60.3720e8e3.js"
   },
   {
-    "revision": "2dfc76a135591ecb9b7416f89c5f8480",
-    "url": "/media/scanning.2dfc76a1.webm"
+    "revision": "7c6c435230491d2e6da01c3f959a08cd",
+    "url": "/media/hades-entering.7c6c4352.mp4"
   },
   {
     "revision": "e879ec560d4fe8745e46",
     "url": "/js/chunk-vendors.41c00d24.js"
   },
   {
-    "revision": "4afbddde8424c72f03482c48dd4f8e73",
-    "url": "/media/hades-entering.4afbddde.webm"
+    "revision": "51d81465123f7544a1fb8d5cc67b79bc",
+    "url": "/media/bgm.51d81465.mp3"
   },
   {
-    "revision": "4f0283c6ce28e888000e978e537a6a56",
-    "url": "/img/layers-2x.4f0283c6.png"
+    "revision": "87fab3b356aa26456e69d8413ac52fcb",
+    "url": "/img/diamond.87fab3b3.png"
   },
   {
     "revision": "be1a88db3a6612fa30c0b9e0c55379e9",
     "url": "/img/home-bless-active.be1a88db.png"
   },
   {
-    "revision": "373a6d99f0d9bc9d569f4f1db3bfe178",
+    "revision": "e64ab62393a0a791db46aaf34ace2267",
     "url": "/index.html"
   },
   {
@@ -128,10 +128,6 @@ self.__precacheManifest = [
     "url": "/img/story-11.e7aa9ee6.png"
   },
   {
-    "revision": "db67bd0d2068918dfdd156c7b48e4c2d",
-    "url": "/img/info-planet.db67bd0d.png"
-  },
-  {
     "revision": "a22d3a703f19e18982519e1571cd81c1",
     "url": "/img/zeus-rod-inactive.a22d3a70.png"
   },
@@ -152,10 +148,6 @@ self.__precacheManifest = [
     "url": "/img/resource-transfer-spawn.f78490e0.png"
   },
   {
-    "revision": "36dc453ae53bcc5b90bf4540c1074547",
-    "url": "/img/leave-cross.36dc453a.png"
-  },
-  {
     "revision": "cc0e2bcefb3c640577d4c9cf0de30808",
     "url": "/img/touch-dot.cc0e2bce.png"
   },
@@ -172,16 +164,16 @@ self.__precacheManifest = [
     "url": "/img/house-a-spawn.2ceb4855.png"
   },
   {
-    "revision": "4bf9b757a5a7d37e487e14f68e8a87ce",
-    "url": "/img/move.4bf9b757.png"
-  },
-  {
     "revision": "0498d1ec9819357bbc253e11a77e5af5",
     "url": "/img/stone.0498d1ec.png"
   },
   {
     "revision": "9e9a396d5c67f3351924367002686a6f",
     "url": "/img/stone-portal-locked.9e9a396d.png"
+  },
+  {
+    "revision": "4bf9b757a5a7d37e487e14f68e8a87ce",
+    "url": "/img/move.4bf9b757.png"
   },
   {
     "revision": "b1b62221fc42e5cf48c45bab3b8c8fe8",
@@ -226,6 +218,10 @@ self.__precacheManifest = [
   {
     "revision": "3d2761d17bb9f2520078d92bef7ffa01",
     "url": "/img/planet-locate.3d2761d1.png"
+  },
+  {
+    "revision": "36dc453ae53bcc5b90bf4540c1074547",
+    "url": "/img/leave-cross.36dc453a.png"
   },
   {
     "revision": "380c4283ed693795002a36d175fcb594",
@@ -288,6 +284,10 @@ self.__precacheManifest = [
     "url": "/img/power-plant-spawn.c5de4421.png"
   },
   {
+    "revision": "fbe337e34abacd4b39abca1b5e82972d",
+    "url": "/img/loading.fbe337e3.gif"
+  },
+  {
     "revision": "a60dc1c0819cf7a602857e1f9409ee72",
     "url": "/img/warehouse.a60dc1c0.png"
   },
@@ -312,28 +312,24 @@ self.__precacheManifest = [
     "url": "/img/story-13.99b2e7d4.png"
   },
   {
-    "revision": "95fb43d0131b705c45e8ed45544b2bea",
-    "url": "/img/info-population.95fb43d0.png"
-  },
-  {
     "revision": "f7a823e6587106b2ce481452926b7d9c",
     "url": "/img/logo-font.f7a823e6.png"
   },
   {
-    "revision": "c6ec2d6947804bb940d1b6e3e4e011fd",
-    "url": "/img/warehouse.c6ec2d69.png"
+    "revision": "95fb43d0131b705c45e8ed45544b2bea",
+    "url": "/img/info-population.95fb43d0.png"
   },
   {
     "revision": "67462d5fb4fc9d7bb31836b3d22b8d5d",
     "url": "/img/story-12.67462d5f.png"
   },
   {
-    "revision": "57ac3b832907e45f1375f725a072d0f6",
-    "url": "/img/stadium-work.57ac3b83.png"
+    "revision": "db67bd0d2068918dfdd156c7b48e4c2d",
+    "url": "/img/info-planet.db67bd0d.png"
   },
   {
-    "revision": "c73ddd2d0e06e656eef8ce23e6a796c2",
-    "url": "/img/ore-3.c73ddd2d.png"
+    "revision": "c6ec2d6947804bb940d1b6e3e4e011fd",
+    "url": "/img/warehouse.c6ec2d69.png"
   },
   {
     "revision": "524d3b17ef0434b51cac49766de6ca4a",
@@ -344,32 +340,28 @@ self.__precacheManifest = [
     "url": "/img/mechanism-inactive.383dd477.png"
   },
   {
+    "revision": "57ac3b832907e45f1375f725a072d0f6",
+    "url": "/img/stadium-work.57ac3b83.png"
+  },
+  {
+    "revision": "089b48d4b444cc4ad3ab",
+    "url": "/js/app.fa96e07d.js"
+  },
+  {
+    "revision": "c73ddd2d0e06e656eef8ce23e6a796c2",
+    "url": "/img/ore-3.c73ddd2d.png"
+  },
+  {
     "revision": "a2f8272cf7147530fa898e7a809dd8a0",
     "url": "/img/ncku-work.a2f8272c.png"
-  },
-  {
-    "revision": "e71c42ee122aa37919b8",
-    "url": "/js/app.4861cf42.js"
-  },
-  {
-    "revision": "71795b2545cd1314906fa74f119d57a3",
-    "url": "/img/power-plant-work.71795b25.png"
-  },
-  {
-    "revision": "3d49af083407f6f6cd15e69ca114beb2",
-    "url": "/img/intelligence-inactive.3d49af08.png"
-  },
-  {
-    "revision": "f7c3878102722137a03b2c2032afeba7",
-    "url": "/img/story-04.f7c38781.png"
   },
   {
     "revision": "0f685b57feca074d7f72d736d1611393",
     "url": "/img/planet-1-light.0f685b57.png"
   },
   {
-    "revision": "ff3a168bc73f8220788db4188d220540",
-    "url": "/img/home-bless-inactive.ff3a168b.png"
+    "revision": "71795b2545cd1314906fa74f119d57a3",
+    "url": "/img/power-plant-work.71795b25.png"
   },
   {
     "revision": "a4b0dbdad477ee1ef8cc26f300c09934",
@@ -384,24 +376,24 @@ self.__precacheManifest = [
     "url": "/img/layers.a6137456.png"
   },
   {
-    "revision": "fd012267faa0f8dbbf869e990b47dd2c",
-    "url": "/img/power-stone-active.fd012267.png"
+    "revision": "4f0283c6ce28e888000e978e537a6a56",
+    "url": "/img/layers-2x.4f0283c6.png"
   },
   {
     "revision": "2273e3d8ad9264b7daa5bdbf8e6b47f8",
     "url": "/img/marker-icon.2273e3d8.png"
   },
   {
-    "revision": "026401ac314386aa343a3b10c9d6d324",
-    "url": "/img/pledge-active.026401ac.png"
+    "revision": "fd012267faa0f8dbbf869e990b47dd2c",
+    "url": "/img/power-stone-active.fd012267.png"
   },
   {
     "revision": "545199bfa45175cbfa44f327bc3416c9",
     "url": "/img/power-plant.545199bf.png"
   },
   {
-    "revision": "98a64d79d28c69a366e6802a9c895bbc",
-    "url": "/img/house-b-work.98a64d79.png"
+    "revision": "f7c3878102722137a03b2c2032afeba7",
+    "url": "/img/story-04.f7c38781.png"
   },
   {
     "revision": "5281195ea7ef8095491a83f45576d027",
@@ -420,24 +412,20 @@ self.__precacheManifest = [
     "url": "/img/story-05.106b8bfb.png"
   },
   {
-    "revision": "43557703d69fd7254b0dba11f881d227",
-    "url": "/img/robot-normal.43557703.png"
+    "revision": "ff3a168bc73f8220788db4188d220540",
+    "url": "/img/home-bless-inactive.ff3a168b.png"
   },
   {
     "revision": "ff40941b92cd845fc850c05224cf91e5",
     "url": "/img/house-a.ff40941b.png"
   },
   {
-    "revision": "a38ba7abeb66efb99c8209a3c961f1b5",
-    "url": "/img/kyronus-icon-start.a38ba7ab.png"
-  },
-  {
     "revision": "3e9c87b57b069bc75ffcce52f52117e7",
     "url": "/img/power.3e9c87b5.png"
   },
   {
-    "revision": "69731f865ac6463f6490548f1db64f85",
-    "url": "/img/story-01.69731f86.png"
+    "revision": "026401ac314386aa343a3b10c9d6d324",
+    "url": "/img/pledge-active.026401ac.png"
   },
   {
     "revision": "c8f0d34f482552f89d271e5e144d0281",
@@ -448,12 +436,16 @@ self.__precacheManifest = [
     "url": "/img/warehouse-work.ac212dcb.png"
   },
   {
-    "revision": "408ab9c2308df799516e75616d474ca5",
-    "url": "/img/ore-1.408ab9c2.png"
+    "revision": "98a64d79d28c69a366e6802a9c895bbc",
+    "url": "/img/house-b-work.98a64d79.png"
   },
   {
-    "revision": "ecfebcf59d56707e02697a2a10114859",
-    "url": "/img/kyronus-display-text.ecfebcf5.png"
+    "revision": "43557703d69fd7254b0dba11f881d227",
+    "url": "/img/robot-normal.43557703.png"
+  },
+  {
+    "revision": "69731f865ac6463f6490548f1db64f85",
+    "url": "/img/story-01.69731f86.png"
   },
   {
     "revision": "aaddf59c0deb37366a705c3bdcc7e523",
@@ -476,32 +468,76 @@ self.__precacheManifest = [
     "url": "/img/resource-transfer.53add80c.png"
   },
   {
+    "revision": "408ab9c2308df799516e75616d474ca5",
+    "url": "/img/ore-1.408ab9c2.png"
+  },
+  {
     "revision": "96d4973e86cdf70e0b1d2973b312bf1b",
     "url": "/img/research-center-work.96d4973e.png"
   },
   {
-    "revision": "ccb3a61e709fa1e38e0bce1726b421de",
-    "url": "/img/building-confirm.ccb3a61e.png"
+    "revision": "ecfebcf59d56707e02697a2a10114859",
+    "url": "/img/kyronus-display-text.ecfebcf5.png"
   },
   {
-    "revision": "707877f4c522e5a55d9ad46e5e6ce995",
-    "url": "/img/government-work.707877f4.png"
+    "revision": "7b42db39aec23dcf22b8e5eec1269e65",
+    "url": "/img/cat-normal.7b42db39.png"
   },
   {
     "revision": "b976bfafd45cd5819f32ea0c5a95fbd9",
     "url": "/img/hades-temple-work.b976bfaf.png"
   },
   {
+    "revision": "1344fe0e932784e3ecc963b679257471",
+    "url": "/img/hades.1344fe0e.png"
+  },
+  {
+    "revision": "59540b5708c05a56f966b24cfd375e87",
+    "url": "/img/audio-bgm.59540b57.png"
+  },
+  {
+    "revision": "1475762aea1c66d52f0e3db21c18f5f1",
+    "url": "/img/coin.1475762a.png"
+  },
+  {
     "revision": "eb530efede9fac287bfd44c213c4640f",
     "url": "/img/hades-portrait.eb530efe.png"
+  },
+  {
+    "revision": "f8484cc2b21bf76cdd69ba369b69a43f",
+    "url": "/img/copper.f8484cc2.png"
+  },
+  {
+    "revision": "25cbaf7bf6bb4c94a74ed0e1526c2bd8",
+    "url": "/img/collect.25cbaf7b.png"
+  },
+  {
+    "revision": "8906cdbb2b529c386167509b4bf5c5fb",
+    "url": "/img/government-spawn.8906cdbb.png"
+  },
+  {
+    "revision": "707877f4c522e5a55d9ad46e5e6ce995",
+    "url": "/img/government-work.707877f4.png"
+  },
+  {
+    "revision": "4943af6f0e2697153cfacf2d32c4a80f",
+    "url": "/img/green-house-spawn.4943af6f.png"
+  },
+  {
+    "revision": "de45ad2f8543478111c0c7ff09bd96da",
+    "url": "/img/forest-work.de45ad2f.png"
+  },
+  {
+    "revision": "414783c337caa0cb0df54c4c82b54aad",
+    "url": "/img/green-house-work.414783c3.png"
   },
   {
     "revision": "3a13d353686aadb3363cd2f57d69a9d1",
     "url": "/img/government.3a13d353.png"
   },
   {
-    "revision": "235905f3c47402dc1987aeb53bfbbc66",
-    "url": "/img/growth-rate.235905f3.png"
+    "revision": "a1d5e3ceb4f83435ee58cc9ad71ddbcb",
+    "url": "/img/friendship-contract-active.a1d5e3ce.png"
   },
   {
     "revision": "6deb0ff06ab6a0e604a250013b40af46",
@@ -512,124 +548,80 @@ self.__precacheManifest = [
     "url": "/img/green-house.bb71c3f1.png"
   },
   {
-    "revision": "1344fe0e932784e3ecc963b679257471",
-    "url": "/img/hades.1344fe0e.png"
-  },
-  {
-    "revision": "414783c337caa0cb0df54c4c82b54aad",
-    "url": "/img/green-house-work.414783c3.png"
-  },
-  {
-    "revision": "4943af6f0e2697153cfacf2d32c4a80f",
-    "url": "/img/green-house-spawn.4943af6f.png"
-  },
-  {
-    "revision": "0ae817bf63438b7805ad7d63176af918",
-    "url": "/img/cat-rare.0ae817bf.png"
-  },
-  {
-    "revision": "87fab3b356aa26456e69d8413ac52fcb",
-    "url": "/img/diamond.87fab3b3.png"
-  },
-  {
-    "revision": "622809e96dc3484326aa7fefc2739672",
-    "url": "/img/eye.622809e9.png"
-  },
-  {
-    "revision": "8906cdbb2b529c386167509b4bf5c5fb",
-    "url": "/img/government-spawn.8906cdbb.png"
-  },
-  {
-    "revision": "de45ad2f8543478111c0c7ff09bd96da",
-    "url": "/img/forest-work.de45ad2f.png"
+    "revision": "1752e3b851838d88383f2d563d0686b5",
+    "url": "/img/crop.1752e3b8.png"
   },
   {
     "revision": "4ad13413ded2f9f7b5ac861e30479810",
     "url": "/img/government-locked.4ad13413.png"
   },
   {
-    "revision": "a1d5e3ceb4f83435ee58cc9ad71ddbcb",
-    "url": "/img/friendship-contract-active.a1d5e3ce.png"
-  },
-  {
-    "revision": "01e6b570f29501bb90849ec5bef088ba",
-    "url": "/img/friendship-contract-inactive.01e6b570.png"
+    "revision": "235905f3c47402dc1987aeb53bfbbc66",
+    "url": "/img/growth-rate.235905f3.png"
   },
   {
     "revision": "7079a58d63bc9c9059c833c73848d4b2",
     "url": "/img/gift.7079a58d.png"
   },
   {
-    "revision": "e15ed859d06481a4c7a3",
-    "url": "/css/chunk-66df925c.95a7463f.css"
+    "revision": "622809e96dc3484326aa7fefc2739672",
+    "url": "/img/eye.622809e9.png"
   },
   {
-    "revision": "7db1f3fd92acb93aaa05",
-    "url": "/css/chunk-629724b9.4aad814c.css"
+    "revision": "01e6b570f29501bb90849ec5bef088ba",
+    "url": "/img/friendship-contract-inactive.01e6b570.png"
   },
   {
-    "revision": "e879ec560d4fe8745e46",
-    "url": "/css/chunk-vendors.7301fb1f.css"
-  },
-  {
-    "revision": "f8970a3f4fc8d672b226",
-    "url": "/css/chunk-8223be60.0c4b9920.css"
+    "revision": "23363356831a46b0e6a1fbe919380e79",
+    "url": "/img/box-active.23363356.png"
   },
   {
     "revision": "c7eeb6d455b2552c9ef8d898e1438cfe",
     "url": "/img/build.c7eeb6d4.png"
   },
   {
-    "revision": "ae05812ca93582c85527ace7e059760e",
-    "url": "/img/build-completed-1x1.ae05812c.png"
+    "revision": "ccb3a61e709fa1e38e0bce1726b421de",
+    "url": "/img/building-confirm.ccb3a61e.png"
   },
   {
-    "revision": "6ad0bcc8ff9bda4440069874f68a8fb1",
-    "url": "/img/babylon-work.6ad0bcc8.png"
-  },
-  {
-    "revision": "1475762aea1c66d52f0e3db21c18f5f1",
-    "url": "/img/coin.1475762a.png"
-  },
-  {
-    "revision": "7b42db39aec23dcf22b8e5eec1269e65",
-    "url": "/img/cat-normal.7b42db39.png"
-  },
-  {
-    "revision": "d8da195f1d4d69db6f0ce58af6e44a3c",
-    "url": "/img/book-active.d8da195f.png"
-  },
-  {
-    "revision": "fcd2ad3879377b0cf8a7eb39185ed6cc",
-    "url": "/img/car40.fcd2ad38.png"
-  },
-  {
-    "revision": "59540b5708c05a56f966b24cfd375e87",
-    "url": "/img/audio-bgm.59540b57.png"
+    "revision": "3d646603d0914a4f7831b3133781d9c4",
+    "url": "/img/charge.3d646603.png"
   },
   {
     "revision": "18ad0655a3ee938eff04cd046e686464",
     "url": "/img/church-work.18ad0655.png"
   },
   {
+    "revision": "ac8713f58c5866d683d71e20cc0f730e",
+    "url": "/img/building-function.ac8713f5.png"
+  },
+  {
+    "revision": "0ae817bf63438b7805ad7d63176af918",
+    "url": "/img/cat-rare.0ae817bf.png"
+  },
+  {
     "revision": "2ba017bc44cc40e9c0753ce1ad680348",
     "url": "/img/cat-epic.2ba017bc.png"
   },
   {
-    "revision": "1752e3b851838d88383f2d563d0686b5",
-    "url": "/img/crop.1752e3b8.png"
+    "revision": "afda0d41ef95fccac1afe23e9178cbba",
+    "url": "/img/building-upgrade.afda0d41.png"
   },
   {
-    "revision": "64933f143946223a3ed23b83a5ddfae2",
-    "url": "/img/build-process-1x1.64933f14.png"
+    "revision": "fcd2ad3879377b0cf8a7eb39185ed6cc",
+    "url": "/img/car40.fcd2ad38.png"
+  },
+  {
+    "revision": "fceb5bfafeda357d222c",
+    "url": "/css/chunk-7573064e.334010dc.css"
   },
   {
     "revision": "290602b55e46bef25f750306abaad26b",
     "url": "/img/back.290602b5.png"
   },
   {
-    "revision": "3d646603d0914a4f7831b3133781d9c4",
-    "url": "/img/charge.3d646603.png"
+    "revision": "d8da195f1d4d69db6f0ce58af6e44a3c",
+    "url": "/img/book-active.d8da195f.png"
   },
   {
     "revision": "78b4de10aa376f1c7cb1b72e61a929fe",
@@ -640,59 +632,63 @@ self.__precacheManifest = [
     "url": "/img/blue.431b99d2.png"
   },
   {
-    "revision": "23363356831a46b0e6a1fbe919380e79",
-    "url": "/img/box-active.23363356.png"
-  },
-  {
-    "revision": "3864abf693345c9e07ce38800e8abcae",
-    "url": "/img/MRT-work.3864abf6.png"
-  },
-  {
-    "revision": "6fc82ba34761017423216dba2396961f",
-    "url": "/img/MRT-1-work.6fc82ba3.png"
-  },
-  {
-    "revision": "25cbaf7bf6bb4c94a74ed0e1526c2bd8",
-    "url": "/img/collect.25cbaf7b.png"
-  },
-  {
-    "revision": "ac8713f58c5866d683d71e20cc0f730e",
-    "url": "/img/building-function.ac8713f5.png"
-  },
-  {
-    "revision": "afda0d41ef95fccac1afe23e9178cbba",
-    "url": "/img/building-upgrade.afda0d41.png"
-  },
-  {
-    "revision": "125f6116d0a585d0df011a85b20f47b9",
-    "url": "/img/book-inactive.125f6116.png"
+    "revision": "ae05812ca93582c85527ace7e059760e",
+    "url": "/img/build-completed-1x1.ae05812c.png"
   },
   {
     "revision": "34d24401dce4f0eeb8afbce6fcf940f0",
     "url": "/img/box-inactive.34d24401.png"
   },
   {
+    "revision": "64933f143946223a3ed23b83a5ddfae2",
+    "url": "/img/build-process-1x1.64933f14.png"
+  },
+  {
+    "revision": "125f6116d0a585d0df011a85b20f47b9",
+    "url": "/img/book-inactive.125f6116.png"
+  },
+  {
     "revision": "5436ab36a37f07e0af528586fdb956a5",
     "url": "/img/MRT-shadow-work.5436ab36.png"
   },
   {
-    "revision": "f8484cc2b21bf76cdd69ba369b69a43f",
-    "url": "/img/copper.f8484cc2.png"
+    "revision": "f8970a3f4fc8d672b226",
+    "url": "/css/chunk-8223be60.0c4b9920.css"
+  },
+  {
+    "revision": "3864abf693345c9e07ce38800e8abcae",
+    "url": "/img/MRT-work.3864abf6.png"
+  },
+  {
+    "revision": "6ad0bcc8ff9bda4440069874f68a8fb1",
+    "url": "/img/babylon-work.6ad0bcc8.png"
+  },
+  {
+    "revision": "6fc82ba34761017423216dba2396961f",
+    "url": "/img/MRT-1-work.6fc82ba3.png"
+  },
+  {
+    "revision": "e879ec560d4fe8745e46",
+    "url": "/css/chunk-vendors.7301fb1f.css"
+  },
+  {
+    "revision": "e15ed859d06481a4c7a3",
+    "url": "/css/chunk-66df925c.95a7463f.css"
+  },
+  {
+    "revision": "7db1f3fd92acb93aaa05",
+    "url": "/css/chunk-629724b9.4aad814c.css"
   },
   {
     "revision": "7059ef8514dc876d050a",
     "url": "/css/chunk-218de41d.b5405413.css"
   },
   {
-    "revision": "6603d5347b1f4c973f37",
-    "url": "/css/chunk-199c59db.437cedd3.css"
-  },
-  {
     "revision": "8cf7af3e99180e7606f4",
     "url": "/css/chunk-13208bf6.57d6e153.css"
   },
   {
-    "revision": "e71c42ee122aa37919b8",
-    "url": "/css/app.42357483.css"
+    "revision": "089b48d4b444cc4ad3ab",
+    "url": "/css/app.4782f58b.css"
   }
 ];
