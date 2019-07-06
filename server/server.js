@@ -15,7 +15,7 @@ mongoose.connect(url, { useNewUrlParser: true, })
 
 mongoose.Promise = global.Promise;
 
-app.listen(port, () => console.log('App listening on port ' + port));
+app.listen(port, () => console.log('New App listening on port ' + port));
 
 app.use(express.static( __dirname + '/public') );
 

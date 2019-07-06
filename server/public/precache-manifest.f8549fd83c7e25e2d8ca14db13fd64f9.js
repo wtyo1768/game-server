@@ -164,16 +164,16 @@ self.__precacheManifest = [
     "url": "/img/house-a-spawn.2ceb4855.png"
   },
   {
+    "revision": "4bf9b757a5a7d37e487e14f68e8a87ce",
+    "url": "/img/move.4bf9b757.png"
+  },
+  {
     "revision": "0498d1ec9819357bbc253e11a77e5af5",
     "url": "/img/stone.0498d1ec.png"
   },
   {
     "revision": "9e9a396d5c67f3351924367002686a6f",
     "url": "/img/stone-portal-locked.9e9a396d.png"
-  },
-  {
-    "revision": "4bf9b757a5a7d37e487e14f68e8a87ce",
-    "url": "/img/move.4bf9b757.png"
   },
   {
     "revision": "b1b62221fc42e5cf48c45bab3b8c8fe8",
@@ -592,8 +592,8 @@ self.__precacheManifest = [
     "url": "/img/church-work.18ad0655.png"
   },
   {
-    "revision": "ac8713f58c5866d683d71e20cc0f730e",
-    "url": "/img/building-function.ac8713f5.png"
+    "revision": "afda0d41ef95fccac1afe23e9178cbba",
+    "url": "/img/building-upgrade.afda0d41.png"
   },
   {
     "revision": "0ae817bf63438b7805ad7d63176af918",
@@ -604,8 +604,8 @@ self.__precacheManifest = [
     "url": "/img/cat-epic.2ba017bc.png"
   },
   {
-    "revision": "afda0d41ef95fccac1afe23e9178cbba",
-    "url": "/img/building-upgrade.afda0d41.png"
+    "revision": "ac8713f58c5866d683d71e20cc0f730e",
+    "url": "/img/building-function.ac8713f5.png"
   },
   {
     "revision": "fcd2ad3879377b0cf8a7eb39185ed6cc",
