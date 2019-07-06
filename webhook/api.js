@@ -8,13 +8,13 @@ app.listen(PORT, () => {
 
 const cd = 'cd ~/../home/wtyo1768';
 const cmd = {
-    pull: `${cd}/kyronus && git pull origin`,
+    pull: `${cd}/kyronus && git pull origin master`,
     rebuild: `${cd}/kyronus  && npm run build`,
-    nginx_rebuild: `${cd}/`
+    nginx_rebuild: `${cd}/kyronus-server && sh ./sh/rebuild.sh `
 }
 
-
 app.post('/webhook', (req, res) => {
+    res.end();
     console.log('WebHookk')
     console.log(req)
     exec(cmd.pull, (err, stdout, stderr) => {
