@@ -1,6 +1,9 @@
 const app = require('express')();
 const PORT = process.env.port || 3000;
 const { exec } = require('child_process');
+const logger = require('winston').createLogger({
+    
+});
 
 app.listen(PORT, () => {
     console.log(`webhook api listen on ${PORT}`);
@@ -16,7 +19,7 @@ const cmd = {
 app.post('/webhook', (req, res) => {
     res.end();
     console.log('WebHookk')
-    console.log(req)
+    console.log(req.headers['x-gitlab-token'])
     exec(cmd.pull, (err, stdout, stderr) => {
         if (err) {
             console.log(err)

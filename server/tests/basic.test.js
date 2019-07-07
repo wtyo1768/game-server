@@ -5,9 +5,9 @@ var request = require('request').defaults({ jar: true });
 const base = 'http://localhost:3000';
 const headers = { 'Content-Type': 'text/plain' };
 const form = {
-    "email": "testa@yahoo.com.tw",
+    "email": "test@yahoo.com.tw",
     "username": "yosa",
-    "password": "1234"
+    "password": "123456"
 };
 
 describe('Server Init', () => {
