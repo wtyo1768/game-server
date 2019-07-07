@@ -29,7 +29,7 @@ describe('User', () => {
         })
     })
     describe('#login', () => {
-        it('should return 401 406', done => {
+        it('should return 401 404 200', done => {
             request.post(base+'/user/login',(err,res,body)=>{
                 expect(res.statusCode).to.be.oneOf([401 ,404 , 200])
                 console.log(res.statusCode)

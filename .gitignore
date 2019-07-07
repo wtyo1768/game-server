@@ -1,12 +1,18 @@
 debug.log
 
-node_modules
+server/node_modules
 
 .ebextensions
 
-# public
+#public
+
+#server/public
 
 .vscode
 
 .npmrc
 
+nginx
+
+
+node_modules
