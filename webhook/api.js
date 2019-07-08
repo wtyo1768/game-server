@@ -1,19 +1,14 @@
 const app = require('express')();
 const PORT = process.env.port || 3000;
 const { exec } = require('child_process');
-const logger = require('winston').createLogger({
-    
-});
 
-app.listen(PORT, () => {
-    console.log(`webhook api listen on ${PORT}`);
-})
+app.listen(PORT, () => console.log(`webhook api listen on ${PORT}`))
 
 const cd = 'cd ~/../home/wtyo1768';
 const cmd = {
     pull: `${cd}/kyronus && git pull origin master`,
     rebuild: `${cd}/kyronus  && npm run build`,
-    nginx_rebuild: `${cd}/kyronus-server && sh ./sh/rebuild.sh `
+    nginx_rebuild: `${cd}/kyronus-server/webhook && sh ./sh/rebuild.sh `
 }
 
 app.post('/webhook', (req, res) => {

@@ -2,10 +2,14 @@ debug.log
 
 server/node_modules
 
-server/public
+public
 
 .vscode
 
 nginx
 
 node_modules
+
+.env
+
+log

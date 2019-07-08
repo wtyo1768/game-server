@@ -14,20 +14,15 @@ const corsOptions = {
     maxAge: 1728000,
 };
 
-router.use((req, res, next) => {
-    res.header("Access-Control-Allow-Origin", req.headers.origin)
-    console.log('host: ' + req.headers.host)
-    next()
-})
-
-router.options("/", cors(corsOptions));
 router.use(cors(corsOptions));
 router.use(bodyParser.json());
 router.use(bodyParser.urlencoded({ extended: false }));
 router.use(bodyParser.text());
 router.use(cookieParser());
-
-router.use(function (req, res, next) {
+require('../Middleware/logger')
+//router.use(require('../Middleware/logger'));
+router.use(async (req, res, next) => {
+    res.header("Access-Control-Allow-Origin", req.headers.origin || origin)
     if (req.method == "GET" || Object.keys(req.body).length == 0)
         return next();
     try {
@@ -38,10 +33,9 @@ router.use(function (req, res, next) {
     next();
 })
 
-router.get('', (req, res) => {
-    res.send('This is Kyronus Server!');
-    // console.log('From : ' + port)
-})
+router.options("/", cors(corsOptions));
+
+router.get('', (req, res) => res.send('This is Kyronus Server!'));
 
 router.get('/.well-known/assetlinks.json',(req,res)=> {
     res.writeHead(200, { 'Content-Type': 'application/json' });
