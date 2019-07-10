@@ -14,7 +14,7 @@
 // importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 // importScripts(
-//   "/precache-manifest.315167e4298fb826ab609ed1fc047f7e.js"
+//   "/precache-manifest.fb4c46406099d46b3c29219ee5364dbe.js"
 // );
 
 // workbox.core.setCacheNameDetails({prefix: "kyronus"});
