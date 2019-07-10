@@ -1,4 +1,23 @@
-<!DOCTYPE html><html lang=en><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><meta name=apple-mobile-web-app-capable content=yes><meta name=mobile-web-app-capable content=yes><!--[if IE]><link rel="icon" href="/favicon.ico"><![endif]--><title>kyronus</title><link href=/css/chunk-218de41d.b5405413.css rel=prefetch><link href=/css/chunk-315f093a.906e1155.css rel=prefetch><link href=/css/chunk-629724b9.4aad814c.css rel=prefetch><link href=/css/chunk-7573064e.334010dc.css rel=prefetch><link href=/css/chunk-7ba14b1a.7e6f8fc6.css rel=prefetch><link href=/css/chunk-8223be60.0c4b9920.css rel=prefetch><link href=/js/chunk-0fa6af65.0c535cb0.js rel=prefetch><link href=/js/chunk-218de41d.12036a6d.js rel=prefetch><link href=/js/chunk-2d0c20e8.07d97edf.js rel=prefetch><link href=/js/chunk-315f093a.5e9ead1f.js rel=prefetch><link href=/js/chunk-629724b9.62ab2cdc.js rel=prefetch><link href=/js/chunk-7573064e.7c9148c2.js rel=prefetch><link href=/js/chunk-7ba14b1a.4a9c32c8.js rel=prefetch><link href=/js/chunk-8223be60.e9be0963.js rel=prefetch><link href=/css/app.1729a43a.css rel=preload as=style><link href=/css/chunk-vendors.7301fb1f.css rel=preload as=style><link href=/js/app.3264794b.js rel=preload as=script><link href=/js/chunk-vendors.41c00d24.js rel=preload as=script><link href=/css/chunk-vendors.7301fb1f.css rel=stylesheet><link href=/css/app.1729a43a.css rel=stylesheet><link rel=icon type=image/png sizes=32x32 href=/img/icons/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/img/icons/favicon-16x16.png><link rel=manifest href=/manifest.json><meta name=theme-color content=#4DBA87><meta name=apple-mobile-web-app-capable content=no><meta name=apple-mobile-web-app-status-bar-style content=default><meta name=apple-mobile-web-app-title content=kyronus><link rel=apple-touch-icon href=/img/icons/apple-touch-icon-152x152.png><link rel=mask-icon href=/img/icons/safari-pinned-tab.svg color=#4DBA87><meta name=msapplication-TileImage content=/img/icons/msapplication-icon-144x144.png><meta name=msapplication-TileColor content=#000000></head><body style="overflow: hidden"><noscript><strong>We're sorry but kyronus doesn't work properly without JavaScript enabled. Please enable it to continue.</strong></noscript><script>if ('serviceWorker' in navigator) {
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+  <title>kyronus</title>
+</head>
+
+<body style="overflow: hidden">
+  <noscript>
+    <strong>We're sorry but kyronus doesn't work properly without JavaScript enabled. Please enable it to
+      continue.</strong>
+  </noscript>
+  <script>
+    if ('serviceWorker' in navigator) {
       window.addEventListener('load', function() {
         navigator.serviceWorker.register('/service-worker.js')
         .then(function(reg){
@@ -8,4 +27,8 @@
           console.log(err);
         })
       })
-    }</script><div id=app></div><script src=/js/chunk-vendors.41c00d24.js></script><script src=/js/app.3264794b.js></script></body></html>
+    }
+  </script>
+  <div id="app"></div>
+</body>
+</html>
