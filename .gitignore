@@ -2,8 +2,6 @@ debug.log
 
 server/node_modules
 
-public
-
 .vscode
 
 nginx
