@@ -17,59 +17,35 @@ importScripts(
 
 importScripts('/precache-manifest.8ab7533fecdf9e67f481971325ab978d.js')
 
-// workbox.core.setCacheNameDetails({ prefix: 'kyronus' })
+workbox.core.setCacheNameDetails({ prefix: 'kyronus' })
 
-// /**
-//  * The workboxSW.precacheAndRoute() method efficiently caches and responds to
-//  * requests for URLs in the manifest.
-//  * See https://goo.gl/S9QRab
-//  */
-// self.__precacheManifest = [].concat(self.__precacheManifest || [])
-// workbox.precaching.suppressWarnings()
-// workbox.precaching.precacheAndRoute(self.__precacheManifest, {})
+/**
+ * The workboxSW.precacheAndRoute() method efficiently caches and responds to
+ * requests for URLs in the manifest.
+ * See https://goo.gl/S9QRab
+ */
+self.__precacheManifest = [].concat(self.__precacheManifest || [])
+workbox.precaching.suppressWarnings()
+workbox.precaching.precacheAndRoute(self.__precacheManifest, {})
 
-// self.addEventListener('install', function(event) {
-//   console.log('[PWA] Installing service worker')
-//   self.skipWaiting()
-// })
-
-// self.addEventListener('activate', event => {
-//   event.waitUntil(
-//     caches.keys().then(cacheNames => {
-//       console.log('cache', cacheNames)
-//       self.clients.claim()
-//     })
-//   )
-// })
-
-// workbox.routing.registerRoute(
-//   /\.(?:js|css)$/,
-//   new workbox.strategies.StaleWhileRevalidate()
-// )
-
-// workbox.routing.registerRoute(
-//   /\.(?:png|gif|jpg|jpeg|svg)$/,
-//   new workbox.strategies.CacheFirst({
-//     cacheName: 'images',
-//     plugins: [
-//       new workbox.expiration.Plugin({
-//         maxEntries: 60,
-//         maxAgeSeconds: 30 * 24 * 60 * 60 // 30 Days
-//       })
-//     ]
-//   })
-// )
-workbox.precaching.precacheAndRoute(self.__precacheManifest || [])
-
-self.addEventListener("install", function (event) {
-  console.log("[PWA] Installing service worker");
+self.addEventListener('install', function(event) {
+  console.log('[PWA] Installing service worker')
   self.skipWaiting()
-});
+})
+
+self.addEventListener('activate', event => {
+  event.waitUntil(
+    caches.keys().then(cacheNames => {
+      console.log('cache', cacheNames)
+      self.clients.claim()
+    })
+  )
+})
 
 workbox.routing.registerRoute(
   /\.(?:js|css)$/,
-  new workbox.strategies.StaleWhileRevalidate(),
-); 
+  new workbox.strategies.StaleWhileRevalidate()
+)
 
 workbox.routing.registerRoute(
   /\.(?:png|gif|jpg|jpeg|svg)$/,
@@ -78,24 +54,8 @@ workbox.routing.registerRoute(
     plugins: [
       new workbox.expiration.Plugin({
         maxEntries: 60,
-        maxAgeSeconds: 30 * 24 * 60 * 60, // 30 Days
-      }),
-    ],
-  }),
-); 
-
-// Cache the Google Fonts webfont files
-workbox.routing.registerRoute(
-  /^https:\/\/fonts\.gstatic\.com/,
-  new workbox.strategies.CacheFirst({
-    cacheName: 'google-fonts-webfonts',
-    plugins: [
-      new workbox.cacheableResponse.Plugin({
-        statuses: [0, 200],
-      }),
-      new workbox.expiration.Plugin({
-        maxAgeSeconds: 60 * 60 * 24 * 365,
-      }),
-    ],
-  }),
-); 
+        maxAgeSeconds: 30 * 24 * 60 * 60 // 30 Days
+      })
+    ]
+  })
+)
