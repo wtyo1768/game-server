@@ -14,10 +14,13 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/precache-manifest.f7e9c8acb7cd3c9b905dae7cd3d3f1d3.js"
+  "/precache-manifest.b970dc128d532c208b0a351bab01bfa6.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "kyronus"});
+
+workbox.skipWaiting();
+workbox.clientsClaim();
 
 /**
  * The workboxSW.precacheAndRoute() method efficiently caches and responds to

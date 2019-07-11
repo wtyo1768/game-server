@@ -324,12 +324,12 @@ self.__precacheManifest = [
     "url": "/img/move.4bf9b757.png"
   },
   {
-    "revision": "afda0d41ef95fccac1afe23e9178cbba",
-    "url": "/img/building-upgrade.afda0d41.png"
-  },
-  {
     "revision": "ac8713f58c5866d683d71e20cc0f730e",
     "url": "/img/building-function.ac8713f5.png"
+  },
+  {
+    "revision": "afda0d41ef95fccac1afe23e9178cbba",
+    "url": "/img/building-upgrade.afda0d41.png"
   },
   {
     "revision": "524d3b17ef0434b51cac49766de6ca4a",
@@ -684,7 +684,7 @@ self.__precacheManifest = [
     "url": "/img/sickle-active.476d8c4e.png"
   },
   {
-    "revision": "b55582aac6a4b43cabfc4b0a6bae1f82",
+    "revision": "cf2d3c1d56d7d204b70889d87f6cf06d",
     "url": "/index.html"
   },
   {
