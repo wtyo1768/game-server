@@ -56,12 +56,12 @@ self.__precacheManifest = [
     "url": "/js/chunk-629724b9.553bdb7d.js"
   },
   {
-    "revision": "4aa22adcf86ec81c5c78",
-    "url": "/css/chunk-7573064e.b87f6d43.css"
+    "revision": "c3e29244c4a971369d24",
+    "url": "/css/chunk-b9e0f266.bc51d84d.css"
   },
   {
-    "revision": "4aa22adcf86ec81c5c78",
-    "url": "/js/chunk-7573064e.a30fffc5.js"
+    "revision": "c3e29244c4a971369d24",
+    "url": "/js/chunk-b9e0f266.cb0ba917.js"
   },
   {
     "revision": "68868c84fddb393744ab",
@@ -324,12 +324,12 @@ self.__precacheManifest = [
     "url": "/img/move.4bf9b757.png"
   },
   {
-    "revision": "afda0d41ef95fccac1afe23e9178cbba",
-    "url": "/img/building-upgrade.afda0d41.png"
-  },
-  {
     "revision": "ac8713f58c5866d683d71e20cc0f730e",
     "url": "/img/building-function.ac8713f5.png"
+  },
+  {
+    "revision": "afda0d41ef95fccac1afe23e9178cbba",
+    "url": "/img/building-upgrade.afda0d41.png"
   },
   {
     "revision": "524d3b17ef0434b51cac49766de6ca4a",
@@ -344,8 +344,8 @@ self.__precacheManifest = [
     "url": "/img/green-house.bb71c3f1.png"
   },
   {
-    "revision": "6c7edd4cace4b5b67f9a",
-    "url": "/js/app.c265925e.js"
+    "revision": "9180d0c22b75cc57d3cd",
+    "url": "/js/app.b74dab7b.js"
   },
   {
     "revision": "17ad2b6bcc5bcc4859b2",
@@ -376,12 +376,12 @@ self.__precacheManifest = [
     "url": "/img/layers.a6137456.png"
   },
   {
-    "revision": "2273e3d8ad9264b7daa5bdbf8e6b47f8",
-    "url": "/img/marker-icon.2273e3d8.png"
-  },
-  {
     "revision": "4f0283c6ce28e888000e978e537a6a56",
     "url": "/img/layers-2x.4f0283c6.png"
+  },
+  {
+    "revision": "2273e3d8ad9264b7daa5bdbf8e6b47f8",
+    "url": "/img/marker-icon.2273e3d8.png"
   },
   {
     "revision": "87fab3b356aa26456e69d8413ac52fcb",
@@ -684,11 +684,11 @@ self.__precacheManifest = [
     "url": "/img/sickle-active.476d8c4e.png"
   },
   {
-    "revision": "f39593aa57d7fa51a6c38ddfa21526d3",
+    "revision": "a8433f79be44cec9b484e612260af62c",
     "url": "/index.html"
   },
   {
-    "revision": "6c7edd4cace4b5b67f9a",
+    "revision": "9180d0c22b75cc57d3cd",
     "url": "/css/app.49fe9465.css"
   }
 ];
