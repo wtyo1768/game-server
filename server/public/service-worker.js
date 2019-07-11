@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/precache-manifest.b970dc128d532c208b0a351bab01bfa6.js"
+  "/precache-manifest.8ab7533fecdf9e67f481971325ab978d.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "kyronus"});

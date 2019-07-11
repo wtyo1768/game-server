@@ -684,7 +684,7 @@ self.__precacheManifest = [
     "url": "/img/sickle-active.476d8c4e.png"
   },
   {
-    "revision": "cf2d3c1d56d7d204b70889d87f6cf06d",
+    "revision": "8229f69bbd1550a34e865bdf00d200ce",
     "url": "/index.html"
   },
   {
