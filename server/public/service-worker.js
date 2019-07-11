@@ -1,4 +1,3 @@
-
 /**
  * Welcome to your Workbox-powered service worker!
  *
@@ -12,13 +11,13 @@
  * See https://goo.gl/2aRDsh
  */
 
+importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
+
 importScripts(
-  'https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js'
-)
+  "/precache-manifest.c9f4cdce409b9a75ad26cb8e141661b4.js"
+);
 
-importScripts('/precache-manifest.8ab7533fecdf9e67f481971325ab978d.js')
-
-workbox.core.setCacheNameDetails({ prefix: 'kyronus' })
+workbox.core.setCacheNameDetails({prefix: "kyronus"});
 
 /**
  * The workboxSW.precacheAndRoute() method efficiently caches and responds to

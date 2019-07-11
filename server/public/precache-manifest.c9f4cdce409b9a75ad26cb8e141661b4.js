@@ -320,16 +320,16 @@ self.__precacheManifest = [
     "url": "/img/MRT-work.3864abf6.png"
   },
   {
+    "revision": "4bf9b757a5a7d37e487e14f68e8a87ce",
+    "url": "/img/move.4bf9b757.png"
+  },
+  {
     "revision": "afda0d41ef95fccac1afe23e9178cbba",
     "url": "/img/building-upgrade.afda0d41.png"
   },
   {
     "revision": "ac8713f58c5866d683d71e20cc0f730e",
     "url": "/img/building-function.ac8713f5.png"
-  },
-  {
-    "revision": "4bf9b757a5a7d37e487e14f68e8a87ce",
-    "url": "/img/move.4bf9b757.png"
   },
   {
     "revision": "524d3b17ef0434b51cac49766de6ca4a",
