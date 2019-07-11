@@ -324,12 +324,12 @@ self.__precacheManifest = [
     "url": "/img/move.4bf9b757.png"
   },
   {
-    "revision": "ac8713f58c5866d683d71e20cc0f730e",
-    "url": "/img/building-function.ac8713f5.png"
-  },
-  {
     "revision": "afda0d41ef95fccac1afe23e9178cbba",
     "url": "/img/building-upgrade.afda0d41.png"
+  },
+  {
+    "revision": "ac8713f58c5866d683d71e20cc0f730e",
+    "url": "/img/building-function.ac8713f5.png"
   },
   {
     "revision": "524d3b17ef0434b51cac49766de6ca4a",
@@ -344,8 +344,8 @@ self.__precacheManifest = [
     "url": "/img/green-house.bb71c3f1.png"
   },
   {
-    "revision": "9a2275f29ef0323b5040",
-    "url": "/js/app.5400981e.js"
+    "revision": "a43c9522fc141de61292",
+    "url": "/js/app.7d09e5d5.js"
   },
   {
     "revision": "b604eee138dc4c02b8f3",
@@ -684,11 +684,11 @@ self.__precacheManifest = [
     "url": "/img/sickle-active.476d8c4e.png"
   },
   {
-    "revision": "8229f69bbd1550a34e865bdf00d200ce",
+    "revision": "fbe6d3ea99e5c71dddd37eb9d9b22e6e",
     "url": "/index.html"
   },
   {
-    "revision": "9a2275f29ef0323b5040",
+    "revision": "a43c9522fc141de61292",
     "url": "/css/app.49fe9465.css"
   }
 ];
