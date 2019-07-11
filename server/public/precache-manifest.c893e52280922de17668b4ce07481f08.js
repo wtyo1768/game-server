@@ -84,7 +84,7 @@ self.__precacheManifest = [
     "url": "/img/home-bless-active.be1a88db.png"
   },
   {
-    "revision": "25bf51dc0fa437b8e5fbeda0319f729a",
+    "revision": "37b15261a1a5343b7fa71c453c42aa61",
     "url": "/index.html"
   },
   {
@@ -320,12 +320,12 @@ self.__precacheManifest = [
     "url": "/img/story-13.99b2e7d4.png"
   },
   {
-    "revision": "4bf9b757a5a7d37e487e14f68e8a87ce",
-    "url": "/img/move.4bf9b757.png"
-  },
-  {
     "revision": "95fb43d0131b705c45e8ed45544b2bea",
     "url": "/img/info-population.95fb43d0.png"
+  },
+  {
+    "revision": "4bf9b757a5a7d37e487e14f68e8a87ce",
+    "url": "/img/move.4bf9b757.png"
   },
   {
     "revision": "c6ec2d6947804bb940d1b6e3e4e011fd",
