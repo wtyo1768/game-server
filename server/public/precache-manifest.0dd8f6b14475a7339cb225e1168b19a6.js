@@ -84,7 +84,7 @@ self.__precacheManifest = [
     "url": "/img/home-bless-active.be1a88db.png"
   },
   {
-    "revision": "a04b5ce991980a52cccd62811cc4801d",
+    "revision": "69b128d2874f4bab2fbec7ce8084fa8e",
     "url": "/index.html"
   },
   {
@@ -320,12 +320,12 @@ self.__precacheManifest = [
     "url": "/img/story-13.99b2e7d4.png"
   },
   {
-    "revision": "95fb43d0131b705c45e8ed45544b2bea",
-    "url": "/img/info-population.95fb43d0.png"
-  },
-  {
     "revision": "4bf9b757a5a7d37e487e14f68e8a87ce",
     "url": "/img/move.4bf9b757.png"
+  },
+  {
+    "revision": "95fb43d0131b705c45e8ed45544b2bea",
+    "url": "/img/info-population.95fb43d0.png"
   },
   {
     "revision": "c6ec2d6947804bb940d1b6e3e4e011fd",
@@ -344,8 +344,8 @@ self.__precacheManifest = [
     "url": "/img/stadium-work.57ac3b83.png"
   },
   {
-    "revision": "6cedd2b0752b241cea4d",
-    "url": "/js/app.e64bf7b5.js"
+    "revision": "cc2c82d586dcf8472ceb",
+    "url": "/js/app.6e2de021.js"
   },
   {
     "revision": "c73ddd2d0e06e656eef8ce23e6a796c2",
@@ -688,7 +688,7 @@ self.__precacheManifest = [
     "url": "/css/chunk-315f093a.589209d6.css"
   },
   {
-    "revision": "6cedd2b0752b241cea4d",
+    "revision": "cc2c82d586dcf8472ceb",
     "url": "/css/app.98181815.css"
   }
 ];
