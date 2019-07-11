@@ -40,7 +40,7 @@ self.addEventListener('activate', event => {
       .then(cacheNames => {
         console.log('cache', cacheNames)
         return Promise.all(
-          cachesToDelete.map(cacheToDelete => {
+          cacheNames.map(cacheToDelete => {
             return caches.delete(cacheToDelete)
           })
         )
