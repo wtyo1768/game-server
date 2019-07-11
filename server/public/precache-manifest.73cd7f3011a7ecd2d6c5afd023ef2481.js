@@ -84,7 +84,7 @@ self.__precacheManifest = [
     "url": "/img/home-bless-active.be1a88db.png"
   },
   {
-    "revision": "3fdc20dae2fb13e27e713d9130b61692",
+    "revision": "bce0c61900e0773f06f40f15c6f20f3f",
     "url": "/index.html"
   },
   {
