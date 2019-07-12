@@ -42,6 +42,7 @@ describe('User', () => {
                 done();
             }).form(form[0]);
         })
+        //不合法字元
         it('should return 400', done => {
             request.post({ url: base + '/user/register', headers }, (err, res, body) => {
                 expect(res.statusCode).to.equal(400)
@@ -49,6 +50,7 @@ describe('User', () => {
                 done();
             }).form(form[2]);
         })
+        //信箱已註冊過
         it('should return 406', done => {
             request.post({ url: base + '/user/register', headers }, (err, res, body) => {
                 expect(res.statusCode).to.equal(406)
@@ -65,6 +67,7 @@ describe('User', () => {
                 done();
             }).form(form[0]);
         })
+        //帳號或密碼錯誤
         it('should return 401', done => {
             request.post(base+'/user/login',(err,res,body)=>{
                 expect(res.statusCode).to.equal(401)
@@ -72,6 +75,7 @@ describe('User', () => {
                 done();
             }).form(form[1]);
         })
+        //帳號不存在
         it('should return 404', done => {
             request.post(base+'/user/login',(err,res,body)=>{
                 expect(res.statusCode).to.equal(404)
