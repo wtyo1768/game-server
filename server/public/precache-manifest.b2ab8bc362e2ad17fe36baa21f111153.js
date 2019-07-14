@@ -32,20 +32,20 @@ self.__precacheManifest = [
     "url": "/js/chunk-46c1e8f1.a096fa02.js"
   },
   {
+    "revision": "7e78fd6e572715082afa",
+    "url": "/css/chunk-48253d1e.b56e529b.css"
+  },
+  {
+    "revision": "7e78fd6e572715082afa",
+    "url": "/js/chunk-48253d1e.ffb10a0a.js"
+  },
+  {
     "revision": "04818c5b3676b8e36b5c",
     "url": "/css/chunk-4bf2fff2.b3c06696.css"
   },
   {
     "revision": "04818c5b3676b8e36b5c",
     "url": "/js/chunk-4bf2fff2.28360ecf.js"
-  },
-  {
-    "revision": "066b79a4d682d7864780",
-    "url": "/css/chunk-4fecf268.517b0398.css"
-  },
-  {
-    "revision": "066b79a4d682d7864780",
-    "url": "/js/chunk-4fecf268.2c9ab724.js"
   },
   {
     "revision": "16a238a3b1f1a5a158f3",
@@ -324,12 +324,12 @@ self.__precacheManifest = [
     "url": "/img/move.4bf9b757.png"
   },
   {
-    "revision": "afda0d41ef95fccac1afe23e9178cbba",
-    "url": "/img/building-upgrade.afda0d41.png"
-  },
-  {
     "revision": "ac8713f58c5866d683d71e20cc0f730e",
     "url": "/img/building-function.ac8713f5.png"
+  },
+  {
+    "revision": "afda0d41ef95fccac1afe23e9178cbba",
+    "url": "/img/building-upgrade.afda0d41.png"
   },
   {
     "revision": "524d3b17ef0434b51cac49766de6ca4a",
@@ -344,8 +344,8 @@ self.__precacheManifest = [
     "url": "/img/green-house.bb71c3f1.png"
   },
   {
-    "revision": "6c08dc816b31afd6e346",
-    "url": "/js/app.07069ef8.js"
+    "revision": "ca6095e9dce9dd876163",
+    "url": "/js/app.f8ba5055.js"
   },
   {
     "revision": "166c16700f9a1cb9c6f1",
@@ -684,11 +684,11 @@ self.__precacheManifest = [
     "url": "/img/sickle-active.476d8c4e.png"
   },
   {
-    "revision": "e7fb9ce0fe9952ae9fd8fc917ee13f2c",
+    "revision": "614968c192d98ac9faae2b973f5f83c7",
     "url": "/index.html"
   },
   {
-    "revision": "6c08dc816b31afd6e346",
-    "url": "/css/app.80cb287a.css"
+    "revision": "ca6095e9dce9dd876163",
+    "url": "/css/app.ca89be78.css"
   }
 ];
