@@ -2,7 +2,6 @@ const router = require('express').Router();
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
-
 const origin = ['https://kyronus.herokuapp.com/',
     'https://kyronus.azurewebsites.net',
     'http://localhost:8080',
@@ -13,15 +12,16 @@ const corsOptions = {
     credentials: true,
     maxAge: 1728000,
 };
-
+const { LogreqInfo } = require('../Middleware/logger');
 router.use(cors(corsOptions));
 router.use(bodyParser.json());
 router.use(bodyParser.urlencoded({ extended: false }));
 router.use(bodyParser.text());
 router.use(cookieParser());
-require('../Middleware/logger')
-//router.use(require('../Middleware/logger'));
+router.use(LogreqInfo);
+
 router.use(async (req, res, next) => {
+    // logger.info('front')
     res.header("Access-Control-Allow-Origin", req.headers.origin || origin)
     if (req.method == "GET" || Object.keys(req.body).length == 0)
         return next();
@@ -30,7 +30,7 @@ router.use(async (req, res, next) => {
     } catch (error) {
         // console.log('---' + error + '----')
     }
-    next();
+    return next(); 
 })
 
 router.options("/", cors(corsOptions));

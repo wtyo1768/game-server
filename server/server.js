@@ -5,7 +5,7 @@ const port = process.env.PORT || process.argv[2] || 3000;
 const url = `mongodb+srv://wtyo1768:s124930654@kyronus-dihrd.mongodb.net/test?retryWrites=true`;
 
 mongoose.connect(url, { useNewUrlParser: true, })
-    .catch((err) => logger.error('error', err))
+    .catch( err => logger.error(err))
 
 mongoose.Promise = global.Promise;
 
