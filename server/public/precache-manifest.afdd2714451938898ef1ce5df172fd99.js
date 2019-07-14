@@ -264,6 +264,18 @@ self.__precacheManifest = [
     "url": "/img/bg.78b4de10.png"
   },
   {
+    "revision": "afda0d41ef95fccac1afe23e9178cbba",
+    "url": "/img/building-upgrade.afda0d41.png"
+  },
+  {
+    "revision": "4bf9b757a5a7d37e487e14f68e8a87ce",
+    "url": "/img/move.4bf9b757.png"
+  },
+  {
+    "revision": "ac8713f58c5866d683d71e20cc0f730e",
+    "url": "/img/building-function.ac8713f5.png"
+  },
+  {
     "revision": "729f1784c9c572a26280c56effef70ca",
     "url": "/img/wood.729f1784.png"
   },
@@ -320,18 +332,6 @@ self.__precacheManifest = [
     "url": "/img/MRT-work.3864abf6.png"
   },
   {
-    "revision": "4bf9b757a5a7d37e487e14f68e8a87ce",
-    "url": "/img/move.4bf9b757.png"
-  },
-  {
-    "revision": "ac8713f58c5866d683d71e20cc0f730e",
-    "url": "/img/building-function.ac8713f5.png"
-  },
-  {
-    "revision": "afda0d41ef95fccac1afe23e9178cbba",
-    "url": "/img/building-upgrade.afda0d41.png"
-  },
-  {
     "revision": "524d3b17ef0434b51cac49766de6ca4a",
     "url": "/img/story-03.524d3b17.png"
   },
@@ -344,8 +344,8 @@ self.__precacheManifest = [
     "url": "/img/green-house.bb71c3f1.png"
   },
   {
-    "revision": "ca6095e9dce9dd876163",
-    "url": "/js/app.f8ba5055.js"
+    "revision": "a44ccd6dc28e73fc319d",
+    "url": "/js/app.788e6f61.js"
   },
   {
     "revision": "166c16700f9a1cb9c6f1",
@@ -684,11 +684,11 @@ self.__precacheManifest = [
     "url": "/img/sickle-active.476d8c4e.png"
   },
   {
-    "revision": "614968c192d98ac9faae2b973f5f83c7",
+    "revision": "36df76a1983fc99755d8b1a1f40ecaeb",
     "url": "/index.html"
   },
   {
-    "revision": "ca6095e9dce9dd876163",
-    "url": "/css/app.ca89be78.css"
+    "revision": "a44ccd6dc28e73fc319d",
+    "url": "/css/app.2347f54c.css"
   }
 ];
