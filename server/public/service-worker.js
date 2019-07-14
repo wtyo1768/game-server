@@ -1,4 +1,4 @@
-importScripts("/precache-manifest.afdd2714451938898ef1ce5df172fd99.js", "https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
+importScripts("/precache-manifest.ab433ce04ed86eec248b1e335ce8b345.js", "https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 workbox.core.setCacheNameDetails({ prefix: 'kyronus' })
 
