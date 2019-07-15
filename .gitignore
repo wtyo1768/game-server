@@ -1,10 +1,6 @@
 debug.log
 
-server/node_modules
-
 .vscode
-
-nginx
 
 node_modules
 
