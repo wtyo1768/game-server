@@ -1,5 +1,4 @@
 const config = {
-  'yo' : 'test' ,
   'mongodb': {
     'database': 'wp2018_groupD',
     'host': 'luffy.ee.ncku.edu.tw',
@@ -20,9 +19,7 @@ const config = {
     'secret' :'f259a5f277d9dc71928d7c2a897772f2',
     'callbackURL': '/user/facebook/cb',
   },
-
-  'AzureInsight':{
-    'instrumentation_key' : '37db324a-652f-489f-82b8-db8ec90d2acd',
-  }
 }
+process.env.NODE_ENV = 'development'
+
 module.exports = config;

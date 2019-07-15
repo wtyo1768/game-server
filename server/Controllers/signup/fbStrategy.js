@@ -3,7 +3,7 @@ const config = require('../../config/config')
 const UserModel = require('../../Model/UserModel');
 
 const verify = async function (accessToken, refreshToken, profile, done) {
-    console.log('yo');
+    logger.info('yo');
     const User = await UserModel.findOne({ facebookID: profile.id })
     if (!User) {
         const UserData = {

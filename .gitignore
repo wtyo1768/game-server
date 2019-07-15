@@ -1,15 +1,8 @@
 debug.log
 
-server/node_modules
-
-public
-
 .vscode
-
-nginx
 
 node_modules
 
-.env
-
 log
+

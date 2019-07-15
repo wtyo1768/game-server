@@ -3,7 +3,6 @@ const config = require('../../config/config');
 const UserModel = require('../../Model/UserModel');
 
 function verify(accessToken, refreshToken, profile, done) {
-    console.log(accessToken + ' |||| ' + refreshToken);
     return UserModel.findOne({ googleID: profile.id }).then(doc => {
         if (!doc) {
             //create One
@@ -15,10 +14,10 @@ function verify(accessToken, refreshToken, profile, done) {
             }
             var User = new UserModel(data);
             return User.save()
-                .then(() => done(null, { _id: User._id }))
+                .then(() => done(null, User))
                 .catch(err => done(err, null));
         }
-        return done(null, { _id: doc._id });
+        return done(null, doc);
     })
         .catch(err => done(err, null));
 }
