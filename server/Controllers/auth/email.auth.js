@@ -5,7 +5,7 @@ exports.verifyEmail =  function (UserDat1a) {
         username: 'rock',
         email: "wtyo1768@gmail.com"
     }
-    console.log('creating')
+    logger.info('creating')
 
     const transporter = nodemailer.createTransport({
         port : 3001,
@@ -15,7 +15,7 @@ exports.verifyEmail =  function (UserDat1a) {
             pass: "moto12493065",
         },
     })
-    console.log('opt')
+    logger.info('opt')
     const mailOptions = {
         from: "wtyo1768@gmail.com",
         to: UserData.email,
@@ -24,11 +24,11 @@ exports.verifyEmail =  function (UserDat1a) {
             'Please verify your account by clicking the link: \nhttp:\/\/' +
             'host' + '\/confirmation\/' + 'token' + '.\n'
     };
-    console.log('Sending...')
+    logger.info('Sending...')
     transporter.sendMail(mailOptions, function (err) {
         if (err)
-            return console.log(err)
+            return logger.info(err)
         else
-            console.log('sended')
+            logger.info('sended')
     }); 
 }

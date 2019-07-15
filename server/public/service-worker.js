@@ -29,7 +29,7 @@ workbox.precaching.suppressWarnings()
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {})
 
 self.addEventListener('install', function(event) {
-  console.log('[PWA] Installing service worker')
+  logger.info('[PWA] Installing service worker')
   self.skipWaiting()
 })
 
@@ -38,7 +38,7 @@ self.addEventListener('activate', event => {
     caches
       .keys()
       .then(cacheNames => {
-        console.log('cache', cacheNames)
+        logger.info('cache', cacheNames)
         return Promise.all(
           cacheNames.map(cacheToDelete => {
             return caches.delete(cacheToDelete)

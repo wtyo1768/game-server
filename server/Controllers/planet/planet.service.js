@@ -2,7 +2,7 @@ const PlanetModel = require('../../Model/PlanetModel');
 const UserModel = require('../../Model/UserModel');
 
 exports.newPlanet = (req, res) => {
-    console.log(req.body);
+    logger.info(req.body);
     try {
         const Planet = new PlanetModel(req.body);
         Planet.save()
@@ -81,7 +81,7 @@ exports.haveBuiltBuilding = async function (req, res) {
 
 exports.BuildingDevelop = function (req, res) {
     const data = req.body;
-    console.log('BuildingDevelop')
+    logger.info('BuildingDevelop')
 
     let isValid = req.user.planets.some(ele => ele.pid == req.params.pid);
     return isValid ? PlanetModel.findById(req.params.pid)
@@ -90,12 +90,12 @@ exports.BuildingDevelop = function (req, res) {
             doc.markModified('architectureTechnology');
             doc.save().then(() => res.end())
         })
-        .catch((err) => console.log(err))
+        .catch((err) => logger.info(err))
         : res.status(500).end();
 }
 
 exports.updateTechPoint = function (req, res) {
-    console.log('here', req.body)
+    logger.info('here', req.body)
     PlanetModel.findByIdAndUpdate({ _id: req.params.pid }, { architectureTechnologyPoint: req.body.point })
         .then(() => res.end())
         .catch(() => res.status(400).end());
@@ -109,7 +109,7 @@ exports.getExp = async (req, res) => {
 }
 
 exports.DrawCard = (req, res) => {
-    console.log('cards')
+    logger.info('cards')
     PlanetModel.findById(req.params.pid)
         .then(doc => {
             doc.buffCards.push(req.body.buffCard);

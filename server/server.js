@@ -15,7 +15,7 @@ app.use(express.static(__dirname + '/public'));
 
 app.use(require('./Routes/global.route'));
 
-app.use('/user', require('./Routes/auth.route'));
+app.use('/user', require('./Routes/signup.route'));
 
 app.use('/user', require('./Routes/user.route'));
 

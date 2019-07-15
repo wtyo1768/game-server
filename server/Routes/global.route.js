@@ -28,7 +28,7 @@ router.use(async (req, res, next) => {
     try {
         req.body = JSON.parse(req.body)
     } catch (error) {
-        // console.log('---' + error + '----')
+        // logger.info('---' + error + '----')
     }
     return next(); 
 })
