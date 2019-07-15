@@ -216,12 +216,12 @@ self.__precacheManifest = [
     "url": "/img/yu-portrait.308a2c17.png"
   },
   {
-    "revision": "b0f986497b51a8ad9b4df70323b62e34",
-    "url": "/img/position-flag.b0f98649.png"
-  },
-  {
     "revision": "36dc453ae53bcc5b90bf4540c1074547",
     "url": "/img/leave-cross.36dc453a.png"
+  },
+  {
+    "revision": "b0f986497b51a8ad9b4df70323b62e34",
+    "url": "/img/position-flag.b0f98649.png"
   },
   {
     "revision": "d829609027e619f938f0864b7b3b75f1",
@@ -264,16 +264,16 @@ self.__precacheManifest = [
     "url": "/img/bg.78b4de10.png"
   },
   {
+    "revision": "4bf9b757a5a7d37e487e14f68e8a87ce",
+    "url": "/img/move.4bf9b757.png"
+  },
+  {
     "revision": "afda0d41ef95fccac1afe23e9178cbba",
     "url": "/img/building-upgrade.afda0d41.png"
   },
   {
     "revision": "ac8713f58c5866d683d71e20cc0f730e",
     "url": "/img/building-function.ac8713f5.png"
-  },
-  {
-    "revision": "4bf9b757a5a7d37e487e14f68e8a87ce",
-    "url": "/img/move.4bf9b757.png"
   },
   {
     "revision": "729f1784c9c572a26280c56effef70ca",
@@ -344,8 +344,8 @@ self.__precacheManifest = [
     "url": "/img/green-house.bb71c3f1.png"
   },
   {
-    "revision": "0c3c9387768336701617",
-    "url": "/js/app.51ba6f1d.js"
+    "revision": "ab3a10e3236ce80ad03b",
+    "url": "/js/app.84e94f1f.js"
   },
   {
     "revision": "166c16700f9a1cb9c6f1",
@@ -684,11 +684,11 @@ self.__precacheManifest = [
     "url": "/img/sickle-active.476d8c4e.png"
   },
   {
-    "revision": "c4cce41e04bf04db56bad296922f3740",
+    "revision": "62b39f78ef64695abdd755e905ddc2c5",
     "url": "/index.html"
   },
   {
-    "revision": "0c3c9387768336701617",
-    "url": "/css/app.b00cfa0e.css"
+    "revision": "ab3a10e3236ce80ad03b",
+    "url": "/css/app.645abc6d.css"
   }
 ];
