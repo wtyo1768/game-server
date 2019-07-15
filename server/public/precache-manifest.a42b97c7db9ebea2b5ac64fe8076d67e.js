@@ -216,12 +216,12 @@ self.__precacheManifest = [
     "url": "/img/yu-portrait.308a2c17.png"
   },
   {
-    "revision": "36dc453ae53bcc5b90bf4540c1074547",
-    "url": "/img/leave-cross.36dc453a.png"
-  },
-  {
     "revision": "b0f986497b51a8ad9b4df70323b62e34",
     "url": "/img/position-flag.b0f98649.png"
+  },
+  {
+    "revision": "36dc453ae53bcc5b90bf4540c1074547",
+    "url": "/img/leave-cross.36dc453a.png"
   },
   {
     "revision": "d829609027e619f938f0864b7b3b75f1",
