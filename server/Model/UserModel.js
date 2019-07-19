@@ -56,4 +56,4 @@ var UserSchema = new mongoose.Schema({
 }, { collection: 'User' });
 
 
-module.exports = mongoose.model('User', UserSchema);;
+module.exports = mongoose.models.User || mongoose.model('User', UserSchema);;
