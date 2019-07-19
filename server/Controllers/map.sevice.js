@@ -14,7 +14,7 @@ exports.collectMapResource = async function (req, res) {
     var doc = await MapModel.findOne(query);
     if (doc) {
         if (doc.expireAt && doc.expireAt < Date.now()) {
-            console.log('remove by hand')
+            logger.info('remove by hand')
             doc.remove().then(() => {
                 const Map = new MapModel(req.body.gridData);
                 Map.save()
@@ -29,7 +29,7 @@ exports.collectMapResource = async function (req, res) {
         }
     }
     else {
-        console.log('New source')
+        logger.info('New source')
         const Map = new MapModel(req.body.gridData);
         Map.save()
         .catch( ()=>res.status(500))
@@ -38,7 +38,7 @@ exports.collectMapResource = async function (req, res) {
 }
 
 exports.ResourceDepletion = function (req, res) {
-    console.log('Depletion');
+    logger.info('Depletion');
     const position = `${req.body.gridData.properties.maxLat},${req.body.gridData.properties.maxLng}`
     const query = { position: position }
 
@@ -50,6 +50,6 @@ exports.ResourceDepletion = function (req, res) {
             doc.save();
             res.status(200).end();
         })
-        .catch(err => console.log(err))
+        .catch(err => logger.info(err))
 }
 

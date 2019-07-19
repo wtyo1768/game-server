@@ -14,16 +14,56 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/precache-manifest.f8549fd83c7e25e2d8ca14db13fd64f9.js"
+  "/precache-manifest.6a6587534e9e264ede467d56c00d8e72.js"
 );
 
-workbox.core.setCacheNameDetails({prefix: "kyronus"});
+workbox.core.setCacheNameDetails({ prefix: 'kyronus' })
 
 /**
  * The workboxSW.precacheAndRoute() method efficiently caches and responds to
  * requests for URLs in the manifest.
  * See https://goo.gl/S9QRab
  */
-self.__precacheManifest = [].concat(self.__precacheManifest || []);
-workbox.precaching.suppressWarnings();
-workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
+self.__precacheManifest = [].concat(self.__precacheManifest || [])
+workbox.precaching.suppressWarnings()
+workbox.precaching.precacheAndRoute(self.__precacheManifest, {})
+
+self.addEventListener('install', function(event) {
+  logger.info('[PWA] Installing service worker')
+  self.skipWaiting()
+})
+
+self.addEventListener('activate', event => {
+  event.waitUntil(
+    caches
+      .keys()
+      .then(cacheNames => {
+        logger.info('cache', cacheNames)
+        return Promise.all(
+          cacheNames.map(cacheToDelete => {
+            return caches.delete(cacheToDelete)
+          })
+        )
+      })
+      .then(() => self.clients.claim())
+  )
+})
+
+
+workbox.routing.registerRoute(
+  /\.(?:js|css)$/,
+  new workbox.strategies.StaleWhileRevalidate()
+)
+
+workbox.routing.registerRoute(
+  /\.(?:png|gif|jpg|jpeg|svg)$/,
+  new workbox.strategies.CacheFirst({
+    cacheName: 'images',
+    plugins: [
+      new workbox.expiration.Plugin({
+        maxEntries: 60,
+        maxAgeSeconds: 30 * 24 * 60 * 60 // 30 Days
+      })
+    ]
+  })
+)

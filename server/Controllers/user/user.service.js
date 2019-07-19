@@ -5,7 +5,7 @@ exports.getAllUserData = async function (req, res) {
     return res.send(req.user);
 }
 exports.getPlanetList = async function (req, res) {
-    console.log(req.user.planets.length)
+    logger.info(req.user.planets.length)
     let result = [];
     req.user.planets.forEach((ele, index) => {
         PlanetModel.findById(ele.pid)
@@ -56,7 +56,7 @@ exports.nextScenes = (req, res) => {
 }
 
 exports.ConsumeResource = async function (req, res) {
-    console.log('consume')
+    logger.info('consume')
     const data = req.body.resources;
     if (!data)
         return res.status(204).end();
@@ -76,15 +76,15 @@ exports.ConsumeResource = async function (req, res) {
 
 exports.spendCoin = function (req, res) {
     const money = req.body.coin;
-    console.log(money)
+    logger.info(money)
     UserModel.findByIdAndUpdate(req.user._id, { coin: money })
         .then(() => res.end())
         .catch(() => res.status(400).end())
 }
 exports.spendDiamond = function (req, res) {
     const diamond = req.body.diamond;
-    console.log(diamond)
-    console.log('dia')
+    logger.info(diamond)
+    logger.info('dia')
     UserModel.findByIdAndUpdate(req.user._id, { diamond: diamond })
         .then(() => res.end())
         .catch(() => res.status(400).end());
@@ -93,8 +93,8 @@ exports.spendDiamond = function (req, res) {
 exports.CoolDownofColleting = function (req, res) {
     const data = req.body.gridData
     let modified = false
-    console.log('Cooldown')
-    console.log(data)
+    logger.info('Cooldown')
+    logger.info(data)
 
     UserModel.findById(req.user._id)
         .select('coolDownGrid')
