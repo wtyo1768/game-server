@@ -26,5 +26,8 @@ module.exports = async function (req, res) {
 
                 return res.status(201).send(User);
             })
-            .catch(err => res.status(400).send(err))
+            .catch(err =>{ 
+                res.status(400).send(err)
+                logger.error(err)
+            })
 }

@@ -4,7 +4,7 @@
   "description": "SERVER",
   "main": "server.js",
   "scripts": {
-    "test": "mocha server/tests/*.test.js -w --recursive --ui tdd",
+    "test": "mocha server/tests/test.js -w --ui tdd",
     "start": "node server/server.js",
     "start:dev": "nodemon server/server.js"
   },
@@ -20,6 +20,7 @@
     "express-validation": "^1.0.2",
     "joi": "^14.3.1",
     "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.15",
     "mongoose": "^5.3.12",
     "passport": "^0.4.0",
     "passport-facebook": "^3.0.0",
@@ -31,6 +32,7 @@
   },
   "devDependencies": {
     "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
     "mocha": "^6.1.4",
     "nodemon": "^1.19.0"
   }

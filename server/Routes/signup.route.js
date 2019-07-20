@@ -17,8 +17,8 @@ router.get('/google', passport.authenticate('google', { session: false, scope: [
 
 router.get('/Auth', passport.authenticate('google', { session: false }), require('../Controllers/user/login'))
 
-router.get('/facebook', passport.authenticate('facebook', { session: false, scope: ['email'] }));
+router.get('/facebook', passport.authenticate('facebook', { session: false}));
 
-router.get('/facebook/cb', passport.authenticate('facebook', { session: false }), require('../Controllers/user/login'));
+router.get('/facebook/cb', passport.authenticate('facebook', { session: false}), require('../Controllers/user/login'));
 
 module.exports = router;

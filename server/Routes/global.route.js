@@ -12,18 +12,18 @@ const corsOptions = {
     credentials: true,
     maxAge: 1728000,
 };
-const { LogreqInfo } = require('../Middleware/logger');
+
 router.use(cors(corsOptions));
 router.use(bodyParser.json());
 router.use(bodyParser.urlencoded({ extended: false }));
 router.use(bodyParser.text());
 router.use(cookieParser());
-router.use(LogreqInfo);
+router.use(require('../Middleware/logger').LogreqInfo);
 
 router.use(async (req, res, next) => {
     // logger.info('front')
     res.header("Access-Control-Allow-Origin", req.headers.origin || origin)
-    if (req.method == "GET" || Object.keys(req.body).length == 0)
+    if (req.method == "GET" || req.body == {})
         return next();
     try {
         req.body = JSON.parse(req.body)
