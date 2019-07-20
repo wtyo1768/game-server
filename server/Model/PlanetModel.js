@@ -18,9 +18,12 @@ var PlanetSchema = new mongoose.Schema({
             "commonBuilding": {
                 "c0": true,
             },
-            "militaryBuilding" : { 'm0': false },
-            "specialBuilding" : { 's0': false },
-            "economicBuilding" : { 'e0': false }
+            "militaryBuilding" : {},
+            "economicBuilding" : {},
+            "specialBuilding" : {
+                "special" : {},
+                "historical" : {},
+            },
         },
     },
     buildingMap: {

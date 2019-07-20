@@ -55,8 +55,8 @@ var UserSchema = new mongoose.Schema({
     currentBeginnerGuideScenes: { type: Number, default: 0 },
 
     uid: { type: Number },
-    friends: { type: Array, default: [] },
-    friendInvitations: { type: Array, default: [] }
+    friends: { type: Types.Mixed, default: [] },
+    friendInvitations: { type: Types.Mixed, default: [] }
 
 }, { collection: 'User' });
 

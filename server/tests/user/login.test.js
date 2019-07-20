@@ -2,8 +2,6 @@ const chai = require('chai');
 const expect = chai.expect;
 const base = 'http://localhost:3000';
 const agent = chai.request.agent(base)
-
-
 const form = {
     "email": "test@123",
     "username": "yo",

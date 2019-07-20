@@ -9,17 +9,18 @@ suite('#SearchFriend', () => {
         agent.get(`/user/search/${uid}`)
             .end((err, res) => {
                 expect(res).to.have.status(200);
-                console.log(res.text)
-                expect(res.text).to.exist;
+                let resdata = JSON.parse(res.text);
+                expect(resdata.username).to.exist;
+                expect(resdata.uid).to.exist;
                 done();
             })
     })
-    test('Cant find User (404' , done =>{
+    test('Cant find User (404', done => {
         agent.get(`/user/search/1`)
-        .end((err, res) => {
-            expect(res).to.have.status(404);
-            done();
-        })
+            .end((err, res) => {
+                expect(res).to.have.status(404);
+                done();
+            })
     })
     // test('DontHaveAbility' , done=>{
     //     agent.get(`/user/search/${uid}`)
@@ -28,4 +29,26 @@ suite('#SearchFriend', () => {
     //         done();
     //     })
     // })
+})
+
+suite('getFriends', () => {
+    test('Should return Friends Array', done => {
+        agent.get('/user/friends')
+            .end((err, res) => {
+                let resdata = JSON.parse(res.text);
+                expect(resdata).to.be.an('array');
+                done();
+            })
+    })
+})
+
+suite('friendInvitations', () => {
+    test('Should return FriendsInvitations Array', done => {
+        agent.get('/user/friendInvitations')
+            .end((err, res) => {
+                let resdata = JSON.parse(res.text);
+                expect(resdata).to.be.an('array');
+                done();
+            })
+    })
 })
