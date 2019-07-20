@@ -30,12 +30,21 @@ var PlanetSchema = new mongoose.Schema({
             "coordinateX": 0,
             "coordinateY": 0,
             "status": "done",
-            "finishTime": Date.now()
+            "finishTime": Date.now(),
+            "grid": {
+                "row": 1,
+                "column": 1
+            }
         },]
+    },
+    value: {
+        power: { type:  Number, default: 0},
+        food: { type: Number, default: 0},
+        entertainment: {type: Number, default: 0},
     },
     architectureTechnologyPoint: { type: Number, default: 1 },
     scale: { type: Number, default: 4 },
-    population: { type: Object, default: { max: 10, amount: 0, growth: 0 } },
+    population: { type: Object, default: { max: 0, amount: 0, growth: 0 } },
     buffCards: { type: Types.Mixed, default: [] },
     activeBuffCard: { type: Types.Mixed, default: [] }
 
