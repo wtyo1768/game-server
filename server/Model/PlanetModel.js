@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Types = mongoose.Schema.Types;
 
 var PlanetSchema = new mongoose.Schema({
-
+    owner : { type : String } ,
     name: { type: String, default: "赫克斯" },
     type: { type: String, default: "預設" },
 

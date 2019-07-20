@@ -27,7 +27,7 @@ const LogreqInfo = async(req,res,next) => {
     const starthandletime = Date.now();
     await next();     
     const responsetime = Date.now() - starthandletime;
-    logger.info(`${req.method} ${req.url} time : ${responsetime}`);
+    // logger.info(`${req.method} ${req.url} time : ${responsetime}`);
 
 }
 

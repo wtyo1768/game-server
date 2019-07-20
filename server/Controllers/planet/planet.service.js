@@ -2,21 +2,20 @@ const PlanetModel = require('../../Model/PlanetModel');
 const UserModel = require('../../Model/UserModel');
 
 exports.newPlanet = (req, res) => {
-    logger.info(req.body);
-    try {
-        const Planet = new PlanetModel(req.body);
-        Planet.save()
-        UserModel.findById(req.user._id)
-            .then(doc => {
-                doc.planets.push({ pid: Planet._id, state: true });
-                doc.markModified('planets');
-                doc.save();
-                res.status(201).send(Planet);
-            })
-    } catch (error) {
-        res.status(400).end()
-    }
-
+    const PlanetData = { ...req.body, owner: req.user.email };
+    const Planet = new PlanetModel(PlanetData);
+    Planet.save()
+    UserModel.findById(req.user._id)
+        .then(doc => {
+            doc.planets.push({ pid: Planet._id, state: true });
+            doc.markModified('planets');
+            doc.save();
+            res.status(201).send(Planet);
+        })
+        .catch(err => {
+            logger.error(err);
+            res.status(400).end();
+        })
 }
 
 exports.getPlanetData = function (req, res) {
@@ -28,22 +27,22 @@ exports.getPlanetData = function (req, res) {
 
 exports.levelUp = function (req, res) {
     PlanetModel.findById(req.params.pid)
-    .then(doc => {
-        doc.level += 1
-        doc.save()
-        res.end()
-    })
-    .catch(() => res.status(500).end())
+        .then(doc => {
+            doc.level += 1
+            doc.save()
+            res.end()
+        })
+        .catch(() => res.status(500).end())
 }
 
 exports.expandScale = function (req, res) {
     PlanetModel.findById(req.params.pid)
-    .then(doc => {
-        doc.scale += 1
-        doc.save()
-        res.end()
-    })
-    .catch(() => res.status(500).end())
+        .then(doc => {
+            doc.scale += 1
+            doc.save()
+            res.end()
+        })
+        .catch(() => res.status(500).end())
 }
 
 exports.ConstructBuilding = function (req, res) {
