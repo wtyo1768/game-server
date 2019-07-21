@@ -1,4 +1,3 @@
-
 require('./user/singup.test');
 
 require('./user/login.test');
