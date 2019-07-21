@@ -18,11 +18,6 @@ exports.findUserByUid = async (req, res) => {
     }
 }
 
-exports.getFriends = (req, res) => {
-    res.send(req.user.friends);
-}
+exports.getFriends = (req, res) => res.send(req.user.friends);
 
-
-exports.friendInvitations = (req, res) => {
-    res.send(req.user.friendInvitations);
-}
+exports.friendInvitations = (req, res) => res.send(req.user.friendInvitations);

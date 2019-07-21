@@ -33,7 +33,11 @@ var PlanetSchema = new mongoose.Schema({
             "coordinateX": 0,
             "coordinateY": 0,
             "status": "done",
-            "finishTime": Date.now()
+            "finishTime": Date.now(),
+            "grid" : {
+                "row" : 1,
+                "column" : 1 ,
+            }
         },]
     },
     architectureTechnologyPoint: { type: Number, default: 1 },

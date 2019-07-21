@@ -7,3 +7,5 @@ require('./planet/planet.test');
 
 require('./user/friend.test');
 
+require('./socket/socket.test');
+
