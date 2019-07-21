@@ -62,6 +62,8 @@ exports.DeconstructBuilding = async function (req, res) {
         .then(planet => {
             planet.buildingMap.splice(req.body.index, 1)
             planet.markModified(`buildingMap`)
+            planet.update({population: req.body.population})
+            planet.update({value: req.body.value})
             planet.save().then((planet) => res.send(planet))
         })
         .catch(err => res.send(err))
@@ -73,6 +75,8 @@ exports.haveBuiltBuilding = async function (req, res) {
         .then(planet => {
             planet.buildingMap[req.body.index].status = 'done'
             planet.markModified(`buildingMap`)
+            planet.update({population: req.body.population})
+            planet.update({value: req.body.value})
             planet.save().then((planet) => res.send(planet))
         })
         .catch(err => res.send(err))
