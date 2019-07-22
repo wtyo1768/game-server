@@ -1,6 +1,7 @@
 const chai = require('chai');
 const expect = chai.expect;
 const base = 'http://localhost:3000';
+chai.use(require('chai-http'));
 const agent = chai.request.agent(base)
 const form = {
     "email": "test@123",

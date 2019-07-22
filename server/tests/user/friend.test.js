@@ -37,6 +37,7 @@ suite('getFriends', () => {
             .end((err, res) => {
                 expect(res).to.have.status(200);
                 let resdata = JSON.parse(res.text);
+                console.log(            resdata)
                 expect(resdata).to.be.an('array');
                 done();
             })
@@ -49,6 +50,7 @@ suite('friendInvitations', () => {
             .end((err, res) => {
                 expect(res).to.have.status(200);
                 let resdata = JSON.parse(res.text);
+                console.log(            resdata)
                 expect(resdata).to.be.an('array');
                 done();
             })

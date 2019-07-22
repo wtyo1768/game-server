@@ -1,4 +1,4 @@
-require('./user/singup.test');
+require('./user/signup.test');
 
 require('./user/login.test');
 
