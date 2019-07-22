@@ -4,5 +4,6 @@ debug.log
 
 node_modules
 
-log
+.env
 
+log

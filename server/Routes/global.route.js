@@ -35,7 +35,7 @@ router.use(async (req, res, next) => {
 
 router.options("/", cors(corsOptions));
 
-router.get('', (req, res) => res.send('This is Kyronus Server!'));
+router.get('', (req, res) => res.send('This is Kyronus Server!!'));
 
 router.get('/.well-known/assetlinks.json',(req,res)=> {
     res.writeHead(200, { 'Content-Type': 'application/json' });

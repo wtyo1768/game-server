@@ -11,6 +11,7 @@ var UserSchema = new mongoose.Schema({
     email: { type: String, required: true },
     //isverified : {type:Boolean , default :false},
     password: { type: String, required: true },
+    lastLogoutTime: { type: Date },
 
     username: { type: String, default: "郭家銘" },
     nickname: { type: String, default: this.username },
@@ -54,8 +55,8 @@ var UserSchema = new mongoose.Schema({
     currentBeginnerGuideScenes: { type: Number, default: 0 },
 
     uid: { type: Number },
-    friends: { type: Array, default: [] },
-    friendInvitations: { type: Array, default: [] }
+    friends: { type: Types.Mixed, default: [] },
+    friendInvitations: { type: Types.Mixed, default: [] }
 
 }, { collection: 'User' });
 

@@ -26,4 +26,8 @@ router.post('/coolDownGrid', UserController.CoolDownofColleting);
 
 router.get('/search/:uid', FriendController.findUserByUid);
 
+router.get('/friends' , FriendController.getFriends);
+
+router.get('/friendInvitations' , FriendController.friendInvitations);
+
 module.exports = router;
