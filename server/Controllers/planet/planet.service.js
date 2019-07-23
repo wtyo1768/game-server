@@ -57,7 +57,7 @@ exports.ConstructBuilding = function (req, res) {
 }
 
 exports.DeconstructBuilding = async function (req, res) {
-
+    
     PlanetModel.findById(req.params.pid)
         .then(planet => {
             planet.buildingMap.splice(req.body.index, 1)
@@ -77,6 +77,7 @@ exports.haveBuiltBuilding = async function (req, res) {
             planet.markModified(`buildingMap`)
             planet.update({population: req.body.population})
             planet.update({value: req.body.value})
+            console.log(planet)
             planet.save().then((planet) => res.send(planet))
         })
         .catch(err => res.send(err))
