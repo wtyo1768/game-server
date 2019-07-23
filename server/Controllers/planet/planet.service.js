@@ -64,8 +64,6 @@ exports.DeconstructBuilding = async function (req, res) {
             planet.population = req.body.population
             planet.value = req.body.value
             planet.markModified(`value`)
-            // planet.update({population: req.body.population})
-            // planet.update({value: req.body.value})
             planet.save().then((planet) => res.send(planet))
         })
         .catch(err => res.send(err))
@@ -79,10 +77,7 @@ exports.ConstructionCompleted = async function (req, res) {
             planet.population = req.body.population
             planet.value = req.body.value
             planet.markModified(`value`)
-            // planet.update({population: req.body.population})
-            // planet.update({value: req.body.value})
             planet.save().then((planet) => res.send(planet))
-            console.log(`haveBuilding ${req.params}`)
         })
         .catch(err => res.send(err))
 }

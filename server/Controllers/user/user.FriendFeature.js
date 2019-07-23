@@ -6,6 +6,7 @@ exports.findUserByUid = async (req, res) => {
     const doc = await UserModel.findOne({ uid: req.params.uid });
     if (doc) {
         const Pdoc = await PlanetModel.findById(doc.planets[0].pid)
+        // return -1 if not found
         const haveC3building = array.findIndex(Pdoc.buildingMap, ["id", "c3"]);
         const UserData = {
             uid: req.params.uid,

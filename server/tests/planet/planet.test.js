@@ -2,18 +2,19 @@ const expect = require('chai').expect
 const agent = require('../auth/login.test');
 
 suite('Planet', () => {
-    // const { pid } = require('../user/user.service');
+    let pid = '5d35d6bc0074c53a2cf16b82'
     // test('New Planet', done =>{
     //     agent.post('/planet')
     //         .send({
     //             name : "test",
     //             type : "testyo",
     //         })
-    //         .end((err,res)=>{
+    //         .end((err,res) => {
     //             expect(res).have.status(201);
     //             done(err);
     //         })
     // })
+
     // test('Planet info', done => {
     //     agent.get(`/planet/${pid}`)
     //         .end((err, res) => {
@@ -22,20 +23,26 @@ suite('Planet', () => {
     //             done(err)
     //         })
     // })
-    test('ConstructionCompleted', done => {
-        agent.post(`/planet/${pid}/building`)
-            .send({ index: 0 })
-            .end((err, res) => {
-                // console.log(res)
-                expect(res).have.status(200)
-                done(err)
-            })
-    })
+
+    // test('ConstructBuilding', done => {
+    //     agent.post(`/planet/${pid}/building`)
+    //         .send({
+    //             building: {
+    //                 id: "c3"
+    //             }
+    //         })
+    //         .end((err, res) => {
+    //             // console.log(res)
+    //             expect(res).have.status(200)
+    //             done(err)
+    //         })
+    // })
+
     // test('delete Building', done => {
     //     agent.delete(`/planet/${pid}/building`)
     //         .send({
     //             population: {
-    //                 max: 2,
+    //                 max: 2122,
     //                 amount: 1,
     //                 growth: 1
     //             },
@@ -50,15 +57,17 @@ suite('Planet', () => {
     //             done(err)
     //         })
     // })
+
     test('patch Building', done => {
         agent.patch(`/planet/${pid}/building`)
             .send({
+                index : 0 ,
                 population: {
-                    max: 21,
+                    max: 2400000,
                     amount: 2342,
                     growth: 252
                 },
-                value: {
+                value : {
                     power: 22,
                     food: 22,
                     entertainment: 221
