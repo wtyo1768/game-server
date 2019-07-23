@@ -4,9 +4,9 @@ require('./auth/login.test');
 
 require('./user/user.service');
 
-require('./planet/planet.test');
+// require('./planet/planet.test');
 
-require('./user/friend.test');
+// require('./user/friend.test');
 
 require('./socket/socket.test');
 
