@@ -2,8 +2,7 @@ const express = require('express')
 const app = express();
 const mongoose = require('mongoose');
 const port = process.env.PORT || process.argv[2] || 3000;
-// const url = `mongodb+srv://wtyo1768:s124930654@kyronus-dihrd.mongodb.net/test?retryWrites=true`;
-const url = `mongodb+srv://wtyo1768:s124930654@kyronus-dihrd.mongodb.net/yo?retryWrites=true`;
+const url = `mongodb+srv://wtyo1768:s124930654@kyronus-dihrd.mongodb.net/test?retryWrites=true`;
 const http = require('http')
 const server = http.createServer(app);
 

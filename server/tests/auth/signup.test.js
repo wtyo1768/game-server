@@ -3,10 +3,6 @@ const expect = chai.expect;
 const request = require('request').defaults({ jar: true });
 const base = 'http://localhost:3000';
 const headers = { 'Content-Type': 'text/plain' };
-const chaiHttp = require('chai-http');
-
-chai.use(chaiHttp);
-var agent = chai.request.agent(base)
 
 suite('Server Init', () => {
     test('should return 200', done => {

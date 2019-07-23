@@ -10,7 +10,10 @@ io.on('connection', socket => {
 
     socket.on('addFriend', msg => {
         UserModel.findOne({ uid: msg.friend.uid }).then(doc => {
+            if(!doc)
+                return console.log("uid doesn't exist");
             doc.friendInvitations.push(msg.user)
+            doc.markModified('friendInvitations')
             doc.save();
         })
         //the user is online

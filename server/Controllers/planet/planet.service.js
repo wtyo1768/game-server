@@ -59,7 +59,6 @@ exports.ConstructBuilding = function (req, res) {
 exports.DeconstructBuilding = async function (req, res) {
     PlanetModel.findById(req.params.pid)
         .then(planet => {
-            console.log(req.body)
             planet.buildingMap.splice(req.body.index, 1)
             planet.markModified(`buildingMap`)
             planet.population = req.body.population
@@ -72,7 +71,7 @@ exports.DeconstructBuilding = async function (req, res) {
         .catch(err => res.send(err))
 }
 
-exports.haveBuiltBuilding = async function (req, res) {
+exports.ConstructionCompleted = async function (req, res) {
     PlanetModel.findById(req.params.pid)
         .then(planet => {
             planet.buildingMap[req.body.index].status = 'done'
