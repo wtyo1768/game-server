@@ -1,11 +1,12 @@
 const chai = require('chai');
 const expect = chai.expect;
-const agent = require('./login.test')
-
+const agent = require('../auth/login.test')
 suite('#SearchFriend', () => {
+   
     // who have Ability to friend
-    let uid = 60836187;
     test('find User By uid (200', done => {
+         const data = require('./user.service');
+    console.log(data)
         agent.get(`/user/search/${uid}`)
             .end((err, res) => {
                 expect(res).to.have.status(200);
@@ -37,7 +38,7 @@ suite('getFriends', () => {
             .end((err, res) => {
                 expect(res).to.have.status(200);
                 let resdata = JSON.parse(res.text);
-                console.log(            resdata)
+                console.log(resdata)
                 expect(resdata).to.be.an('array');
                 done();
             })
@@ -50,7 +51,7 @@ suite('friendInvitations', () => {
             .end((err, res) => {
                 expect(res).to.have.status(200);
                 let resdata = JSON.parse(res.text);
-                console.log(            resdata)
+                console.log(resdata)
                 expect(resdata).to.be.an('array');
                 done();
             })

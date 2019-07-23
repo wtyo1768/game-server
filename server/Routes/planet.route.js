@@ -16,7 +16,7 @@ router.patch('/:pid/scale', PlanetController.expandScale)
 router.route('/:pid/building')
     .post(PlanetController.ConstructBuilding)
 
-    .patch(PlanetController.haveBuiltBuilding)
+    .patch(PlanetController.ConstructionCompleted)
 
     .delete(PlanetController.DeconstructBuilding)
 
