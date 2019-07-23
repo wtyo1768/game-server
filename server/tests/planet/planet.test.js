@@ -29,26 +29,6 @@ suite('Planet', () => {
                 done(err)
             })
     })
-    test('delete Building', done => {
-        agent.delete(`/planet/${pid}/building`)
-            .send({
-                population: {
-                    max: 1,
-                    amount: 1,
-                    growth: 1
-                },
-                value: {
-                    power: 1,
-                    food: 1,
-                    entertainment: 1
-                }
-            })
-            .end((err, res) => {
-                console.log(res.body)
-                expect(res).have.status(200)
-                done(err)
-            })
-    })
     test('patch Building', done => {
         agent.patch(`/planet/${pid}/building`)
             .send({
@@ -61,6 +41,26 @@ suite('Planet', () => {
                     power: 2,
                     food: 2,
                     entertainment: 2
+                }
+            })
+            .end((err, res) => {
+                console.log(res.body)
+                expect(res).have.status(200)
+                done(err)
+            })
+    })
+    test('delete Building', done => {
+        agent.delete(`/planet/${pid}/building`)
+            .send({
+                population: {
+                    max: 1,
+                    amount: 1,
+                    growth: 1
+                },
+                value: {
+                    power: 1,
+                    food: 1,
+                    entertainment: 1
                 }
             })
             .end((err, res) => {
