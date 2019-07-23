@@ -57,27 +57,32 @@ exports.ConstructBuilding = function (req, res) {
 }
 
 exports.DeconstructBuilding = async function (req, res) {
-
     PlanetModel.findById(req.params.pid)
         .then(planet => {
             planet.buildingMap.splice(req.body.index, 1)
             planet.markModified(`buildingMap`)
-            planet.update({population: req.body.population})
-            planet.update({value: req.body.value})
+            planet.population = req.body.population
+            planet.value = req.body.value
+            planet.markModified(`value`)
+            // planet.update({population: req.body.population})
+            // planet.update({value: req.body.value})
             planet.save().then((planet) => res.send(planet))
         })
         .catch(err => res.send(err))
 }
 
-exports.haveBuiltBuilding = async function (req, res) {
-
+exports.ConstructionCompleted = async function (req, res) {
     PlanetModel.findById(req.params.pid)
         .then(planet => {
             planet.buildingMap[req.body.index].status = 'done'
             planet.markModified(`buildingMap`)
-            planet.update({population: req.body.population})
-            planet.update({value: req.body.value})
+            planet.population = req.body.population
+            planet.value = req.body.value
+            planet.markModified(`value`)
+            // planet.update({population: req.body.population})
+            // planet.update({value: req.body.value})
             planet.save().then((planet) => res.send(planet))
+            console.log(`haveBuilding ${req.params}`)
         })
         .catch(err => res.send(err))
 }
