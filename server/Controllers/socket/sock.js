@@ -22,12 +22,12 @@ io.on('connection', socket => {
             }).catch(err => {
                 logger.error(err)
                 if (UsersID[msg.friend.uid])
-                    socket.to(UsersID[msg.friend.uid]).emit('getAllFriendInvitations', err)
+                    socket.to(UsersID[msg.friend.uid]).emit('serverError', 'Server Error')
             })
         }).catch(err => {
             logger.error(err)
             if (UsersID[msg.friend.uid])
-                socket.to(UsersID[msg.friend.uid]).emit('getAllFriendInvitations', 'Server Error')
+                socket.to(UsersID[msg.friend.uid]).emit('serverError', 'Server Error')
         })
     })
 
@@ -45,13 +45,13 @@ io.on('connection', socket => {
             }).catch(err => {
                 logger.error(err)
                 if (UsersID[msg.friend.uid]) {
-                    socket.to(UsersID[msg.friend.uid]).emit('getFriends', 'Server Error')
+                    socket.to(UsersID[msg.friend.uid]).emit('serverError', 'Server Error')
                 }
             })
         }).catch(err => {
             logger.error(err)
             if (UsersID[msg.friend.uid]) {
-                socket.to(UsersID[msg.friend.uid]).emit('getFriends', 'Server Error')
+                socket.to(UsersID[msg.friend.uid]).emit('serverError', 'Server Error')
             }
         })
     })
