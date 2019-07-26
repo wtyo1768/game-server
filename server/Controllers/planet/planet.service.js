@@ -58,12 +58,16 @@ exports.ConstructBuilding = function (req, res) {
 
 exports.DeconstructBuilding = async function (req, res) {
     PlanetModel.findById(req.params.pid)
-        .then(planet => {
+        .then(async planet => {
             planet.buildingMap.splice(req.body.index, 1)
             planet.markModified(`buildingMap`)
             planet.population = req.body.population
             planet.value = req.body.value
             planet.markModified(`value`)
+            let doc = await UserModel.findById(req.user._id);
+            doc.resourceMax = req.body.resourceMax;
+            doc.resources = req.body.resources;
+            doc.save();
             planet.save().then((planet) => res.send(planet))
         })
         .catch(err => res.send(err))
@@ -71,12 +75,16 @@ exports.DeconstructBuilding = async function (req, res) {
 
 exports.ConstructionCompleted = async function (req, res) {
     PlanetModel.findById(req.params.pid)
-        .then(planet => {
+        .then(async planet => {
             planet.buildingMap[req.body.index].status = 'done'
             planet.markModified(`buildingMap`)
             planet.population = req.body.population
             planet.value = req.body.value
             planet.markModified(`value`)
+            let doc = await UserModel.findById(req.user._id);
+            doc.resourceMax = req.body.resourceMax;
+            doc.resources = req.body.resources;
+            doc.save();
             planet.save().then((planet) => res.send(planet))
         })
         .catch(err => res.send(err))
