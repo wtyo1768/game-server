@@ -13,5 +13,4 @@ run unit test:
   only:
     - master
   script:
-    - npm run start:dev
-    - npm run test
+    - npm run start:dev && npm run test
