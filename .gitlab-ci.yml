@@ -1,0 +1,17 @@
+stages:
+  - unit-test
+
+image: node:12.7.0-alpine
+
+run unit test:
+  before_script:
+    - npm install
+  stage: unit-test
+  cache:
+    untracked: true
+    policy: pull
+  only:
+    - master
+  script:
+    - npm run start:dev
+    - npm run test
