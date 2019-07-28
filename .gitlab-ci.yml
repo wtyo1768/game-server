@@ -6,7 +6,8 @@ image: node:12.7.0-alpine
 
 run test server:
   before_script:
-    - npm install
+    - npm i -D
+    - docker build -t nodeserver ./server 
   stage: start server 
   cache:
     untracked: true
@@ -14,8 +15,7 @@ run test server:
   only:
     - master
   script:
-    - npm run start:dev
-
+    - docker run --name nodeserver --rm -p 3000:3000 nodeserver
 
 run unit test:
   stage: unit-test
@@ -25,4 +25,4 @@ run unit test:
   only:
     - master
   script:
-    - npm run test
+    - npm run production-test
