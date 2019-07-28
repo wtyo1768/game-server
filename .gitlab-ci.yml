@@ -6,12 +6,10 @@ image: gitlab/dind
 
 services:
   - docker:dind
-  - node:12.7.0-alpine
 
 run test server:
-
   before_script:
-    - docker build -d -t nodeserver ./server 
+    - docker build -t nodeserver ./server 
 
   stage: start server 
 
@@ -23,9 +21,10 @@ run test server:
     - master
 
   script:
-    - docker run --name nodeserver --rm -p 3000:3000 nodeserver
+    - docker run -d --name nodeserver --rm -p 3000:3000 nodeserver
 
 run unit test:
+  image : node:12.7.0-alpine
 
   before_script:
     - npm i -D
