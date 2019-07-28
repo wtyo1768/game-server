@@ -6,27 +6,38 @@ image: gitlab/dind
 
 services:
   - docker:dind
+  - node:12.7.0-alpine
 
 run test server:
 
   before_script:
-    - npm i -D
     - docker build -d -t nodeserver ./server 
+
   stage: start server 
+
   cache:
     untracked: true
     policy: pull
+
   only:
     - master
+
   script:
     - docker run --name nodeserver --rm -p 3000:3000 nodeserver
 
 run unit test:
+
+  before_script:
+    - npm i -D
+
   stage: unit-test
+
   cache:
     untracked: true
     policy: pull
+
   only:
     - master
+
   script:
     - npm run production-test
