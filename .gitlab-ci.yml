@@ -21,7 +21,7 @@ run test server:
     - master
 
   script:
-    - sudo docker run -d --name nodeserver -p 3000:3000 nodeserver
+    - docker run -d --name nodeserver -p 3000:3000 nodeserver
 
 run unit test:
   image : node:12.7.0-alpine
