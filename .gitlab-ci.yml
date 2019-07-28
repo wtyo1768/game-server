@@ -2,10 +2,7 @@ stages:
   - start server
   - unit-test
 
-image: gitlab/dind
-
-services:
-  - docker:dind
+image: gitlab/gitlab-ee:latest
 
 run test server:
   before_script:
