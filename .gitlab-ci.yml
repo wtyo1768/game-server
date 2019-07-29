@@ -1,0 +1,45 @@
+stages:
+  - start server
+  - unit-test
+
+image: node:12.7.0-alpine
+# image: docker:git
+
+# services:
+  # - docker:dind
+
+run test server:
+
+  before_script:
+    - npm install 
+    - npm run start:dev & 
+    
+  stage: unit-test
+
+  cache:
+    untracked: true
+    policy: pull
+
+  only:
+    - master
+
+  script:
+    - npm run production-test
+
+# run unit test:
+#   image : node:12.7.0-alpine
+
+#   before_script:
+#     - npm i -D
+
+#   stage: unit-test
+
+#   cache:
+#     untracked: true
+#     policy: pull
+
+#   only:
+#     - master
+
+#   script:
+#     - npm run production-test

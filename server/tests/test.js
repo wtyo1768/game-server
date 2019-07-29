@@ -1,4 +1,3 @@
-console.log('hey')
 
 require('./auth/signup.test');
 
@@ -11,5 +10,3 @@ require('./planet/planet.test');
 // require('./user/friend.test');
 
 // require('./socket/socket.test');
-
-console.log('yo')
