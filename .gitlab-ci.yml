@@ -2,16 +2,17 @@ stages:
   - start server
   - unit-test
 
+image: node:12.7.0-alpine
 # image: docker:git
 
-services:
-  - docker:dind
+# services:
+  # - docker:dind
 
 run test server:
   before_script:
-    - docker build -t nodeserver ./server 
+    - npm install 
 
-  stage: start server 
+  stage: start server
 
   cache:
     untracked: true
@@ -21,7 +22,7 @@ run test server:
     - master
 
   script:
-    - docker run -d --name nodeserver -p 3000:3000 nodeserver
+    - npm run start:dev &
 
 run unit test:
   image : node:12.7.0-alpine
