@@ -18,7 +18,7 @@ suite('Test Init', () => {
             if (mongoose.connection.db.collection('User'))
                 mongoose.connection.db.collection('User').drop(done);
         })
-    })
+    }).timeout(4000)
 
     test('Server Init should return 200', done => {
         request.get(base, (err, res, body) => {
