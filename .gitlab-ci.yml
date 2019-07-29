@@ -1,5 +1,5 @@
 stages:
-  # - start server
+  - start server
   - unit-test
 
 image: node:12.7.0-alpine
@@ -9,9 +9,11 @@ image: node:12.7.0-alpine
   # - docker:dind
 
 run test server:
+
   before_script:
     - npm install 
-
+    - npm run start:dev & 
+    
   stage: unit-test
 
   cache:
@@ -22,9 +24,6 @@ run test server:
     - master
 
   script:
-    - npm run start:dev &
-    
-  after_script:
     - npm run production-test
 
 # run unit test:
