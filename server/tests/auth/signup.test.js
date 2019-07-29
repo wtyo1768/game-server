@@ -10,18 +10,22 @@ mongoose.Promise = global.Promise;
 mongoose.connection.on('error', error => console.warn('Error : ', error));
 
 suite('Test Init', () => {
-    test('should return 200', done => {
-        request.get(base, (err, res, body) => {
-            return new Promise((res, rej) => {
-                !mongoose.connection.db ?
-                    res(mongoose.connect(url, { useNewUrlParser: true, })) : res();
-            }).then(val => {
-                expect(res.statusCode).to.equal(200);
-                if (mongoose.connection.db.collection('User'))
-                    mongoose.connection.db.collection('User').drop(done);
-            })
+    test('DB init', done => {
+        new Promise((res, rej) => {
+            !mongoose.connection.db ?
+                res(mongoose.connect(url, { useNewUrlParser: true, })) : res();
+        }).then(val => {
+            if (mongoose.connection.db.collection('User'))
+                mongoose.connection.db.collection('User').drop(done);
         })
     })
+
+    test('Server Init should return 200', done => {
+        request.get(base, (err, res, body) => {
+            expect(res.statusCode).to.equal(200);
+            done();
+        })
+    }).timeout(4000)
 })
 suite('Register', () => {
     const form = {
