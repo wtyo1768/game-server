@@ -23,6 +23,8 @@ run test server:
 
   script:
     - npm run start:dev &
+    
+  after_script:
     - npm run production-test
 
 # run unit test:
