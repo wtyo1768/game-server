@@ -1,5 +1,5 @@
 stages:
-  - start server
+  # - start server
   - unit-test
 
 image: node:12.7.0-alpine
@@ -12,24 +12,6 @@ run test server:
   before_script:
     - npm install 
 
-  stage: start server
-
-  cache:
-    untracked: true
-    policy: pull
-
-  only:
-    - master
-
-  script:
-    - npm run start:dev &
-
-run unit test:
-  image : node:12.7.0-alpine
-
-  before_script:
-    - npm i -D
-
   stage: unit-test
 
   cache:
@@ -40,4 +22,23 @@ run unit test:
     - master
 
   script:
+    - npm run start:dev &
     - npm run production-test
+
+# run unit test:
+#   image : node:12.7.0-alpine
+
+#   before_script:
+#     - npm i -D
+
+#   stage: unit-test
+
+#   cache:
+#     untracked: true
+#     policy: pull
+
+#   only:
+#     - master
+
+#   script:
+#     - npm run production-test
