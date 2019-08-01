@@ -18,8 +18,8 @@ var UserSchema = new mongoose.Schema({
     // coin: { type: Number, default: 6000 },
     // coinMax: { type: Number, default: 10000 },
     coin: {
-        amount: {type: Number, default: 0},
-        max: {type: Number, default: 0},
+        amount: {type: Number, default: 6000},
+        max: {type: Number, default: 10000},
         production: {type: Number, default: 0}
     },
 

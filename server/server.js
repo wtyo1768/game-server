@@ -1,18 +1,19 @@
-const express = require('express')
+const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 const port = process.env.PORT || process.argv[2] || 3000;
-const url = `mongodb+srv://wtyo1768:s124930654@kyronus-dihrd.mongodb.net/test?retryWrites=true`;
-const http = require('http')
-const server = http.createServer(app);
+const http = require('http');
+const server = http.createServer(app); 
+const db = (process.env.NODE_ENV.trim() == "development") ? "yo" : "test";
+const url = `mongodb+srv://wtyo1768:s124930654@kyronus-dihrd.mongodb.net/${db}?retryWrites=trueb`;
 
 global.io = require('socket.io').listen(server);
 
-mongoose.connect(url, { useNewUrlParser: true, }).catch( err => logger.error(err))
+mongoose.connect(url, { useNewUrlParser: true, }).catch(err => logger.error(err))
 
 mongoose.Promise = global.Promise;
 
-server.listen(port, () => logger.info(`New App listening on port ${port} ${process.env.NODE_ENV} `));
+server.listen(port, () => logger.info(`New App listening on port ${port} in ${process.env.NODE_ENV} `));
 
 app.use(express.static(__dirname + '/public'));
 

@@ -61,13 +61,16 @@ suite('Planet', () => {
     test('patch Building', done => {
         agent.patch(`/planet/${pid}/building`)
             .send({
-                index : 0 ,
+                index: 0,
+                resourceMax: 870,
+                resources: [{ type: "FUCK" }],
+
                 population: {
                     max: 2400000,
                     amount: 2342,
                     growth: 252
                 },
-                value : {
+                value: {
                     power: 22,
                     food: 22,
                     entertainment: 221
