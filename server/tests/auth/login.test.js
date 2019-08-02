@@ -18,7 +18,7 @@ const form = [
         "username": "!@#$%",
         "password": "111111"
     }
-] 
+]
 
 suite('login', () => {
     test('should return 200 Success', done => {
@@ -30,22 +30,36 @@ suite('login', () => {
             })
     })
 
-    //帳號或密碼錯誤
-    test('should return 401 Invaild password or account', done => {
-        request.post(base+'/user/login',(err,res,body)=>{
-            expect(res.statusCode).to.equal(401)
-            done();
-        }).form(form[1]);
+
+    test('second', done => {
+        agent.get('/user')
+            .then(res => Promise.resolve(res.body))
+            .then(value => {
+                console.log(value.uid)
+                agent.get(`/user/search/${value.uid}`)
+                    .then(res => {
+                        console.log(res.status)
+                        done();
+                    })
+            })
     })
 
-     //帳號不存在
-     test('should return 404 Not found', done => {
-        request.post(base+'/user/login',(err,res,body)=>{
-            expect(res.statusCode).to.equal(404)
-            console.log(res.statusCode)
-            done();
-        }).form(form[2]);
-    })
+    //帳號或密碼錯誤
+    //     test('should return 401 Invaild password or account', done => {
+    //         request.post(base + '/user/login', (err, res, body) => {
+    //             expect(res.statusCode).to.equal(401)
+    //             done();
+    //         }).form(form[1]);
+    //     })
+
+    //     //帳號不存在
+    //     test('should return 404 Not found', done => {
+    //         request.post(base + '/user/login', (err, res, body) => {
+    //             expect(res.statusCode).to.equal(404)
+    //             console.log(res.statusCode)
+    //             done();
+    //         }).form(form[2]);
+    //     })
 })
 
 module.exports = agent;

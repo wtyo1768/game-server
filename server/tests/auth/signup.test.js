@@ -15,10 +15,9 @@ suite('Test Init', () => {
             !mongoose.connection.db ?
                 res(mongoose.connect(url, { useNewUrlParser: true, })) : res();
         }).then(val => {
-            if (mongoose.connection.db.collection('User'))
-                mongoose.connection.db.collection('User').drop(done);
-        })
-    }).timeout(4000)
+                mongoose.connection.db.collection('User').drop(done)
+        }).catch(err => null)
+    }).timeout(5000)
 
     test('Server Init should return 200', done => {
         request.get(base, (err, res, body) => {
