@@ -4,7 +4,7 @@ const array = require('lodash/array');
 
 exports.findUserByUid = async (req, res) => {
     const doc = await UserModel.findOne({ uid: req.params.uid });
-    if (doc) {
+    if (doc && doc.planets[0]) {
         const Pdoc = await PlanetModel.findById(doc.planets[0].pid)
         // return -1 if not found
         const haveC3building = array.findIndex(Pdoc.buildingMap, ["id", "c3"]);
