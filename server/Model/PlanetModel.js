@@ -63,6 +63,17 @@ var PlanetSchema = new mongoose.Schema({
                 "row": 1,
                 "column": 2
             }
+        }, {
+            "id": "m0",
+            "name": "government",
+            "coordinateX": 3,
+            "coordinateY": 1,
+            "status": "done",
+            "finishTime": Date.now(),
+            "grid": {
+                "row": 1,
+                "column": 2
+            }
         }]
     },
     value: {
