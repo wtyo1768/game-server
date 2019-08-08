@@ -17,8 +17,11 @@ var PlanetSchema = new mongoose.Schema({
         {
             "commonBuilding": {
                 "c0": true,
+                "c1": true
             },
-            "militaryBuilding" : {},
+            "militaryBuilding" : {
+                "m0": true
+            },
             "economicBuilding" : {},
             "specialBuilding" : {
                 "special" : {},
@@ -31,14 +34,36 @@ var PlanetSchema = new mongoose.Schema({
             "id": "k0",
             "name": "stonePortal",
             "coordinateX": 0,
-            "coordinateY": 0,
+            "coordinateY": 2,
             "status": "done",
             "finishTime": Date.now(),
             "grid": {
                 "row": 1,
                 "column": 1
             }
-        },]
+        }, {
+            "id": "c0",
+            "name": "researchCenter",
+            "coordinateX": 1,
+            "coordinateY": 1,
+            "status": "done",
+            "finishTime": Date.now(),
+            "grid": {
+                "row": 2,
+                "column": 2
+            }
+        }, {
+            "id": "c1",
+            "name": "resourceTransfer",
+            "coordinateX": 2,
+            "coordinateY": 1,
+            "status": "done",
+            "finishTime": Date.now(),
+            "grid": {
+                "row": 1,
+                "column": 2
+            }
+        }]
     },
     value: {
         power: { type:  Number, default: 0},
