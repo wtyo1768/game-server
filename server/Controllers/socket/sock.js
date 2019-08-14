@@ -63,8 +63,9 @@ io.on('connection', socket => {
             const uid = _.findKey(UsersID, ele => ele == socket.id);
             const doc = await UserModel.findOne({ uid: uid })
             doc.lastLogoutTime = Date.now();
-            doc.save();
             doc.coin = msg.coin;
+            doc.markModified('coin')
+            doc.save();
             const Pdoc = await PlanetModel.findById(doc.planets[0].pid)
             Pdoc.value = msg.value;
             Pdoc.population = msg.population;
