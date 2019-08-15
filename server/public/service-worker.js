@@ -1,4 +1,4 @@
-importScripts("/precache-manifest.94655da09f08655eeb7c1a61614cf376.js", "https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
+importScripts("/precache-manifest.f8ff203ff78ea38c9e1ad4479e1ae6f6.js", "https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 workbox.core.setCacheNameDetails({ prefix: 'kyronus' })
 
@@ -6,7 +6,7 @@ self.__precacheManifest = [].concat(self.__precacheManifest || [])
 workbox.precaching.suppressWarnings()
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {})
 
-self.addEventListener('install', function(event) {
+self.addEventListener('install', function (event) {
   console.log('[PWA] Installing service worker')
   self.skipWaiting()
 })
@@ -27,7 +27,6 @@ self.addEventListener('activate', event => {
   )
 })
 
-
 workbox.routing.registerRoute(
   /\.(?:js|css)$/,
   new workbox.strategies.StaleWhileRevalidate()
@@ -45,3 +44,4 @@ workbox.routing.registerRoute(
     ]
   })
 )
+

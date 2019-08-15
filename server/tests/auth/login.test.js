@@ -30,20 +30,6 @@ suite('login', () => {
             })
     })
 
-
-    test('second', done => {
-        agent.get('/user')
-            .then(res => Promise.resolve(res.body))
-            .then(value => {
-                console.log(value.uid)
-                agent.get(`/user/search/${value.uid}`)
-                    .then(res => {
-                        console.log(res.status)
-                        done();
-                    })
-            })
-    })
-
     //帳號或密碼錯誤
     //     test('should return 401 Invaild password or account', done => {
     //         request.post(base + '/user/login', (err, res, body) => {
