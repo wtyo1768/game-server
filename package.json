@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "mocha server/tests/test.js -w --ui tdd",
-    "production-test" : "mocha server/tests/test.js --ui tdd --exit --forbid-only",
+    "production-test": "mocha server/tests/test.js --ui tdd --exit --forbid-only",
     "start": "cross-env NODE_ENV=production node server/server.js",
     "start:dev": "cross-env NODE_ENV=development nodemon server/server.js"
   },

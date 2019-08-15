@@ -7,6 +7,6 @@ require('./auth/login.test');
 
 // require('./planet/planet.test');
 
-// require('./user/friend.test');
+require('./user/friend.test');
 
 // require('./socket/socket.test');
