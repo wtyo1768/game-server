@@ -4,6 +4,7 @@ const request = require('request').defaults({ jar: true });
 const base = 'http://localhost:3000';
 chai.use(require('chai-http'));
 const agent = chai.request.agent(base)
+const agent2 = chai.request.agent(base)
 const form = [
     {
         "email": "test@123",
@@ -17,6 +18,10 @@ const form = [
         "email": "dosent_exist@gmail.com",
         "username": "!@#$%",
         "password": "111111"
+    }, {
+        "email": "test2@123",
+        "username": "azoo",
+        "password": "123456"
     }
 ]
 
@@ -24,6 +29,11 @@ suite('login', () => {
     test('should return 200 Success', done => {
         agent.post('/user/login')
             .send(form[0])
+            .end((err, res) => {
+                expect(res).to.have.status(200);
+            })
+        agent2.post('/user/login')
+            .send(form[3])
             .end((err, res) => {
                 expect(res).to.have.status(200);
                 done()
@@ -48,4 +58,9 @@ suite('login', () => {
     //     })
 })
 
-module.exports = agent;
+// module.exports = {
+//     agent: agent,
+//     agent2: agent2
+// }
+
+module.exports = [agent, agent2]

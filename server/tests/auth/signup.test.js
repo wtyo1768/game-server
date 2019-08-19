@@ -15,7 +15,11 @@ suite('Test Init', () => {
             !mongoose.connection.db ?
                 res(mongoose.connect(url, { useNewUrlParser: true, })) : res();
         }).then(val => {
-                mongoose.connection.db.collection('User').drop(done)
+                mongoose.connection.db.collection('Planet').remove({"owner":{$nin:["ky@ky"]}})
+                mongoose.connection.db.collection('User').remove({"email":{$nin:["ky@ky"]}})
+                done()
+                // mongoose.connection.db.collection('Planet').drop()
+                // mongoose.connection.db.collection('User').drop(done)
         }).catch(err => null)
     }).timeout(5000)
 
@@ -32,7 +36,19 @@ suite('Register', () => {
         "username": "yo",
         "password": "123456"
     };
+    const form2 = {
+        "email": "test2@123",
+        "username": "azoo",
+        "password": "123456"
+    }
+    const form3 = {
+        "email": "ky@ky",
+        "username": "usability-testing",
+        "password": "123456"
+    }
     test('should return 201 created', done => {
+        // request.post({ url: base + '/user/register', headers }).form(form3)
+        request.post({ url: base + '/user/register', headers }).form(form2)
         request.post({ url: base + '/user/register', headers }, (err, res, body) => {
             expect(res.statusCode).to.equal(201)
             done();
