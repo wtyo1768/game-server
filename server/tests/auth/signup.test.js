@@ -9,6 +9,12 @@ const url = `mongodb+srv://wtyo1768:s124930654@kyronus-dihrd.mongodb.net/yo?retr
 mongoose.Promise = global.Promise;
 mongoose.connection.on('error', error => console.warn('Error : ', error));
 
+suite('Init' , () => { 
+    test('Waiting for Server Start' , done => {
+        setTimeout(done,2000);
+    })
+})
+
 suite('Test Init', () => {
     test('DB init', done => {
         new Promise((res, rej) => {
