@@ -12,7 +12,7 @@ mongoose.connection.on('error', error => console.warn('Error : ', error));
 suite('Init' , () => { 
     test('Waiting for Server Start' , done => {
         setTimeout(done,2000);
-    })
+    }).timeout(3000);
 })
 
 suite('Test Init', () => {
