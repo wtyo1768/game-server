@@ -21,11 +21,11 @@ suite('Test Init', () => {
             !mongoose.connection.db ?
                 res(mongoose.connect(url, { useNewUrlParser: true, })) : res();
         }).then(val => {
-                mongoose.connection.db.collection('Planet').remove({"owner":{$nin:["ky@ky"]}})
-                mongoose.connection.db.collection('User').remove({"email":{$nin:["ky@ky"]}})
-                done()
-                // mongoose.connection.db.collection('Planet').drop()
-                // mongoose.connection.db.collection('User').drop(done)
+                // mongoose.connection.db.collection('Planet').remove({"owner":{$nin:["ky@ky"]}})
+                // mongoose.connection.db.collection('User').remove({"email":{$nin:["ky@ky"]}})
+                // done()
+                mongoose.connection.db.collection('Planet').drop()
+                mongoose.connection.db.collection('User').drop(done)
         }).catch(err => null)
     }).timeout(5000)
 
