@@ -27,4 +27,6 @@ app.use('/planet', require('./Routes/planet.route'));
 
 app.use('/map', require('./Routes/map.route'));
 
+app.use('/*' , (req,res) => res.send('Worth Path'))
+
 require('./Controllers/socket/sock');
