@@ -118,3 +118,29 @@ exports.CoolDownofColleting = function (req, res) {
         })
         .catch(err => res.status(500).end());
 }
+
+exports.completeMainStory = function (req, res) {
+    const data = req.body.currentChapter
+    UserModel.findById(req.user._id)
+    .then(doc => {
+        doc.mainStory.currentChapter = data
+        doc.mainStory.watchedStory = false
+        doc.save()
+        res.end()
+    })
+    .catch(err => {
+        res.status(400).end()
+    })
+}
+
+exports.watchedMainStory = function (req, res) {
+    UserModel.findById(req.user._id)
+    .then(doc => {
+        doc.mainStory.watchedStory = true
+        doc.save()
+        res.end()
+    })
+    .catch(err => {
+        res.status(400).end()
+    })
+}
