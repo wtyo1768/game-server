@@ -32,12 +32,12 @@ suite('Register', () => {
             expect(res.statusCode).to.equal(201)
             done();
         }).form(form);
-    })
+    }).timedOut(3000)
     test('should return 406 duplicate account', done => {
         request.post({ url: base + '/user/register', headers }, (err, res, body) => {
             expect(res.statusCode).to.equal(406)
             done();
         }).form(form);
-    })
+    }).timedOut(3000)
 })
 
