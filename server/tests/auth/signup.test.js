@@ -5,6 +5,11 @@ const base = 'http://localhost:3000';
 const headers = { 'Content-Type': 'text/plain' };
 
 suite('Register', () => {
+
+    suiteSetup(function(done){
+        setTimeout(done , 1000);
+    })
+
     const form = {
         "email": "test@123",
         "username": "yo",

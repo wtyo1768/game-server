@@ -9,8 +9,7 @@ exports.newPlanet = (req, res) => {
         .then(doc => {
             doc.planets.push({ pid: Planet._id, state: true });
             doc.markModified('planets');
-            doc.save();
-            res.status(201).send(Planet);
+            doc.save().then(() => res.status(201).send(Planet))
         })
         .catch(err => {
             logger.error(err);
