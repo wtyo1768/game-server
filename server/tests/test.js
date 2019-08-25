@@ -25,7 +25,7 @@ suite('Test Init', () => {
                 // done()
                 mongoose.connection.db.collection('Planet').drop()
                 mongoose.connection.db.collection('User').drop(done)
-        }).catch(err => null)
+        }).catch(err => console.error(err))
     }).timeout(5000)
 
     test('Server Init should return 200', done => {
