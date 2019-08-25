@@ -22,6 +22,10 @@ router.patch('/diamond', UserController.spendDiamond);
 
 router.patch('/resources', UserController.ConsumeResource);
 
+router.patch('/mainStory/complete', UserController.completeMainStory)
+
+router.patch('/mainStory/watched', UserController.watchedMainStory)
+
 router.post('/coolDownGrid', UserController.CoolDownofColleting);
 
 router.get('/search/:uid', FriendController.findUserByUid);
