@@ -23,8 +23,9 @@ run test server:
     - npm run production-test
 
 run deploy:
-
   stage : deploy
+  before_script : 
+    - sudo apt-get install git
   script: git push production HEAD:master
   environment:
     name: kyronus-env
