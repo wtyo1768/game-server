@@ -1,5 +1,6 @@
 stages:
   - unit-test
+  - deploy
 
 image: node:12.7.0-alpine
 
@@ -20,3 +21,10 @@ run test server:
 
   script:
     - npm run production-test
+
+run deploy:
+
+  stage : deploy
+  script: git push production HEAD:master
+  environment:
+    name: kyronus-env
