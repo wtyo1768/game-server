@@ -30,7 +30,7 @@ run deploy:
   before_script :
     - apk add --no-cache git
   script: 
-    - echo DEPLOY
+    - helm --help
   environment:
     name: kyronus-env
     url: https://citychaserstudio.com
