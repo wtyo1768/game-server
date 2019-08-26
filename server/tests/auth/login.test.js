@@ -1,10 +1,9 @@
 const chai = require('chai');
 const expect = chai.expect;
-const request = require('request').defaults({ jar: true });
 const base = 'http://localhost:3000';
+
 chai.use(require('chai-http'));
-const agent = chai.request.agent(base)
-const agent2 = chai.request.agent(base)
+const agent,agent2= chai.request.agent(base)
 const form = [
     {
         "email": "test@123",
@@ -57,10 +56,5 @@ suite('login', () => {
     //         }).form(form[2]);
     //     })
 })
-
-// module.exports = {
-//     agent: agent,
-//     agent2: agent2
-// }
 
 module.exports = [agent, agent2]

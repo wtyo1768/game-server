@@ -26,7 +26,7 @@ run deploy:
   image : alpine:3.7
   stage : deploy
   before_script :
-    - apt-get install git
+    - apk add --no-cache git
   script: git push production HEAD:master
   environment:
     name: kyronus-env
