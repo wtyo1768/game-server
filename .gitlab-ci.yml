@@ -24,7 +24,7 @@ run test server:
 
 run deploy:
 
-  image : alpine/git
+  image : docker:dind
   stage : deploy
   script: git push production HEAD:master
   environment:
