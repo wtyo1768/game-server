@@ -53,14 +53,15 @@ suite('Socekt', () => {
             // user: { uid: 60836187, username: 'yo' }
             friend: { uid: uid2, username: 'azoo' },
             user: { uid: uid, username: 'yo' }
-        };
-        client.emit('addFriend', InvitationInfo)
+        }; 
         client2.on('getAllFriendInvitations', msg => {
             console.log('       client2(uid:10000000) : Invitation From : ', msg)
             let eq = _.isEqual(msg , InvitationInfo.user);
             expect(eq).to.equal(true)
             done();
         })
+        client.emit('addFriend', InvitationInfo)
+       
     }).timeout(5000);
 
     test('acceptFriendInvitation', done => {
@@ -69,14 +70,15 @@ suite('Socekt', () => {
             // user: { uid: 10000000, username: 'ImTEST' }
             friend: { uid: uid, username: 'yo' },
             user: { uid: uid2, username: 'azoo' }
-        }
-        client2.emit('acceptFriendInvitation', FriendInfo)
+        }   
         client.on('getFriends', msg => {
             console.log('       This one accept invitation', msg)
             let eq = _.isEqual(msg , FriendInfo.user);
             expect(eq).to.be.equal(true)
             done();
         })
+        client2.emit('acceptFriendInvitation', FriendInfo)
+    
     }).timeout(5000);
 
     test("shutDown" , done =>{
