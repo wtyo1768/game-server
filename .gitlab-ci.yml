@@ -5,6 +5,8 @@ stages:
 image: node:12.7.0-alpine
 
 run test server:
+  cache:
+    untracked : true
 
   before_script:
     - npm install 
@@ -28,7 +30,7 @@ run deploy:
   before_script :
     - apk add --no-cache git
   script: 
-    - deploy  $UAT_NAMESPACE
+    - echo DEPLOY
   environment:
     name: kyronus-env
     url: https://citychaserstudio.com
