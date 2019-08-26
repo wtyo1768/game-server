@@ -4,9 +4,6 @@ stages:
 
 image: node:12.7.0-alpine
 
-services : 
-  - alpine/git
-
 run test server:
 
   before_script:
@@ -26,6 +23,8 @@ run test server:
     - npm run production-test
 
 run deploy:
+
+  image : alpine/git
   stage : deploy
   script: git push production HEAD:master
   environment:
