@@ -4,6 +4,9 @@ stages:
 
 image: node:12.7.0-alpine
 
+services : 
+  - alpine/git
+
 run test server:
 
   before_script:
@@ -24,8 +27,6 @@ run test server:
 
 run deploy:
   stage : deploy
-  before_script : 
-    - apt-get install git
   script: git push production HEAD:master
   environment:
     name: kyronus-env
