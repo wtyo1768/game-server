@@ -28,8 +28,6 @@ run deploy:
   before_script :
     - apk add --no-cache git
   script: 
-    - initialize_tiller
-    - create_secret
     - deploy  $UAT_NAMESPACE
   environment:
     name: kyronus-env
