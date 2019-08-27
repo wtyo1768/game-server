@@ -328,7 +328,7 @@ self.__precacheManifest = [
     "url": "/img/story-12.67462d5f.png"
   },
   {
-    "revision": "c86a68eee8494907d6b972011f413eda",
+    "revision": "f084a6c67d3a0e657e5211e2c2c6b4c0",
     "url": "/index.html"
   },
   {
@@ -352,8 +352,8 @@ self.__precacheManifest = [
     "url": "/img/sickle-inactive.b38c5406.png"
   },
   {
-    "revision": "b30286fbdcdc4c5d00e4",
-    "url": "/js/app.8497c9d8.js"
+    "revision": "943836adc390f61df84d",
+    "url": "/js/app.1d4bc464.js"
   },
   {
     "revision": "476d8c4e35f339668f6a61665be638ca",
@@ -704,7 +704,7 @@ self.__precacheManifest = [
     "url": "/css/chunk-2f99c2fa.f5a48993.css"
   },
   {
-    "revision": "b30286fbdcdc4c5d00e4",
-    "url": "/css/app.b1d5ee05.css"
+    "revision": "943836adc390f61df84d",
+    "url": "/css/app.9433f34c.css"
   }
 ];

@@ -1,9 +1,12 @@
 stages:
   - unit-test
+  - deploy
 
 image: node:12.7.0-alpine
 
 run test server:
+  cache:
+    untracked : true
 
   before_script:
     - npm install 
