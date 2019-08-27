@@ -23,14 +23,3 @@ run test server:
 
   script:
     - npm run production-test
-
-run deploy:
-  image : alpine:3.7
-  stage : deploy
-  before_script :
-    - apk add --no-cache git
-  script: 
-    - helm --help
-  environment:
-    name: kyronus-env
-    url: https://citychaserstudio.com
