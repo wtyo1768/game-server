@@ -9,6 +9,13 @@ pipeline {
         stage('Build') { 
             steps {
                 sh 'npm install' 
+                sh 'ls'
+            }
+        }
+        stage('Deploy'){
+            steps {
+                sh 'echo Deploy'
+                
             }
         }
     }
