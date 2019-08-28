@@ -46,10 +46,10 @@ var UserSchema = new mongoose.Schema({
     collectAbility: { type: Number, default: 100 },
     collectWeights: {
         type: Types.Mixed, default: [
-            { type: '木頭', weights: 1 },
-            { type: '石頭', weights: 0.8 },
-            { type: '鋼鐵', weights: 0.5 },
-            { type: '銅礦', weights: 0.2 }
+            { type: '木頭', weights: 1.05 },
+            { type: '石頭', weights: 0.85 },
+            { type: '鋼鐵', weights: 0.68 },
+            { type: '銅礦', weights: 0.42 }
         ]
     },
     collectorMax: { type: Number, default: 2 },
