@@ -15,10 +15,16 @@ router.post('/login', passport.authenticate('local', { session: false }), requir
 
 router.get('/google', passport.authenticate('google', { session: false, scope: ['profile', 'email'] }));
 
-router.get('/Auth', passport.authenticate('google', { session: false }), require('../Controllers/user/login'))
+router.get('/Auth', passport.authenticate('google', {
+	session: false,
+	failureRedirect: 'http://localhost:8080/#/login'
+}), require('../Controllers/user/thirdPartyLogin'))
 
 router.get('/facebook', passport.authenticate('facebook', { session: false}));
 
-router.get('/facebook/cb', passport.authenticate('facebook', { session: false}), require('../Controllers/user/login'));
+router.get('/facebook/cb', passport.authenticate('facebook', {
+	session: false,
+	failureRedirect: 'http://localhost:8080/#/login'
+}), require('../Controllers/user/thirdPartyLogin'));
 
 module.exports = router;

@@ -11,7 +11,7 @@ var UserSchema = new mongoose.Schema({
     email: { type: String, required: true },
     //isverified : {type:Boolean , default :false},
     password: { type: String, required: true },
-    lastLogoutTime: { type: Date },
+    lastLogoutTime: { type: Date, default: Date.now() },
 
     username: { type: String, default: "郭家銘" },
     nickname: { type: String, default: this.username },
