@@ -17,16 +17,16 @@ server.listen(port, () => logger.info(`New App listening on port ${port} in ${pr
 
 // app.use(express.static(__dirname + '/public'));
 
-app.use(require('./Routes/global.route'));
+app.use('/api', require('./Routes/global.route'));
 
-app.use('/user', require('./Routes/signup.route'));
+app.use('/api/user', require('./Routes/signup.route'));
 
-app.use('/user', require('./Routes/user.route'));
+app.use('/api/user', require('./Routes/user.route'));
 
-app.use('/planet', require('./Routes/planet.route'));
+app.use('/api/planet', require('./Routes/planet.route'));
 
-app.use('/map', require('./Routes/map.route'));
+app.use('/api/map', require('./Routes/map.route'));
 
-app.use('/*' , (req,res) => res.send('Worth Path'))
+app.use('/*' , (req,res) => res.send('This is Invaild Path'))
 
 require('./Controllers/socket/sock');
