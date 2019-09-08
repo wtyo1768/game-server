@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const url = `mongodb+srv://wtyo1768:s124930654@kyronus-dihrd.mongodb.net/yo?retryWrites=true`;
 const request = require('request').defaults({ jar: true });
-const base = 'http://localhost:3000';
+const base = 'http://localhost:3000/api';
 const chai = require('chai')
 const expect = chai.expect;
 
@@ -56,4 +56,6 @@ require('./planet/planet.test');
 
 require('./user/friend.test');
 
-require('./socket/socket.test');
+// require('./user/baggage.test');
+
+// require('./socket/socket.test');

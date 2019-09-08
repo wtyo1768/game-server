@@ -18,9 +18,9 @@ var UserSchema = new mongoose.Schema({
     // coin: { type: Number, default: 6000 },
     // coinMax: { type: Number, default: 10000 },
     coin: {
-        amount: {type: Number, default: 6000},
-        max: {type: Number, default: 10000},
-        production: {type: Number, default: 0}
+        amount: { type: Number, default: 6000 },
+        max: { type: Number, default: 10000 },
+        production: { type: Number, default: 0 }
     },
 
     diamond: { type: Number, default: 50 },
@@ -32,7 +32,12 @@ var UserSchema = new mongoose.Schema({
             { type: '墨金屬', amount: 500 }, { type: '鍨金屬', amount: 500 },
             { type: '氦金屬', amount: 500 }, { type: '銝金屬', amount: 500 }],
     },
-    baggage: { type: Array, default: [] },
+    baggage: {  
+            expendables: [{ itemId: Types.ObjectId, id: String, name_zh: String }],
+            sketch: [{ itemId: Types.ObjectId, id: String, name_zh: String }],
+            goods: [{ itemId: Types.ObjectId, id: String, name_zh: String }],
+            default : { expendables : [] , sketch : [] , goods : [] }
+    },
     achievements: {
         type: Types.Mixed, default: [{
             title: '星際拓荒者', brief: '擁有第一個星球', state: true
@@ -59,10 +64,10 @@ var UserSchema = new mongoose.Schema({
     isBeginner: { type: Boolean, default: true },
     currentBeginnerGuideScenes: { type: Number, default: 0 },
     mainStory: {
-        currentChapter: {type: String, default: '1-1'},
-        watchedStory: {type: Boolean, default: false}
+        currentChapter: { type: String, default: '1-1' },
+        watchedStory: { type: Boolean, default: false }
     },
-    
+
     uid: { type: Number },
     friends: { type: Types.Mixed, default: [] },
     friendInvitations: { type: Types.Mixed, default: [] }
@@ -76,7 +81,7 @@ UserSchema.pre('save', async function (next) {
         do {
             let firstNum = Math.ceil(10000000);
             let uid = firstNum + Math.floor(Math.random() * 1000 * 100000);
-            if(uid > 99999999)
+            if (uid > 99999999)
                 uid -= 10000000;
             this.uid = uid;
             logger.info('signUp : ' + this.uid + ' ' + (await UserModel.findOne({ uid: this.uid })))

@@ -4,7 +4,7 @@ const UserModel = require('../../Model/UserModel');
 exports.newPlanet = (req, res) => {
     const PlanetData = { ...req.body, owner: req.user.email };
     const Planet = new PlanetModel(PlanetData);
-    Planet.save()
+    Planet.save();
     UserModel.findById(req.user._id)
         .then(doc => {
             doc.planets.push({ pid: Planet._id, state: true });

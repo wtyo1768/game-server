@@ -27,6 +27,6 @@ app.use('/api/planet', require('./Routes/planet.route'));
 
 app.use('/api/map', require('./Routes/map.route'));
 
-app.use('/*' , (req,res) => res.send('This is Invaild Path'))
+app.use('/*' , (req,res) => res.status(404).send('This is Invaild Path'))
 
 require('./Controllers/socket/sock');

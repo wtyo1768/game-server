@@ -19,15 +19,15 @@ router.use(bodyParser.text());
 router.use(cookieParser());
 router.use(require('../Middleware/logger').LogreqInfo);
 
-router.use(async (req, res, next) => {
-    // logger.info('front')
+router.use(async (req, res, next) => { 
     res.header("Access-Control-Allow-Origin", req.headers.origin || origin)
-    if (req.method == "GET" || req.body == {})
+    if (req.method == "GET" || req.body == {} || req.headers["content-type"] != 'text/plain' )
         return next();
     try {
         req.body = JSON.parse(req.body)
     } catch (error) {
-        // logger.info('---' + error + '----')
+        // logger.info('Global.Route: ' , error);
+        console.log(req.body)
     }
     return next(); 
 })

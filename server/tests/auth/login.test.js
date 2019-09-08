@@ -1,6 +1,6 @@
 const chai = require('chai');
 const expect = chai.expect;
-const base = 'http://localhost:3000';
+const base = 'http://localhost:3000/api';
 chai.use(require('chai-http'));
 const agent = chai.request.agent(base)
 const agent2 = chai.request.agent(base)

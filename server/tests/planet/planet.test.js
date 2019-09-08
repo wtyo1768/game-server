@@ -2,10 +2,9 @@ const expect = require('chai').expect
 const agent = require('../auth/login.test');
 
 suite('Planet', () => {
-    // let pid = '5d35d6bc0074c53a2cf16b82'
     let UserData, pid
 
-    test('New Planet', done =>{
+    test('New Planet', done => {
         agent[0].post('/planet')
             .send({
                 name : "test",

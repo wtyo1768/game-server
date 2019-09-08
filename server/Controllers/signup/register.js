@@ -19,7 +19,6 @@ module.exports = async function (req, res) {
     return searchRes ? res.status(406).end()
         : User.save()
             .then(() => {
-                //require('../auth/email.auth').verifyEmail(UserData);
                 const payload = { _id: User._id };
                 const token = jwt.sign(payload, secret, expire);
                 res.cookie('auth', token, { expires: new Date(Date.now() + 1000 * 3600 * 24 * 7), httpOnly: true })

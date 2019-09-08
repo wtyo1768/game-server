@@ -2,7 +2,6 @@ const chai = require('chai');
 const expect = chai.expect;
 const agent = require('../auth/login.test')
 suite('#SearchFriend', () => {
-//    let uid = 60836187;
     // who have Ability to friend
 
     let UserData
