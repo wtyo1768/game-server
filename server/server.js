@@ -15,8 +15,6 @@ mongoose.Promise = global.Promise;
 
 server.listen(port, () => logger.info(`New App listening on port ${port} in ${process.env.NODE_ENV} `));
 
-// app.use(express.static(__dirname + '/public'));
-
 app.use('/api', require('./Routes/global.route'));
 
 app.use('/api/user', require('./Routes/signup.route'));

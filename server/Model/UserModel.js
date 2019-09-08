@@ -3,6 +3,10 @@ const Types = mongoose.Schema.Types;
 
 mongoose.set('useFindAndModify', false);
 
+var BaggageItem = new mongoose.Schema({
+    itemId: Types.ObjectId, id: String, name_zh: String
+})
+
 var UserSchema = new mongoose.Schema({
 
     facebookID: { type: Number },
@@ -31,12 +35,6 @@ var UserSchema = new mongoose.Schema({
             { type: '鋼鐵', amount: 1000 }, { type: '銅礦', amount: 1000 },
             { type: '墨金屬', amount: 500 }, { type: '鍨金屬', amount: 500 },
             { type: '氦金屬', amount: 500 }, { type: '銝金屬', amount: 500 }],
-    },
-    baggage: {  
-            expendables: [{ itemId: Types.ObjectId, id: String, name_zh: String }],
-            sketch: [{ itemId: Types.ObjectId, id: String, name_zh: String }],
-            goods: [{ itemId: Types.ObjectId, id: String, name_zh: String }],
-            default : { expendables : [] , sketch : [] , goods : [] }
     },
     achievements: {
         type: Types.Mixed, default: [{
@@ -70,15 +68,21 @@ var UserSchema = new mongoose.Schema({
 
     uid: { type: Number },
     friends: { type: Types.Mixed, default: [] },
-    friendInvitations: { type: Types.Mixed, default: [] }
+    friendInvitations: { type: Types.Mixed, default: [] },
+
+    baggage: {
+        expendables: [BaggageItem],
+        sketch: [BaggageItem],
+        goods: [BaggageItem],
+    },
 
 }, { collection: 'User' });
-
 
 UserSchema.pre('save', async function (next) {
     // give him uid when sign up 
     if (this.isModified('password')) {
         do {
+            // Generate a unique UID
             let firstNum = Math.ceil(10000000);
             let uid = firstNum + Math.floor(Math.random() * 1000 * 100000);
             if (uid > 99999999)
@@ -91,5 +95,7 @@ UserSchema.pre('save', async function (next) {
     next()
 })
 
+
 var UserModel = mongoose.models.User || mongoose.model('User', UserSchema);
+
 module.exports = UserModel;
