@@ -83,8 +83,7 @@ exports.spendCoin = function (req, res) {
 }
 exports.spendDiamond = function (req, res) {
     const diamond = req.body.diamond;
-    logger.info(diamond)
-    logger.info('dia')
+    logger.info(`${dia} diamond`)
     UserModel.findByIdAndUpdate(req.user._id, { diamond: diamond })
         .then(() => res.end())
         .catch(() => res.status(400).end());

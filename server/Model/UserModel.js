@@ -13,14 +13,11 @@ var UserSchema = new mongoose.Schema({
     googleID: { type: Number },
 
     email: { type: String, required: true },
-    //isverified : {type:Boolean , default :false},
     password: { type: String, required: true },
     lastLogoutTime: { type: Date, default: Date.now() },
 
     username: { type: String, default: "郭家銘" },
     nickname: { type: String, default: this.username },
-    // coin: { type: Number, default: 6000 },
-    // coinMax: { type: Number, default: 10000 },
     coin: {
         amount: { type: Number, default: 6000 },
         max: { type: Number, default: 10000 },
@@ -92,7 +89,7 @@ UserSchema.pre('save', async function (next) {
             //Already Exist then regenerate one
         } while ((await UserModel.findOne({ uid: this.uid })) != null)
     }
-    next()
+    next();
 })
 
 

@@ -36,6 +36,6 @@ router.get('/friendInvitations' , FriendController.friendInvitations);
 
 router.post('/baggage/:type' ,  BaggageController.saveToBaggage ) ;
 
-
+router.delete('/baggage/:type/:itemId' , BaggageController.useBaggageItem );
 
 module.exports = router;

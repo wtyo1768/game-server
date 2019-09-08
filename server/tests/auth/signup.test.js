@@ -10,11 +10,13 @@ suite('Register', () => {
         "username": "yo",
         "password": "123456"
     };
+
     const form2 = {
         "email": "test2@123",
         "username": "azoo",
         "password": "123456"
     }
+
     test('should return 201 created', done => {
         request.post({ url: base + '/user/register', headers }).form(form2)
         request.post({ url: base + '/user/register', headers }, (err, res, body) => {
@@ -22,11 +24,13 @@ suite('Register', () => {
             done();
         }).form(form);
     }).timeout(5000)
+
     test('should return 406 duplicate account', done => {
         request.post({ url: base + '/user/register', headers }, (err, res, body) => {
-            expect(res.statusCode).to.equal(406)
+            expect(res.statusCode).to.equal(406);
             done();
         }).form(form);
     }).timeout(5000)
+
 })
 
