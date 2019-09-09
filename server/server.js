@@ -5,7 +5,7 @@ const port = process.env.PORT || process.argv[2] || 3000;
 const http = require('http');
 const server = http.createServer(app); 
 const db = (process.env.NODE_ENV.trim() == "development") ? "yo" : "test";
-const url = `mongodb+srv://wtyo1768:s124930654@kyronus-dihrd.mongodb.net/${db}?retryWrites=trueb`;
+const url = `mongodb+srv://wtyo1768:s124930654@kyronus-dihrd.mongodb.net/${db}?retryWrites=true&w=majority`;
 
 global.io = require('socket.io').listen(server);
 
