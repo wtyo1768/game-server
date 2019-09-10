@@ -59,7 +59,7 @@ var UserSchema = new mongoose.Schema({
     isBeginner: { type: Boolean, default: true },
     currentBeginnerGuideScenes: { type: Number, default: 0 },
     mainStory: {
-        currentChapter: { type: String, default: '1-1' },
+        currentChapter: { type: String, default: '1_1' },
         watchedStory: { type: Boolean, default: false }
     },
 
