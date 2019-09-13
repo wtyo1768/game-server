@@ -19,40 +19,43 @@ exports.getPlanetList = async function (req, res) {
 
 }
 
-exports.leaveBeginningMode = (req,res) =>{
+exports.leaveBeginningMode = (req, res) => {
     UserModel.findById(req.user._id)
-    .then(doc=>{
-        doc.isInBeginningStory = false;
-        doc.save();
-        res.end()
-    })
-    .catch(err=>{
-        res.status(400).end();
-    })   
+        .then(doc => {
+            doc.isInBeginningStory = false;
+            doc.save();
+            res.end()
+        })
+        .catch(err => {
+            logger.error(err);
+            res.status(400).end();
+        })
 }
 
-exports.isBeginner = (req,res) =>{
+exports.isBeginner = (req, res) => {
     UserModel.findById(req.user._id)
-    .then(doc=>{
-        doc.isBeginner = false;
-        doc.save();
-        res.end()
-    })
-    .catch(err=>{
-        res.status(400).end();
-    })   
+        .then(doc => {
+            doc.isBeginner = false;
+            doc.save();
+            res.end()
+        })
+        .catch(err => {
+            logger.error(err);
+            res.status(400).end();
+        })
 }
 
 exports.nextScenes = (req, res) => {
     UserModel.findById(req.user._id)
-    .then(doc => {
-        doc.currentBeginnerGuideScenes = req.body.currentScenes
-        doc.save();
-        res.end()
-    })
-    .catch(err => {
-        res.status(400).end();
-    })
+        .then(doc => {
+            doc.currentBeginnerGuideScenes = req.body.currentScenes
+            doc.save();
+            res.end()
+        })
+        .catch(err => {
+            logger.error(err);
+            res.status(400).end();
+        })
 }
 
 exports.ConsumeResource = async function (req, res) {
@@ -71,7 +74,10 @@ exports.ConsumeResource = async function (req, res) {
             doc.markModified('resources')
             doc.save().then(() => res.status(200).end())
         })
-        .catch(err => res.status(500).end())
+        .catch(err => {
+            logger.error(err);
+            res.status(500).end()
+        })
 }
 
 exports.spendCoin = function (req, res) {
@@ -79,14 +85,20 @@ exports.spendCoin = function (req, res) {
     logger.info(money)
     UserModel.findByIdAndUpdate(req.user._id, { coin: money })
         .then(() => res.end())
-        .catch(() => res.status(400).end())
+        .catch(err => {
+            logger.error(err);
+            res.status(400).end()
+        })
 }
 exports.spendDiamond = function (req, res) {
     const diamond = req.body.diamond;
     logger.info(`${diamond} : diamond`);
     UserModel.findByIdAndUpdate(req.user._id, { diamond: diamond })
         .then(() => res.end())
-        .catch(() => res.status(400).end());
+        .catch(err => {
+            logger.error(err);
+            res.status(400).end();
+        });
 }
 
 exports.CoolDownofColleting = function (req, res) {
@@ -115,31 +127,36 @@ exports.CoolDownofColleting = function (req, res) {
             doc.save();
             return res.status(200).end();
         })
-        .catch(err => res.status(500).end());
+        .catch(err => {
+            logger.error(err);
+            res.status(500).end()
+        });
 }
 
 exports.completeMainStory = function (req, res) {
     const data = req.body.currentChapter
     UserModel.findById(req.user._id)
-    .then(doc => {
-        doc.mainStory.currentChapter = data
-        doc.mainStory.watchedStory = false
-        doc.save()
-        res.end()
-    })
-    .catch(err => {
-        res.status(400).end()
-    })
+        .then(doc => {
+            doc.mainStory.currentChapter = data
+            doc.mainStory.watchedStory = false
+            doc.save()
+            res.end()
+        })
+        .catch(err => {
+            logger.error(err);
+            res.status(400).end()
+        })
 }
 
 exports.watchedMainStory = function (req, res) {
     UserModel.findById(req.user._id)
-    .then(doc => {
-        doc.mainStory.watchedStory = true
-        doc.save()
-        res.end()
-    })
-    .catch(err => {
-        res.status(400).end()
-    })
+        .then(doc => {
+            doc.mainStory.watchedStory = true
+            doc.save()
+            res.end()
+        })
+        .catch(err => {
+            logger.error(err);
+            res.status(400).end()
+        })
 }
