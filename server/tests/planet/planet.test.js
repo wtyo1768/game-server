@@ -7,15 +7,15 @@ suite('Planet', () => {
     test('New Planet', done => {
         agent[0].post('/planet')
             .send({
-                name : "test",
-                type : "testyo",
+                name: "test",
+                type: "testyo",
             })
-            .end((err,res) => {
+            .end((err, res) => {
                 expect(res).have.status(201);
                 done(err);
             })
     })
-    
+
     test('Get pid', done => {
         agent[0].get('/user')
             .end((err, res) => {
@@ -89,5 +89,23 @@ suite('Planet', () => {
                 expect(res).have.status(200)
                 done(err)
             })
+    })
+
+    test('move Building', done => {
+        agent[0].patch(`/planet/${pid}/buildingMap/move`)
+            .send({
+                building: {
+                    "id": "test",
+                    "coordinateX": 1,
+                    "coordinateY": 1,
+                },
+                coordinateX: 8,
+                coordinateY: 7
+            })
+            .end((err, res) => {
+                console.log(res.status)
+                done()
+            })
+
     })
 })

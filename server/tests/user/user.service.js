@@ -21,7 +21,14 @@ suite('User', () => {
                 done(err)
             })
     })
+    test('haveAccess' , done => {
+        agent[0].patch('/user/mainStory/accessHint')
+            .end((err,res)=>{
+                expect(res.body).to.equal(true)
+                done()
+            })
 
+    })
     test('watched story', done => {
         agent[0].patch('/user/mainStory/watched')
             .end((err, res) => {

@@ -30,5 +30,6 @@ router.post('/:pid/buffCards', PlanetController.DrawCard)
 
 router.patch('/:pid/activeBuffCard', PlanetController.activeBuffCard)
 
+router.patch('/:pid/buildingMap/move', PlanetController.moveBuilding)
 
 module.exports = router;

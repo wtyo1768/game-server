@@ -132,6 +132,19 @@ exports.CoolDownofColleting = function (req, res) {
             res.status(500).end()
         });
 }
+exports.accessHint = (req, res) => {
+    UserModel.findById(req.user._id)
+        .then(doc => {
+            doc.mainStory.haveAccessedHint = true;
+            doc.save().then( () => res.send(doc.mainStory.haveAccessedHint) )
+        })
+        .catch(err => {
+            logger.error(err)
+            res.status(500).end()
+        })
+
+}
+
 
 exports.completeMainStory = function (req, res) {
     const data = req.body.currentChapter
@@ -139,6 +152,7 @@ exports.completeMainStory = function (req, res) {
         .then(doc => {
             doc.mainStory.currentChapter = data
             doc.mainStory.watchedStory = false
+            doc.haveAccessedHint = false
             doc.save()
             res.end()
         })

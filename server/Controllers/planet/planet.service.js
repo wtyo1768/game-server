@@ -1,5 +1,6 @@
 const PlanetModel = require('../../Model/PlanetModel');
 const UserModel = require('../../Model/UserModel');
+const _ = require('lodash')
 
 exports.newPlanet = (req, res) => {
     const PlanetData = { ...req.body, owner: req.user.email };
@@ -141,4 +142,27 @@ exports.activeBuffCard = (req, res) => {
             res.end()
         })
         .catch(() => res.status(500).end())
+}
+
+exports.moveBuilding = (req, res) => {
+    console.log(req.body)
+    PlanetModel.findById(req.params.pid)
+        .then(doc => {
+            buildingIndex = _.findIndex(doc.buildingMap, 
+                element => element.coordinateX == req.body.building.coordinateX && 
+                           element.coordinateY == req.body.building.coordinateY )
+            if (buildingIndex != -1) {
+                doc.buildingMap[buildingIndex].coordinateY = req.body.coordinateY;
+                doc.buildingMap[buildingIndex].coordinateX = req.body.coordinateX;
+                doc.markModified(`buildingMap`)
+                doc.save(() => res.status(200).end())
+            }
+            else 
+                res.status(500).end()
+        })
+        .catch(err => {
+            logger.error(err)
+            res.status(500).end()
+        })
+    res.send(true)
 }

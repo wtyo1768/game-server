@@ -24,6 +24,8 @@ router.patch('/resources', UserController.ConsumeResource);
 
 router.patch('/mainStory/complete', UserController.completeMainStory)
 
+router.patch('/mainStory/accessHint' , UserController.accessHint )
+
 router.patch('/mainStory/watched', UserController.watchedMainStory)
 
 router.post('/coolDownGrid', UserController.CoolDownofColleting);
@@ -36,6 +38,6 @@ router.get('/friendInvitations' , FriendController.friendInvitations);
 
 router.post('/baggage/:type' ,  BaggageController.saveToBaggage ) ;
 
-router.delete('/baggage/:type/:itemId' , BaggageController.useBaggageItem );
+router.delete('/baggage/:type/' , BaggageController.useBaggageItem );
 
 module.exports = router;

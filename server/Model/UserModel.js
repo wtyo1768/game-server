@@ -4,7 +4,9 @@ const Types = mongoose.Schema.Types;
 mongoose.set('useFindAndModify', false);
 
 var BaggageItem = new mongoose.Schema({
-    itemId: Types.ObjectId, id: String, name_zh: String
+    id: String, name_zh: String , amount : Number
+},{
+    _id : false
 })
 
 var UserSchema = new mongoose.Schema({
@@ -59,6 +61,7 @@ var UserSchema = new mongoose.Schema({
     isBeginner: { type: Boolean, default: true },
     currentBeginnerGuideScenes: { type: Number, default: 0 },
     mainStory: {
+        haveAccessedHint : {type: Boolean , default : false},
         currentChapter: { type: String, default: '1_1' },
         watchedStory: { type: Boolean, default: false }
     },

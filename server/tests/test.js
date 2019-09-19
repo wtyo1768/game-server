@@ -24,16 +24,18 @@ suite('Test Init', () => {
             // mongoose.connection.db.collection('Planet').remove({"owner":{$nin:["ky@ky"]}})
             // mongoose.connection.db.collection('User').remove({"email":{$nin:["ky@ky"]}})
             // done()
-            mongoose.connection.db.listCollections({ name: 'Planet' }, { nameOnly: true })
-                .next((err, colinfo) => {
-                    if (colinfo)
-                        mongoose.connection.db.collection('Planet').drop()
-                })
             mongoose.connection.db.listCollections({ name: 'User' }, { nameOnly: true })
                 .next((err, colinfo) => {
                     if (colinfo)
                         mongoose.connection.db.collection('User').drop()
+                    mongoose.connection.db.listCollections({ name: 'Planet' }, { nameOnly: true })
+                        .next((err, colinfo) => {
+                            if (colinfo) {
+                                mongoose.connection.db.collection('Planet').drop()
+                            }
+                        })
                     done();
+
                 })
         }).catch(err => console.error(err))
     }).timeout(5000)
@@ -50,9 +52,9 @@ require('./auth/signup.test');
 
 require('./auth/login.test');
 
-// require('./user/user.service');
+require('./user/user.service');
 
-// require('./planet/planet.test');
+require('./planet/planet.test');
 
 // require('./user/friend.test');
 
