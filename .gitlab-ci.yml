@@ -2,7 +2,7 @@ stages:
   - unit-test
   - deploy
 
-image: node:12.7.0-alpine
+image: node:10.16.3-alpine
 
 run test server:
   cache:
