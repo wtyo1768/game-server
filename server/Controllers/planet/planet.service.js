@@ -5,12 +5,11 @@ const _ = require('lodash')
 exports.newPlanet = (req, res) => {
     const PlanetData = { ...req.body, owner: req.user.email };
     const Planet = new PlanetModel(PlanetData);
-    Planet.save();
-    UserModel.findById(req.user._id)
+    Promise.all([Planet.save(), UserModel.findById(req.user._id)])
         .then(doc => {
-            doc.planets.push({ pid: Planet._id, state: true });
-            doc.markModified('planets');
-            doc.save().then(() => res.status(201).send(Planet))
+            doc[1].planets.push({ pid: Planet._id, state: true });
+            doc[1].markModified('planets');
+            doc[1].save().then(() => res.status(201).send(Planet))
         })
         .catch(err => {
             logger.error(err);
