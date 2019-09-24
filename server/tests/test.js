@@ -20,22 +20,15 @@ suite('Test Init', () => {
         new Promise((res, rej) => {
             !mongoose.connection.db ?
                 res(mongoose.connect(url, { useNewUrlParser: true, })) : res();
-        }).then(val => {
-            // mongoose.connection.db.collection('Planet').remove({"owner":{$nin:["ky@ky"]}})
-            // mongoose.connection.db.collection('User').remove({"email":{$nin:["ky@ky"]}})
-            // done()
+        }).then(() => {
             mongoose.connection.db.listCollections({ name: 'User' }, { nameOnly: true })
                 .next((err, colinfo) => {
-                    if (colinfo)
-                        mongoose.connection.db.collection('User').drop()
+                    if (colinfo) mongoose.connection.db.collection('User').drop()
                     mongoose.connection.db.listCollections({ name: 'Planet' }, { nameOnly: true })
                         .next((err, colinfo) => {
-                            if (colinfo) {
-                                mongoose.connection.db.collection('Planet').drop()
-                            }
+                            if (colinfo) mongoose.connection.db.collection('Planet').drop()
+                            done();
                         })
-                    done();
-
                 })
         }).catch(err => console.error(err))
     }).timeout(5000)
