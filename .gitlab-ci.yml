@@ -10,7 +10,7 @@ run test server:
 
   before_script:
     - npm install 
-    - npm run start:dev & 
+    - npm run ci-start-server
     
   stage: unit-test
 
@@ -22,4 +22,4 @@ run test server:
     - master
 
   script:
-    - npm run production-test
+    - npm run ci-test
