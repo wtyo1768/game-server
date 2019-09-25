@@ -12,7 +12,7 @@ exports.saveToBaggage = (req, res) => {
             req.body.forEach(element => {
                 let itemIndex = _.findIndex(doc.baggage[type], n => n.id == element.id);
                 if ( itemIndex != -1 ) {
-                    console.log( doc.baggage[type][itemIndex] );
+                    // console.log( doc.baggage[type][itemIndex] );
                     doc.baggage[type][itemIndex].amount += element.amount;
                 }
                 else
