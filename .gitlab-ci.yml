@@ -10,7 +10,7 @@ run test server:
 
   before_script:
     - npm install 
-    - npm run ci-start-server
+    - npm run ci-start-server &
     
   stage: unit-test
 
