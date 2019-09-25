@@ -13,7 +13,7 @@ mongoose.connect(url, { useNewUrlParser: true, }).catch(err => logger.error(err)
 
 mongoose.Promise = global.Promise;
 
-server.listen(port, () => logger.info(`New App listening on port ${port} in ${process.env.NODE_ENV} `));
+server.listen(port, () => logger.error(`New App listening on port ${port} in ${process.env.NODE_ENV} `));
 
 app.use('/api', require('./Routes/global.route'));
 
